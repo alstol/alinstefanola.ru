@@ -1,0 +1,116 @@
+@font-face {
+	font-family: "FancyScript";
+	src: url("../fonts/script.ttf");
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.background {
+	position:fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	background-image: url("../images/sunset.jpg");
+	background-size: cover;
+	background-position: center;
+	filter: grayscale(100%) contrast(110%);
+}
+
+.background:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+}
+
+.background:after {
+    content: '';
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    bottom: 10px;
+    left: 10px;
+    border: 1px solid rgba(255,255,255,.2);
+}
+
+.background-pattern {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('../images/triangles.png');
+    background-size: cover;
+    background-position: center;
+    opacity: .04;
+}
+
+.content {
+	position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    z-index: 2;
+    margin-top: -4%;
+    max-width: 80%;
+}
+
+.content-wrap {
+    position:fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.content-wrap:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+}
+
+.content:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 337px;
+    height: 337px;
+    left: 50%;
+    top: 50%;
+    margin-left: -168px;
+    margin-top: -168px;
+    /*background-image: url('../images/circle-red.png');*/
+    background-size: 100%;
+}
+
+#name {
+    font-family: FancyScript;
+    font-size:5em;
+}
+
+@media (max-width: 760px) {
+    #name {
+        font-size:4em;
+    }
+}
+
+@media (max-width: 600px) {
+    #name {
+        font-size:3em;
+    }
+}
+
+@media (max-width: 450px) {
+    #name {
+        font-size:2em;
+    }
+}
