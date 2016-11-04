@@ -13,7 +13,7 @@ body {
 	bottom: 0;
 	right: 0;
 	left: 0;
-	background-image: url("../images/sunset.jpg");
+	background-image: url("../images/sunset_smaller.jpg");
 	background-size: cover;
 	background-position: center;
 	filter: grayscale(100%) contrast(110%);
@@ -46,7 +46,7 @@ body {
     background-image: url('../images/triangles.png');
     background-size: cover;
     background-position: center;
-    opacity: .04;
+    opacity: .06;
 }
 
 .content {
@@ -76,41 +76,108 @@ body {
     margin-right: -0.25em;
 }
 
-.content:before {
+.content.active:before {
     content: '';
     display: block;
     position: absolute;
     top: 0;
     left: 0;
-    width: 337px;
-    height: 337px;
+    width: 300px;
+    height: 300px;
     left: 50%;
     top: 50%;
-    margin-left: -168px;
-    margin-top: -168px;
-    /*background-image: url('../images/circle-red.png');*/
+    margin-left: -150px;
+    margin-top: -150px;
+    background-color: lime;
+    border-radius: 50%;
     background-size: 100%;
+    opacity: 0.25;
 }
 
 #name {
     font-family: FancyScript;
-    font-size:5em;
+    font-size:3em;
 }
 
-@media (max-width: 760px) {
+ul.social-links {
+    position: fixed;
+    width: 475px;
+    left: 50%;
+    bottom: 50px;
+    margin-left: -237px;
+    padding: 0;
+    list-style-type: none;
+}
+
+.social-links li {
+    display: inline-block;
+}
+
+.social-media {
+    width:40px;
+    height:40px;
+    background-image: url('../images/social_media.png');
+    opacity:0.3;
+    transition: opacity 0.3s;
+    cursor:pointer;
+}
+
+.social-media:hover{
+    opacity:1;
+}
+
+.social-media.linkedin{
+    background-position: 0px 0;
+}
+
+.social-media.github{
+    background-position: 40px 0;
+}
+
+.social-media.email{
+    background-position: 80px 0;
+}
+
+.social-media.skype{
+    background-position: 120px 0;
+}
+
+.social-media.facebook{
+    background-position: 160px 0;
+}
+
+/*@media (max-width: 760px) {
     #name {
         font-size:4em;
     }
-}
+    .content:before {
+        width: 350px;
+        height: 350px;
+        margin-left: -175px;
+        margin-top: -175px;
+    }
+}*/
 
 @media (max-width: 600px) {
     #name {
         font-size:3em;
+    }
+    .content.active:before {
+        width: 300px;
+        height: 300px;
+        margin-left: -150px;
+        margin-top: -150px;
     }
 }
 
 @media (max-width: 450px) {
     #name {
         font-size:2em;
+    }
+    .content.active:before {
+        width: 200px;
+        height: 200px;
+        margin-left: -100px;
+        margin-top: -100px;
     }
 }

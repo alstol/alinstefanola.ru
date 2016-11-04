@@ -82,14 +82,16 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 337px;
-    height: 337px;
+    width: 400px;
+    height: 400px;
     left: 50%;
     top: 50%;
-    margin-left: -168px;
-    margin-top: -168px;
-    /*background-image: url('../images/circle-red.png');*/
+    margin-left: -200px;
+    margin-top: -200px;
+    background-color: orange;
+    border-radius: 50%;
     background-size: 100%;
+    opacity: 0.25;
 }
 
 #name {
@@ -101,16 +103,34 @@ body {
     #name {
         font-size:4em;
     }
+    .content:before {
+        width: 350px;
+        height: 350px;
+        margin-left: -175px;
+        margin-top: -175px;
+    }
 }
 
 @media (max-width: 600px) {
     #name {
         font-size:3em;
     }
+    .content:before {
+        width: 300px;
+        height: 300px;
+        margin-left: -150px;
+        margin-top: -150px;
+    }
 }
 
 @media (max-width: 450px) {
     #name {
         font-size:2em;
+    }
+    .content:before {
+        width: 200px;
+        height: 200px;
+        margin-left: -100px;
+        margin-top: -100px;
     }
 }
