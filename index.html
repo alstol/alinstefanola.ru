@@ -17,19 +17,84 @@
     <div class="content-wrap">
         <div class="content">
             <div id="name">Alin-Stefan Olaru</div>
-            <ul class="social-links">
-                <li><a href="https://github.com/xShteff" target="_blank"><div class="social-media github" title="GitHub"></div></a></li>
-                <li><a href="https://linkedin.com/in/alin-stefan-olaru-774164a3" target="_blank"><div class="social-media linkedin" title="LinkedIn"></div></a></li>
-                <li><a href="https://www.facebook.com/omgitsallenmcp" target="_blank"><div class="social-media facebook" title="Facebook"></div></a></li>
-                <li><a href="skype:alin_shtefan?chat" target="_blank"><div class="social-media skype" title="Skype"></div></a></li>
-                <li><a href="mailto:hello@alinstefanola.ru" target="_top"><div class="social-media email" title="E-Mail"></div></a></li>
-            </ul>
+            <span id="extra">Junior software engineer</span>
+            <ul class="social-links"></ul>
         </div>
     </div>
     <script>
-        $(document).ready(function() {
+    var SocialMedia = {
+        List: {
+            GitHub: {
+                url: "https://github.com/xShteff",
+                cname: "github",
+                target: "_blank"
+            },
+            LinkedIn: {
+                url: "https://linkedin.com/in/alin-stefan-olaru-774164a3",
+                cname: "linkedin",
+                target: "_blank"
+            },
+            Facebook: {
+                url: "https://www.facebook.com/omgitsallenmcp",
+                cname: "facebook",
+                target: "_blank"
+            },
+            Skype: {
+                url: "skype:alin_shtefan?chat",
+                cname: "skype",
+                target: "_blank"
+            },
+            "E-Mail": {
+                url: "mailto:hello@alinstefanola.ru",
+                cname: "email",
+                target: "_top"
+            }
+        },
+
+        Init: function() {
+            var count = 1;
+            $.each(SocialMedia.List, function(a, b) {
+            console.log(a);                
+                var icon = $("<div>").attr({
+                    'class': 'social-media ' + SocialMedia.List[a].cname,
+                    'title': a
+                });
+                var link = $('<a>').attr({
+                    'href': SocialMedia.List[a].url,
+                    'target': SocialMedia.List[a].target
+                }).append(icon);
+                var el = $('<li>').append(link).css({
+                    'display': 'none'
+                });
+                $('.social-links').append(el);
+                SocialMedia.Display(SocialMedia.List[a].cname, count, 250);
+                count++;
+            })
+            
+        },
+        Display: function(name, delay, multiplier) {
+            setTimeout(function() {
+                $('.social-links .' + name).parent().parent().show('fast');
+                if(delay === 5)
+                    setTimeout(function() {
+                            $('#extra').show('fast');
+                    }, multiplier);
+            }, delay * multiplier)
+        }
+    }
+
+    $(document).ready(function() {
+        $('.background').show('slow', function() {
+            setTimeout(function() {
+                $('.background').addClass('grayscale');
+            }, 500);
             $('.content').addClass('active');
+            $('#name').fadeIn().addClass('active');
+            setTimeout(function() {
+                SocialMedia.Init();
+            }, 1000);
         });
+    });
     </script>
 </body>
 </html>

@@ -5,6 +5,7 @@
 
 body {
     font-family: sans-serif;
+    background-color: black;
 }
 
 .background {
@@ -16,7 +17,17 @@ body {
 	background-image: url("../images/sunset_smaller.jpg");
 	background-size: cover;
 	background-position: center;
-	filter: grayscale(100%) contrast(110%);
+	filter: grayscale(0%) contrast(100%);
+    transition: all 1s ease;
+    display: none;
+}
+
+.background.active {
+    display: block;
+}
+
+.grayscale {
+    filter: grayscale(100%) contrast(110%);
 }
 
 .background:before {
@@ -56,7 +67,9 @@ body {
     z-index: 2;
     margin-top: -4%;
     max-width: 80%;
+    transition:all 1s ease;
 }
+
 
 .content-wrap {
     position:fixed;
@@ -96,7 +109,30 @@ body {
 
 #name {
     font-family: FancyScript;
+    font-size:4em;
+    bottom: 50px;
+    transition: all 1s ease;
+    position: relative;
+    display: none;
+}
+
+#extra {
+    font-family: "Lucida Console";
+    font-size:1em;
+    text-transform: uppercase;
+    position: fixed;
+    width: 475px;
+    left: 50%;
+    bottom: 120px;
+    margin-left: -237px;
+    padding: 0;
+    display: none;
+}
+
+#name.active{
     font-size:3em;
+    bottom: 0px;
+    transform: rotate(-3deg) rotateY(23deg);
 }
 
 ul.social-links {
@@ -119,7 +155,6 @@ ul.social-links {
     background-image: url('../images/social_media.png');
     opacity:0.3;
     transition: opacity 0.3s;
-    cursor:pointer;
 }
 
 .social-media:hover{
@@ -160,6 +195,10 @@ ul.social-links {
 
 @media (max-width: 600px) {
     #name {
+        font-size:3.3em;
+    }
+
+    #name.active {
         font-size:3em;
     }
     .content.active:before {
@@ -172,6 +211,9 @@ ul.social-links {
 
 @media (max-width: 450px) {
     #name {
+        font-size:2.3em;
+    }
+    #name.active {
         font-size:2em;
     }
     .content.active:before {
