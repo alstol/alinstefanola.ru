@@ -101,7 +101,6 @@ body {
     top: 50%;
     margin-left: -150px;
     margin-top: -150px;
-    background-color: lime;
     border-radius: 50%;
     background-size: 100%;
     opacity: 0.25;
@@ -114,6 +113,7 @@ body {
     transition: all 1s ease;
     position: relative;
     display: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
 }
 
 #extra {
@@ -127,6 +127,7 @@ body {
     margin-left: -237px;
     padding: 0;
     display: none;
+    text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
 }
 
 #name.active{
