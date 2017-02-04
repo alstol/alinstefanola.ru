@@ -26,7 +26,6 @@
     </style>
 </head>
 <body>
-<?php echo $filename?>
 	<div class="background">
         <div class="background-pattern"></div>
     </div>

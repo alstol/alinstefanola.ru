@@ -103,7 +103,7 @@ body {
     margin-top: -150px;
     border-radius: 50%;
     background-size: 100%;
-    opacity: 0.25;
+    opacity: 0.5;
 }
 
 #name {
@@ -156,6 +156,7 @@ ul.social-links {
     background-image: url('../images/social_media.png');
     opacity:0.3;
     transition: opacity 0.3s;
+    filter: drop-shadow(2px 2px 2px #222)
 }
 
 .social-media:hover{
