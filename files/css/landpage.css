@@ -1,6 +1,96 @@
 @font-face {
-	font-family: "FancyScript";
-	src: url("../fonts/script.ttf");
+    font-family: "FancyScript";
+    src: url("../fonts/script.ttf");
+}
+
+@keyframes grayscale {
+    from {
+        filter: grayscale(0%) contrast(100%);
+    }
+    to {
+        filter: grayscale(100%) contrast(120%);
+    }
+}
+
+@keyframes bgfadeout {
+    from {
+        background: #000;
+    }
+    to {
+        background: transparent;
+    }
+}
+
+@keyframes spinThing {
+    0% {
+        width: 300px;
+        height: 300px;
+        margin-top: -150px;
+        margin-left: -150px;
+        transform: rotateY(0deg);
+    }
+    25%,
+    75% {
+        width: 250px;
+        height: 250px;
+        margin-top: -125px;
+        margin-left: -125px;
+    }
+    50% {
+        width: 300px;
+        height: 300px;
+        margin-top: -150px;
+        margin-left: -150px;
+    }
+    17.5% {
+        transform: rotateY(90deg);
+        background: orange;
+    }
+    37.5% {
+        transform: rotateY(270deg);
+        background: purple;
+    }
+    62.5% {
+        background: blue;
+        transform: rotateY(450deg);
+    }
+    87.5% {
+        background: cyan;
+        transform: rotateY(630deg);
+    }
+    100% {
+        margin-top: -150px;
+        margin-left: -150px;
+        width: 300px;
+        height: 300px;
+        transform: rotateY(720deg);
+        background: lime;
+    }
+}
+
+@keyframes nameSpin {
+    0%,
+    87.5% {
+        transform: rotateY(270deg);
+    }
+    100% {
+        bottom: 0px;
+        font-size: 3em;
+        transform: rotate(-3deg) rotateY(383deg);
+    }
+}
+
+@keyframes socialPopIn {
+    from {
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+    }
+    to {
+        width: 40px;
+        height: 40px;
+        opacity: 1;
+    }
 }
 
 body {
@@ -9,25 +99,19 @@ body {
 }
 
 .background {
-	position:fixed;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	background-image: url("../images/sunset_smaller.jpg");
-	background-size: cover;
-	background-position: center;
-	filter: grayscale(0%) contrast(100%);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: url("../images/sunset_smaller.jpg");
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(0%) contrast(100%);
     transition: all 1s ease;
-    display: none;
-}
-
-.background.active {
     display: block;
-}
-
-.grayscale {
-    filter: grayscale(100%) contrast(110%);
+    animation: grayscale 1s ease-in-out 1.5s;
+    animation-fill-mode: forwards;
 }
 
 .background:before {
@@ -45,7 +129,7 @@ body {
     right: 10px;
     bottom: 10px;
     left: 10px;
-    border: 1px solid rgba(255,255,255,.2);
+    border: 1px solid rgba(255, 255, 255, .2);
 }
 
 .background-pattern {
@@ -61,24 +145,26 @@ body {
 }
 
 .content {
-	position: relative;
+    position: relative;
     display: inline-block;
     vertical-align: middle;
     z-index: 2;
     margin-top: -4%;
     max-width: 80%;
-    transition:all 1s ease;
+    transition: all 1s ease;
 }
 
-
 .content-wrap {
-    position:fixed;
+    position: fixed;
     top: 0;
     bottom: 0;
     right: 0;
     left: 0;
     color: #fff;
     text-align: center;
+    background: #000;
+    animation: bgfadeout 1s ease-in-out 1.5s;
+    animation-fill-mode: forwards;
 }
 
 .content-wrap:before {
@@ -89,7 +175,7 @@ body {
     margin-right: -0.25em;
 }
 
-.content.active:before {
+.content:before {
     content: '';
     display: block;
     position: absolute;
@@ -103,22 +189,26 @@ body {
     margin-top: -150px;
     border-radius: 50%;
     background-size: 100%;
-    opacity: 0.5;
+    opacity: 0.3;
+    background: cyan;
+    animation: spinThing 2s ease-in-out 0s;
+    animation-fill-mode: forwards;
 }
 
 #name {
     font-family: FancyScript;
-    font-size:4em;
+    font-size: 4em;
     bottom: 50px;
     transition: all 1s ease;
     position: relative;
-    display: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+    animation: nameSpin 2s ease-in-out 0s;
+    animation-fill-mode: forwards;
 }
 
 #extra {
     font-family: "Lucida Console";
-    font-size:1em;
+    font-size: 1em;
     text-transform: uppercase;
     position: fixed;
     width: 475px;
@@ -126,14 +216,19 @@ body {
     bottom: 120px;
     margin-left: -237px;
     padding: 0;
-    display: none;
     text-shadow: 0px 0px 2px rgba(0, 0, 0, 1);
+    animation: extraPopIn 0.5s ease-in-out 2.5s;
+    animation-fill-mode: forwards;
+    transform: rotateY(270deg);
 }
 
-#name.active{
-    font-size:3em;
-    bottom: 0px;
-    transform: rotate(-3deg) rotateY(23deg);
+@keyframes extraPopIn {
+    from {
+        transform: rotateY(270deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
 }
 
 ul.social-links {
@@ -147,41 +242,49 @@ ul.social-links {
 }
 
 .social-links li {
+    width: 0px;
+    height: 0px;
     display: inline-block;
+    animation: socialPopIn 1s ease-in-out 3s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    margin-left: 10px;
 }
 
 .social-media {
-    width:40px;
-    height:40px;
+    width: 40px;
+    height: 40px;
     background-image: url('../images/social_media.png');
-    opacity:0.3;
-    transition: opacity 0.3s;
-    filter: drop-shadow(2px 2px 2px #222)
+    opacity: 0.3;
+    filter: drop-shadow(2px 2px 2px #222);
+    transition: all 0.5s;
 }
 
-.social-media:hover{
-    opacity:1;
+.social-media:hover {
+    opacity: 1;
+    transform: rotateZ(20deg);
 }
 
-.social-media.linkedin{
+.social-media.linkedin {
     background-position: 0px 0;
 }
 
-.social-media.github{
+.social-media.github {
     background-position: 40px 0;
 }
 
-.social-media.email{
+.social-media.email {
     background-position: 80px 0;
 }
 
-.social-media.skype{
+.social-media.skype {
     background-position: 120px 0;
 }
 
-.social-media.facebook{
+.social-media.facebook {
     background-position: 160px 0;
 }
+
 
 /*@media (max-width: 760px) {
     #name {
@@ -197,11 +300,10 @@ ul.social-links {
 
 @media (max-width: 600px) {
     #name {
-        font-size:3.3em;
+        font-size: 3.3em;
     }
-
     #name.active {
-        font-size:3em;
+        font-size: 3em;
     }
     .content.active:before {
         width: 300px;
@@ -213,10 +315,10 @@ ul.social-links {
 
 @media (max-width: 450px) {
     #name {
-        font-size:2.3em;
+        font-size: 2.3em;
     }
     #name.active {
-        font-size:2em;
+        font-size: 2em;
     }
     .content.active:before {
         width: 200px;

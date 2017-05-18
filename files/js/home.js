@@ -59,7 +59,7 @@ var SocialMedia = {
     }
 
     $(document).ready(function() {
-        $('.background').show('slow', function() {
+        /*$('.background').show('slow', function() {
             setTimeout(function() {
                 $('.background').addClass('grayscale');
             }, 500);
@@ -68,5 +68,5 @@ var SocialMedia = {
             setTimeout(function() {
                 SocialMedia.Init();
             }, 1000);
-        });
+        });*/
     });
