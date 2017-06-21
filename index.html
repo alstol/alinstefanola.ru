@@ -36,7 +36,12 @@
 </head>
 
 <body>
-    <nav>
+    <div id="loadingContent">
+        <div class="middle">
+            <img src="files/images/SpadesLogo.png" class="intrologo">
+        </div>
+    </div>
+    <nav class="hidden">
         <a id="logo" href="#top"><img src="files/images/SpadesLogo.png" height="0"></a>
         <ul>
             <li><a href="#about">About</a></li>
@@ -44,14 +49,14 @@
             <li><a href="#portfolio">Portfolio</a></li>
         </ul>
     </nav>
-    <section id="top" class="intro">
+    <section id="top" class="intro hidden">
         <div class="inner">
             <div class="content">
                 <div class="name">Alin-Stefan Olaru</div>
             </div>
         </div>
     </section>
-    <section class="info">
+    <section class="info hidden">
         <article id="about">
             <header>
                 <h1>The person behind this page</h1>
@@ -232,7 +237,7 @@
         </article>
 
     </section>
-    <footer id="social">
+    <footer id="social" class="hidden">
         <img src="files/images/SpadesLogo.png" height="75">
         <p><i>"Royal Spades"</i></p>
         <p>Copyright &copy; <span id="currentYear"></span> Alin-Stefan Olaru</p>
@@ -240,6 +245,15 @@
 
     </footer>
     <script>
+        var Loader = {
+            deinitialise: function () {
+                $('.hidden').removeClass('hidden');
+                setTimeout(function () {
+                    $('#loadingContent').fadeOut();
+                }, 500);
+            }
+        }
+
         var SocialMedia = {
             List: {
                 GitHub: {
@@ -298,12 +312,15 @@
         }
 
         $(document).ready(function () {
+            $('.intro').ready(function () {
+                Loader.deinitialise();
+            });
             SocialMedia.Init();
             setDates();
         });
 
         $(window).scroll(function () {
-            if ($(document).scrollTop() > 50) {
+            if ($(document).scrollTop() > $('body').height() - 25) {
                 $('nav').addClass('fixed');
             } else {
                 $('nav').removeClass('fixed');
