@@ -257,6 +257,14 @@ nav {
     animation: rotating 2s linear infinite;
 }
 
+.keywords li{
+    display:inline;
+    padding:7px;
+    background: rgb(21, 193, 73);
+    border: 1px solid rgb(85, 255, 136);
+    border-radius:9px;
+}
+
 @-webkit-keyframes rotating {
     from {
         -webkit-transform: rotateY(0deg);

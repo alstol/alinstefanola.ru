@@ -62,16 +62,20 @@
                 <h1>The person behind this page</h1>
             </header>
             <p>
-                Well hello there! My name is Alin. I'm a <span id="age"></span> years old, Romanian, 7th semester ICT Engineering student currently living in Denmark. I moved here back in August 2014 when I started studying at VIA University College,
-                Campus Horsens. During college I had courses such as Software Development with Java, .NET Development, Mobile Applications, Serious Games Development, Mixed Reality Applications, Responsive Web Design, Relational Databases, Programming
-                Concepts and Languages, Applied Linear Algebra, Lego Robot Lab.
+                Well hello there! My name is Alin. I'm a <span id="age"></span> years old, Computer Engineering graduate currently living in Denmark. I moved here back in August 2014 when I started studying at VIA University College,
+                Campus Horsens. During college I had courses such as Software Development with Java, .NET Development, Mobile Applications (Android), Serious Games Development, Mixed Reality Applications, Responsive Web Design, Relational Databases, Programming
+                Concepts and Languages, Applied Linear Algebra, Lego Robot Lab, Single WebPage Applications, Linear Algebra, Stochastic Modelling and Processing. As of January of 2018 I have graduated college and managed to do so without failing a single class.
             </p>
             <p>
-                This page has been built simply as a "Business card". It originally had zero text as most of the existing information could be already found on my Social Media and now it (hopefully) contains some kind of summary about myself.
+                I'm planning to keep this page as a "Business Card", where you can find <b>some</b> information about myself. If you wish to keep on stalking me feel free to make use of the social media links placed at the bottom of the page.
             </p>
             <p>
-                The page itself is under continuous development. I'm planning to eventually animate it (as the original one was) with either CSS3 or via JavaScript and add multiple cover images (again, as the original one had).
+                If you have any specific questions feel free to contact me via mail at <a href="mailto:alinstefanolaru@gmail.com">alinstefanolaru@gmail.com</a>.
             </p>
+            <p>
+                The page is under continuous development. 
+            </p>
+
         </article>
 
         <article id="experience">
@@ -84,11 +88,21 @@
                 </div>
                 <div class="title">Student Software Developer</div>
                 <div class="company">EConGrid</div>
-                <div class="timeperiod">February 2017 - Present</div>
+                <div class="timeperiod">February 2017 - February 2018</div>
                 <div class="description">
                     <p>
                         Part time software developer. Most of my tasks pretty much represent frontend improvements, creating new interfaces (GUI) for new functionalities and such.
                     </p>
+                    <p>
+                        During the last few months I have attempted to upgrade the current ASP.NET Framework application to ASP.NET Core 2.0, with Angular 5 and TypeScript.
+                    </p>
+                    <h4>Keywords:</h4>
+                    <ul class="keywords">
+                        <li>ASP.NET Core 2.0</li>
+                        <li>Angular 5</li>
+                        <li>TypeScript</li>
+                        <li>SignalR</li>
+                    </ul>
                 </div>
             </section>
             <hr>
@@ -112,6 +126,15 @@
                             target="_blank">GridStack</a>, an OpenSource library that allows you to create drag-and-drop, multi-column interfaces really easily.
                     </p>
                     <a href="http://econgrid.com/index.php/our-competences/?lang=en" target="_blank">> More information</a>
+                    <h4>Keywords:</h4>
+                    <ul class="keywords">
+                        <li>Xamarin</li>
+                        <li>ASP.NET</li>
+                        <li>JQuery</li>
+                        <li>JavaScript</li>
+                        <li>SignalR</li>
+                        <li>PhoneGap</li>
+                    </ul>
                 </div>
             </section>
             <hr>
@@ -127,6 +150,12 @@
                         Community Manager of the Public Beta server of InnoGames' western-themed browser game called <a href="https://www.innogames.com/games/the-west/" target="_blank">'The-West'</a><br> Part of my duties include recruiting and supervising
                         a group of volunteers dedicated for game support, expanding and maintaining the game community and quality assurance for the game.
                     </p>
+                    <h4>Keywords:</h4>
+                    <ul class="keywords">
+                        <li>Game Support</li>
+                        <li>QA Testing</li>
+                        <li>Team Work</li>
+                    </ul>
                 </div>
             </section>
             <hr>
@@ -165,6 +194,30 @@
             <header>
                 <h1>Portfolio</h1>
             </header>
+            <h2>this</h2>
+            <p>Literally this.</p>
+            <ul>
+                <li><a href="https://github.com/xShteff/alinstefanola.ru">Repo</a></li>
+                <li><a href="#"></a>Refresh</li>
+            </ul>
+            <h2>JSLines</h2>
+            <p>
+                Attempting to make a puzzle-esque game I used to play as a child. The idea is simple: you play on a 9x9 grid and start with five coloured balls. Every time you move one ball you get three more. If you have five or more balls in line then they will dissappear and your score will increase. You must try to get the highest score!
+            </p>
+            <ul>
+                <li><a href="https://github.com/xShteff/JSLines">Repo</a></li>
+                <li><a href="https://xshteff.github.io/JSLines" target="_blank">Demo</a></li>
+            </ul>
+            <h2>
+                JSInterface
+            </h2>
+            <p>
+                Attempting to make some kind of game interface that would work on mobile devices as well. Idea came after playing this browser game for over 8 years and seeing it's interface not being updated all this time. I wanted to attempt to make one myself and see how hard would it be.
+            </p>
+            <ul>
+                <li><a href="https://github.com/xShteff/JS-Interface">Repo</a></li>
+                <li><a href="https://xshteff.github.io/JS-Interface" target="_blank">Demo</a></li>
+            </ul>
             <h2>A self-building webpage</h2>
             <p>
                 A totally not original idea. I would link the place where I've seen it but sadly I can't find it anymore. The entire idea behind this is having a "live coding" session where you see some CSS code in front of you and you see the entire page change right
@@ -222,6 +275,7 @@
 
     </footer>
     <script>
+        //I'm aware that it's recommended we keep JavaScript into separate files. I'm usually more organised than this. Trust me.
         var Loader = {
             deinitialise: function() {
                 $('.hidden').removeClass('hidden');
@@ -304,7 +358,7 @@
             }
         });
 
-
+        // Scroll hijacking at it's finest.
         $('a[href*="#"]')
             .not('[href="#"]')
             .not('[href="#0"]')
@@ -318,7 +372,7 @@
                     if (target.length) {
                         event.preventDefault();
                         $('html, body').animate({
-                            scrollTop: target.offset().top
+                            scrollTop: target.offset().top - 25
                         }, 1000, function() {
 
                             var $target = $(target);
