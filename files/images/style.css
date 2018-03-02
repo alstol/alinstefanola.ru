@@ -258,11 +258,12 @@ nav {
 }
 
 .keywords li{
-    display:inline;
+    display:inline-block;
     padding:7px;
     background: rgb(21, 193, 73);
     border: 1px solid rgb(85, 255, 136);
     border-radius:9px;
+    margin-top: 4px;
 }
 
 @-webkit-keyframes rotating {
