@@ -16,6 +16,13 @@ var fetchGithubData = () => {
                 selfStarred: ghData
             }
         })
+        //Might as well do a 2-in-1 and include a recent picture of my face somewhere...
+        var avatar = new Vue({
+            el: '#about',
+            data: {
+                avatar: ghData[0].owner.avatar_url
+            }
+        })
     })
 }
 

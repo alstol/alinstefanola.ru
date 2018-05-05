@@ -266,6 +266,28 @@ nav {
     margin-top: 4px;
 }
 
+#meinFace {
+    width: 150px;
+    border-radius: 50%;
+    filter:grayscale(100%);
+    transition: filter 1s ease;
+}
+
+#meinFace:hover {
+    filter: grayscale(0%);
+    transition: filter 1s ease;
+}
+
+.faceHolder {
+    float:left;
+}
+
+.introText {
+    float: left;
+    width: 80%;
+    margin-left: 35px;
+}
+
 @-webkit-keyframes rotating {
     from {
         -webkit-transform: rotateY(0deg);
@@ -347,6 +369,27 @@ nav ul li a:hover {
     background: rgba(0, 0, 0, 1);
     z-index: 4;
 }
+
+@media screen and (max-width: 975px) {
+    #meinFace {
+        width: 300px;
+        border-radius: 50%;
+        display: block;
+        margin:auto;
+    }
+
+    .faceHolder {
+        float:left;
+        width:100%;
+    }
+    
+    .introText {
+        float: left;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
 
 @media screen and (max-width: 750px) {
     .content .name {
