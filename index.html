@@ -108,76 +108,13 @@
             <header>
                 <h1>Portfolio</h1>
             </header>
-            <h2>JSLines</h2>
-            <p>
-                Attempting to make a puzzle-esque game I used to play as a child. The idea is simple: you play on a 9x9 grid and start with five coloured balls. Every time you move one ball you get three more. If you have five or more balls in line then they will dissappear and your score will increase. You must try to get the highest score!
-            </p>
-            <ul>
-                <li><a href="https://github.com/xShteff/JSLines" target="_blank">Repo</a></li>
-                <li><a href="https://xshteff.github.io/JSLines" target="_blank">Demo</a></li>
-            </ul>
-            <h2>
-                JSInterface
-            </h2>
-            <p>
-                Attempting to make some kind of game interface that would work on mobile devices as well. Idea came after playing this browser game for over 8 years and seeing it's interface not being updated all this time. I wanted to attempt to make one myself and see how hard would it be.
-            </p>
-            <ul>
-                <li><a href="https://github.com/xShteff/JS-Interface" target="_blank">Repo</a></li>
-                <li><a href="https://xshteff.github.io/JS-Interface" target="_blank">Demo</a></li>
-            </ul>
-            <h2>A self-building webpage</h2>
-            <p>
-                A totally not original idea. I would link the place where I've seen it but sadly I can't find it anymore. The entire idea behind this is having a "live coding" session where you see some CSS code in front of you and you see the entire page change right
-                in front of your eyes! I have made two versions of this, first of them which is just so damn horrible as it was made while learning how to javascript, and the second one which was made around one year later, which is somewhat decent. I
-                will be saving your sanity by only linking the most recent one.
-            </p>
-            <ul>
-                <li><a href="https://github.com/xShteff/Self-Building-Webpage-v2" target="_blank">Repo</a></li>
-                <li><a href="https://xshteff.github.io/Self-Building-Webpage-v2/" target="_blank">Demo</a></li>
-
-            </ul>
-            <h2>A JavaScript only Poker game!</h2>
-            <p>
-                Another project made while learning JavaScript. Sadly there's no re-master version of this one. You'll have to deal with one ridiculously long method that for some reason is recursive too, that decides whether or not you won or not. The entire game is
-                made by using 0 images.
-            </p>
-            <ul>
-                <li><a href="https://github.com/xShteff/PokerJS" target="_blank">Repo</a></li>
-            </ul>
-            <h2>TW Best Friends</h2>
-            <p>
-                TW stands for "The-West", which is the browser game mentioned in my experience section. This is an userscript, pretty much something that runs once the game loads and enhances your gaming experience. This script has been made with the help of Diggo11
-                who at the time was a Community Manager and a Game Developer for the game itself.
-            </p>
-            <ul>
-                <li><a href="https://github.com/xShteff/TW-Best-Friends" target="_blank">Repo</a></li>
-            </ul>
-            <h2>The Magic Bundle</h2>
-            <p>
-                Again, an userscript for The-West. This one has two versions as well, in this case they are not separate. First of them has been made while learning how to work with JavaScript and the final version has been done a bit later. It contains a bunch of older
-                projects merged into only one. It provides features such as improved notifications, a task killer, it auto-buys products for you, it adds a new Veteran Point counter (at the time there was no way of seeing them), and a fancy shmancy neon
-                experience bar (which yes, is useless but cool).
-            </p>
-
-            <ul>
-                <li><a href="https://github.com/xShteff/TWKappa" target="_blank">Repo</a></li>
-            </ul>
-
-            <h2>TW Kappa</h2>
-            <p>
-                Yet another userscript. This one integrates <a href="https://twitch.tv" target="_blank">twitch.tv's</a> emoticon list into The-West! ...and a few extra ones. That's it. Oh, the script uses an API hosted by <a href="http://twitchemotes.com"
-                    target="_blank">twitchemotes.com</a>. I apparently have to mention that otherwise I'd be in trouble.
-            </p>
-            <ul>
-                <li><a href="https://github.com/xShteff/Magic-Bundle-v2" target="_blank">Repo</a></li>
-            </ul>
-            <h2>this</h2>
-            <p>Literally this.</p>
-            <ul>
-                <li><a href="https://github.com/xShteff/alinstefanola.ru" target="_blank">Repo</a></li>
-                <li><a href="https://alinstefanola.ru"></a>Refresh</li>
-            </ul>
+            <div v-for="git in selfStarred">
+                <h2>{{ git.name }}</h2>
+                <p>{{git.description}}</p>
+                <ul>
+                    <li><a v-bind:href="git.html_url" target="_blank">Repo</a></li>
+                </ul>
+            </div>          
         </article>
 
     </section>
@@ -195,6 +132,7 @@
     <script src="files/js/loader.js"></script>
     <script src="files/js/socialmedia.js"></script>
     <script src="files/js/experience.js"></script>
+    <script src="files/js/portfolio.js"></script>
     <script src="files/js/dates.js"></script>
     <script src="files/js/scroller.js"></script>
     <script src="files/js/init.js"></script>
