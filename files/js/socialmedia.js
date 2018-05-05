@@ -1,26 +1,37 @@
-var SocialMedia = {
-    Init: function() {
-        var count = 1;
-        $.ajax({
-            dataType: "json",
-            url: 'files/data/socialmedia.json',
-            success: function(result) {
-                $.each(result, function(a, b) {
-                    var icon = $("<div>").attr({
-                        'class': 'social-media ' + result[a].cname,
-                        'title': a
-                    });
-                    var link = $('<a>').attr({
-                        'href': result[a].url,
-                        'target': result[a].target
-                    }).append(icon);
-                    var el = $('<li>').append(link);
-                    $('.social-links').append(el);
-                    count++;
-                })
-            }
-          });
+var socialMedia = new Vue({
+    el: '#socialLinks',
+    data: {
+        socialLinks: [
+            {
+                "name": "GitHub",
+                "url":"https://github.com/xShteff",
+                "cname":"github",
+                "target":"_blank"
+             },
+             {
+                "name": "LinkedIn",
+                "url":"https://linkedin.com/in/alin-stefan-olaru-774164a3",
+                "cname":"linkedin",
+                "target":"_blank"
+             },
+             {
+                "name": "Facebook",
+                "url":"https://www.facebook.com/DoNotTryThis",
+                "cname":"facebook",
+                "target":"_blank"
+             },
+             {
+                "name": "Skype",
+                "url":"skype:alin_shtefan?chat",
+                "cname":"skype",
+                "target":"_blank"
+             },
+             {
+                "name": "Email",
+                "url":"mailto:alinstefanolaru@gmail.com",
+                "cname":"email",
+                "target":"_top"
+             }
+            ]     
     }
-}
-
-//TODO: Initialise the experience via an ajax call.
+})

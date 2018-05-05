@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="files/images/style.css">
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -61,209 +62,63 @@
             <header>
                 <h1>The person behind this page</h1>
             </header>
-            <p>
-                Well hello there! My name is Alin. I'm a <span id="age"></span> years old, Computer Engineering graduate currently living in Denmark. I moved here back in August 2014 when I started studying at VIA University College,
-                Campus Horsens. During college I had courses such as Software Development with Java, .NET Development, Mobile Applications (Android), Serious Games Development, Mixed Reality Applications, Responsive Web Design, Relational Databases, Programming
-                Concepts and Languages, Applied Linear Algebra, Lego Robot Lab, Single WebPage Applications, Linear Algebra, Stochastic Modelling and Processing. As of January of 2018 I have graduated college and managed to do so without failing a single class.
-            </p>
-            <p>
-                I'm planning to keep this page as a "Business Card", where you can find <b>some</b> information about myself. If you wish to keep on stalking me feel free to make use of the social media links placed at the bottom of the page.
-            </p>
-            <p>
-                If you have any specific questions feel free to contact me via mail at <a href="mailto:alinstefanolaru@gmail.com">alinstefanolaru@gmail.com</a>.
-            </p>
-            <p>
-                The page is under continuous development. 
-            </p>
-
+            <div class="faceHolder">
+                <img v-bind:src="avatar" id="meinFace" title="Hopefully an image of my face. Fetched from GitHub. Might be off-centered...">
+            </div>
+            <div class="introText">
+                <p>
+                    Well hello there! My name is Alin. I'm a <span id="age"></span> years old, Computer Engineering graduate currently living in Denmark. I moved here back in August 2014 when I started studying at VIA University College,
+                    Campus Horsens. During college I had courses such as Software Development with Java, .NET Development, Mobile Applications (Android), Serious Games Development, Mixed Reality Applications, Responsive Web Design, Relational Databases, Programming
+                    Concepts and Languages, Applied Linear Algebra, Lego Robot Lab, Single WebPage Applications, Linear Algebra, Stochastic Modelling and Processing. As of January of 2018 I have graduated college and managed to do so without failing a single class.
+                </p>
+                <p>
+                    I'm planning to keep this page as a "Business Card", where you can find <b>some</b> information about myself. If you wish to keep on stalking me feel free to make use of the social media links placed at the bottom of the page.
+                </p>
+                <p>
+                    If you have any specific questions feel free to contact me via mail at <a href="mailto:alinstefanolaru@gmail.com">alinstefanolaru@gmail.com</a>.
+                </p>
+                <p>
+                    The page is under continuous development. 
+                </p>
+            </div>
         </article>
 
         <article id="experience">
             <header>
                 <h1>Working Experience</h1>
             </header>
-            <section class="experience">
-                <div class="logo">
-                    <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAVbAAAAJDg5Y2RmNjhkLTg5YzgtNDg1ZC1hNGJmLWU1OTA1NzhjNGVhNg.png">
-                </div>
-                <div class="title">Student Software Developer</div>
-                <div class="company">EConGrid</div>
-                <div class="timeperiod">February 2017 - February 2018</div>
-                <div class="description">
-                    <p>
-                        Part time software developer. Most of my tasks pretty much represent frontend improvements, creating new interfaces (GUI) for new functionalities and such.
-                    </p>
-                    <p>
-                        During the last few months I have attempted to upgrade the current ASP.NET Framework application to ASP.NET Core 2.0, with Angular 5 and TypeScript.
-                    </p>
-                    <h4>Keywords:</h4>
+            <div v-for="job in experience">
+                <section class="experience">
+                    <div class="logo">
+                        <img v-bind:src="job.companyLogo" alt="Logo">
+                    </div>
+                    <div class="title">{{ job.title }}</div>
+                    <div class="company">{{ job.companyName }}</div>
+                    <div class="timeperiod">{{ job.timePeriod.from }} - {{ job.timePeriod.until }}</div>
+                    <div class="description">
+                        <p v-for="p in job.descriptionParagraphs">
+                            {{ p }}
+                        </p>
+                    </div>
                     <ul class="keywords">
-                        <li>ASP.NET Core 2.0</li>
-                        <li>Angular 5</li>
-                        <li>TypeScript</li>
-                        <li>SignalR</li>
+                        <li v-for="key in job.keywords">{{ key }}</li>
                     </ul>
-                </div>
-            </section>
-            <hr>
-            <section class="experience">
-                <div class="logo">
-                    <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAVbAAAAJDg5Y2RmNjhkLTg5YzgtNDg1ZC1hNGJmLWU1OTA1NzhjNGVhNg.png">
-                </div>
-                <div class="title">Software Engineer Intern</div>
-                <div class="company">EConGrid</div>
-                <div class="timeperiod">August 2016 - January 2017</div>
-                <div class="description">
-                    <p>
-                        During this period I worked on two primary tasks: A pocket companion dedicated to the people that had to install their EnergyConnectors (Commissioning App) and redesigning their already existing interface (Energy Cloud).
-                    </p>
-                    <p>
-                        Both projects were web applications built under the .NET Framework (ASP.NET). As already mentioned The Commissioning App represents a pocket companion, it is supposed to offer guides on how to install the EnergyConnectors and test the connection with
-                        the freshly installed units with our servers, eventually help the person troubleshoot in case something goes wrong.
-                    </p>
-                    <p>
-                        The second task implies moving the old-static bootstrap-based interface to a widget based dynamic one, or a tile system as we ended up calling it. The interface was built by using <a href="https://github.com/troolee/gridstack.js"
-                            target="_blank">GridStack</a>, an OpenSource library that allows you to create drag-and-drop, multi-column interfaces really easily.
-                    </p>
-                    <a href="http://econgrid.com/index.php/our-competences/?lang=en" target="_blank">> More information</a>
-                    <h4>Keywords:</h4>
-                    <ul class="keywords">
-                        <li>Xamarin</li>
-                        <li>ASP.NET</li>
-                        <li>JQuery</li>
-                        <li>JavaScript</li>
-                        <li>SignalR</li>
-                        <li>PhoneGap</li>
-                    </ul>
-                </div>
-            </section>
-            <hr>
-            <section class="experience">
-                <div class="logo">
-                    <img src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAANjAAAAJDA1OTQ4ZGJhLTMwNjEtNDMxOS04N2Q0LWMyZjQ0MmQ5YjJkNg.png">
-                </div>
-                <div class="title">External Community Manager</div>
-                <div class="company">InnoGames Gmbh</div>
-                <div class="timeperiod">July 2016 - Present</div>
-                <div class="description">
-                    <p>
-                        Community Manager of the Public Beta server of InnoGames' western-themed browser game called <a href="https://www.innogames.com/games/the-west/" target="_blank">'The-West'</a><br> Part of my duties include recruiting and supervising
-                        a group of volunteers dedicated for game support, expanding and maintaining the game community and quality assurance for the game.
-                    </p>
-                    <h4>Keywords:</h4>
-                    <ul class="keywords">
-                        <li>Game Support</li>
-                        <li>QA Testing</li>
-                        <li>Team Work</li>
-                    </ul>
-                </div>
-            </section>
-            <hr>
-            <section class="experience">
-                <div class="logo">
-                    <img src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAANjAAAAJDA1OTQ4ZGJhLTMwNjEtNDMxOS04N2Q0LWMyZjQ0MmQ5YjJkNg.png">
-                </div>
-                <div class="title">Customer Support (Volunteer)</div>
-                <div class="company">InnoGames Gmbh</div>
-                <div class="timeperiod">March 2013 - June 2016</div>
-                <div class="description">
-                    <p>
-                        During this period I have been a game supporter. Part of my duties included answering customer queries through a dedicated support system. I have also been a coordinator for a small group of dedicated game testers known as "Elite Testers".
-                    </p>
-                    <p>
-                        My volunteering status ended on mid-June 2016 when I have been hired as a Community Manager of the same team I have been a part of.
-                    </p>
-                </div>
-            </section>
-            <hr>
-            <section class="experience">
-                <div class="logo">
-                    <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/p/6/005/0b7/0d1/2ecebf1.png">
-                </div>
-                <div class="title">Student Lecturer</div>
-                <div class="company">VIA University College</div>
-                <div class="timeperiod">August 2015 - January 2016</div>
-                <div class="description">
-                    I have been helping first semester students understand the basic of software development with Java.
-                </div>
-
-            </section>
+                </section>
+                <hr>
+            </div>
+            
         </article>
-        <hr>
         <article id="portfolio">
             <header>
                 <h1>Portfolio</h1>
             </header>
-            <h2>JSLines</h2>
-            <p>
-                Attempting to make a puzzle-esque game I used to play as a child. The idea is simple: you play on a 9x9 grid and start with five coloured balls. Every time you move one ball you get three more. If you have five or more balls in line then they will dissappear and your score will increase. You must try to get the highest score!
-            </p>
-            <ul>
-                <li><a href="https://github.com/xShteff/JSLines" target="_blank">Repo</a></li>
-                <li><a href="https://xshteff.github.io/JSLines" target="_blank">Demo</a></li>
-            </ul>
-            <h2>
-                JSInterface
-            </h2>
-            <p>
-                Attempting to make some kind of game interface that would work on mobile devices as well. Idea came after playing this browser game for over 8 years and seeing it's interface not being updated all this time. I wanted to attempt to make one myself and see how hard would it be.
-            </p>
-            <ul>
-                <li><a href="https://github.com/xShteff/JS-Interface" target="_blank">Repo</a></li>
-                <li><a href="https://xshteff.github.io/JS-Interface" target="_blank">Demo</a></li>
-            </ul>
-            <h2>A self-building webpage</h2>
-            <p>
-                A totally not original idea. I would link the place where I've seen it but sadly I can't find it anymore. The entire idea behind this is having a "live coding" session where you see some CSS code in front of you and you see the entire page change right
-                in front of your eyes! I have made two versions of this, first of them which is just so damn horrible as it was made while learning how to javascript, and the second one which was made around one year later, which is somewhat decent. I
-                will be saving your sanity by only linking the most recent one.
-            </p>
-            <ul>
-                <li><a href="https://github.com/xShteff/Self-Building-Webpage-v2" target="_blank">Repo</a></li>
-                <li><a href="https://xshteff.github.io/Self-Building-Webpage-v2/" target="_blank">Demo</a></li>
-
-            </ul>
-            <h2>A JavaScript only Poker game!</h2>
-            <p>
-                Another project made while learning JavaScript. Sadly there's no re-master version of this one. You'll have to deal with one ridiculously long method that for some reason is recursive too, that decides whether or not you won or not. The entire game is
-                made by using 0 images.
-            </p>
-            <ul>
-                <li><a href="https://github.com/xShteff/PokerJS" target="_blank">Repo</a></li>
-            </ul>
-            <h2>TW Best Friends</h2>
-            <p>
-                TW stands for "The-West", which is the browser game mentioned in my experience section. This is an userscript, pretty much something that runs once the game loads and enhances your gaming experience. This script has been made with the help of Diggo11
-                who at the time was a Community Manager and a Game Developer for the game itself.
-            </p>
-            <ul>
-                <li><a href="https://github.com/xShteff/TW-Best-Friends" target="_blank">Repo</a></li>
-            </ul>
-            <h2>The Magic Bundle</h2>
-            <p>
-                Again, an userscript for The-West. This one has two versions as well, in this case they are not separate. First of them has been made while learning how to work with JavaScript and the final version has been done a bit later. It contains a bunch of older
-                projects merged into only one. It provides features such as improved notifications, a task killer, it auto-buys products for you, it adds a new Veteran Point counter (at the time there was no way of seeing them), and a fancy shmancy neon
-                experience bar (which yes, is useless but cool).
-            </p>
-
-            <ul>
-                <li><a href="https://github.com/xShteff/TWKappa" target="_blank">Repo</a></li>
-            </ul>
-
-            <h2>TW Kappa</h2>
-            <p>
-                Yet another userscript. This one integrates <a href="https://twitch.tv" target="_blank">twitch.tv's</a> emoticon list into The-West! ...and a few extra ones. That's it. Oh, the script uses an API hosted by <a href="http://twitchemotes.com"
-                    target="_blank">twitchemotes.com</a>. I apparently have to mention that otherwise I'd be in trouble.
-            </p>
-            <ul>
-                <li><a href="https://github.com/xShteff/Magic-Bundle-v2" target="_blank">Repo</a></li>
-            </ul>
-            <h2>this</h2>
-            <p>Literally this.</p>
-            <ul>
-                <li><a href="https://github.com/xShteff/alinstefanola.ru" target="_blank">Repo</a></li>
-                <li><a href="https://alinstefanola.ru"></a>Refresh</li>
-            </ul>
+            <div v-for="git in selfStarred">
+                <h2>{{ git.name }}</h2>
+                <p>{{git.description}}</p>
+                <ul>
+                    <li><a v-bind:href="git.html_url" target="_blank">Repo</a></li>
+                </ul>
+            </div>          
         </article>
 
     </section>
@@ -271,11 +126,17 @@
         <img src="files/images/SpadesLogo.png" height="75">
         <p><i>"Royal Spades"</i></p>
         <p>Copyright &copy; <span id="currentYear"></span> Alin-Stefan Olaru</p>
-        <ul class="social-links"></ul>
+        <ul id="socialLinks">
+            <li v-for="socialLink in socialLinks">
+                <a v-bind:href="socialLink.url" v-bind:target="socialLink.target"><div class="social-media" v-bind:class="socialLink.cname"></div></a>
+            </li>
+        </ul>
 
     </footer>
     <script src="files/js/loader.js"></script>
     <script src="files/js/socialmedia.js"></script>
+    <script src="files/js/experience.js"></script>
+    <script src="files/js/portfolio.js"></script>
     <script src="files/js/dates.js"></script>
     <script src="files/js/scroller.js"></script>
     <script src="files/js/init.js"></script>
