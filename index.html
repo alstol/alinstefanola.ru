@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="files/images/style.css">
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
     <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
@@ -271,7 +272,11 @@
         <img src="files/images/SpadesLogo.png" height="75">
         <p><i>"Royal Spades"</i></p>
         <p>Copyright &copy; <span id="currentYear"></span> Alin-Stefan Olaru</p>
-        <ul class="social-links"></ul>
+        <ul id="socialLinks">
+            <li v-for="socialLink in socialLinks">
+                <a v-bind:href="socialLink.url" v-bind:target="socialLink.target"><div class="social-media" v-bind:class="socialLink.cname"></div></a>
+            </li>
+        </ul>
 
     </footer>
     <script src="files/js/loader.js"></script>
@@ -279,6 +284,7 @@
     <script src="files/js/dates.js"></script>
     <script src="files/js/scroller.js"></script>
     <script src="files/js/init.js"></script>
+    <script src="files/js/vue.js"></script>
 </body>
 
 </html>
