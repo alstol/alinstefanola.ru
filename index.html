@@ -83,114 +83,27 @@
             <header>
                 <h1>Working Experience</h1>
             </header>
-            <section class="experience">
-                <div class="logo">
-                    <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAVbAAAAJDg5Y2RmNjhkLTg5YzgtNDg1ZC1hNGJmLWU1OTA1NzhjNGVhNg.png">
-                </div>
-                <div class="title">Student Software Developer</div>
-                <div class="company">EConGrid</div>
-                <div class="timeperiod">February 2017 - February 2018</div>
-                <div class="description">
-                    <p>
-                        Part time software developer. Most of my tasks pretty much represent frontend improvements, creating new interfaces (GUI) for new functionalities and such.
-                    </p>
-                    <p>
-                        During the last few months I have attempted to upgrade the current ASP.NET Framework application to ASP.NET Core 2.0, with Angular 5 and TypeScript.
-                    </p>
-                    <h4>Keywords:</h4>
+            <div v-for="job in experience">
+                <section class="experience">
+                    <div class="logo">
+                        <img v-bind:src="job.companyLogo" alt="Logo">
+                    </div>
+                    <div class="title">{{ job.title }}</div>
+                    <div class="company">{{ job.companyName }}</div>
+                    <div class="timeperiod">{{ job.timePeriod.from }} - {{ job.timePeriod.until }}</div>
+                    <div class="description">
+                        <p v-for="p in job.descriptionParagraphs">
+                            {{ p }}
+                        </p>
+                    </div>
                     <ul class="keywords">
-                        <li>ASP.NET Core 2.0</li>
-                        <li>Angular 5</li>
-                        <li>TypeScript</li>
-                        <li>SignalR</li>
+                        <li v-for="key in job.keywords">{{ key }}</li>
                     </ul>
-                </div>
-            </section>
-            <hr>
-            <section class="experience">
-                <div class="logo">
-                    <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/AAEAAQAAAAAAAAVbAAAAJDg5Y2RmNjhkLTg5YzgtNDg1ZC1hNGJmLWU1OTA1NzhjNGVhNg.png">
-                </div>
-                <div class="title">Software Engineer Intern</div>
-                <div class="company">EConGrid</div>
-                <div class="timeperiod">August 2016 - January 2017</div>
-                <div class="description">
-                    <p>
-                        During this period I worked on two primary tasks: A pocket companion dedicated to the people that had to install their EnergyConnectors (Commissioning App) and redesigning their already existing interface (Energy Cloud).
-                    </p>
-                    <p>
-                        Both projects were web applications built under the .NET Framework (ASP.NET). As already mentioned The Commissioning App represents a pocket companion, it is supposed to offer guides on how to install the EnergyConnectors and test the connection with
-                        the freshly installed units with our servers, eventually help the person troubleshoot in case something goes wrong.
-                    </p>
-                    <p>
-                        The second task implies moving the old-static bootstrap-based interface to a widget based dynamic one, or a tile system as we ended up calling it. The interface was built by using <a href="https://github.com/troolee/gridstack.js"
-                            target="_blank">GridStack</a>, an OpenSource library that allows you to create drag-and-drop, multi-column interfaces really easily.
-                    </p>
-                    <a href="http://econgrid.com/index.php/our-competences/?lang=en" target="_blank">> More information</a>
-                    <h4>Keywords:</h4>
-                    <ul class="keywords">
-                        <li>Xamarin</li>
-                        <li>ASP.NET</li>
-                        <li>JQuery</li>
-                        <li>JavaScript</li>
-                        <li>SignalR</li>
-                        <li>PhoneGap</li>
-                    </ul>
-                </div>
-            </section>
-            <hr>
-            <section class="experience">
-                <div class="logo">
-                    <img src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAANjAAAAJDA1OTQ4ZGJhLTMwNjEtNDMxOS04N2Q0LWMyZjQ0MmQ5YjJkNg.png">
-                </div>
-                <div class="title">External Community Manager</div>
-                <div class="company">InnoGames Gmbh</div>
-                <div class="timeperiod">July 2016 - Present</div>
-                <div class="description">
-                    <p>
-                        Community Manager of the Public Beta server of InnoGames' western-themed browser game called <a href="https://www.innogames.com/games/the-west/" target="_blank">'The-West'</a><br> Part of my duties include recruiting and supervising
-                        a group of volunteers dedicated for game support, expanding and maintaining the game community and quality assurance for the game.
-                    </p>
-                    <h4>Keywords:</h4>
-                    <ul class="keywords">
-                        <li>Game Support</li>
-                        <li>QA Testing</li>
-                        <li>Team Work</li>
-                    </ul>
-                </div>
-            </section>
-            <hr>
-            <section class="experience">
-                <div class="logo">
-                    <img src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAANjAAAAJDA1OTQ4ZGJhLTMwNjEtNDMxOS04N2Q0LWMyZjQ0MmQ5YjJkNg.png">
-                </div>
-                <div class="title">Customer Support (Volunteer)</div>
-                <div class="company">InnoGames Gmbh</div>
-                <div class="timeperiod">March 2013 - June 2016</div>
-                <div class="description">
-                    <p>
-                        During this period I have been a game supporter. Part of my duties included answering customer queries through a dedicated support system. I have also been a coordinator for a small group of dedicated game testers known as "Elite Testers".
-                    </p>
-                    <p>
-                        My volunteering status ended on mid-June 2016 when I have been hired as a Community Manager of the same team I have been a part of.
-                    </p>
-                </div>
-            </section>
-            <hr>
-            <section class="experience">
-                <div class="logo">
-                    <img src="https://media.licdn.com/mpr/mpr/shrink_200_200/p/6/005/0b7/0d1/2ecebf1.png">
-                </div>
-                <div class="title">Student Lecturer</div>
-                <div class="company">VIA University College</div>
-                <div class="timeperiod">August 2015 - January 2016</div>
-                <div class="description">
-                    I have been helping first semester students understand the basic of software development with Java.
-                </div>
-
-            </section>
+                </section>
+                <hr>
+            </div>
+            
         </article>
-        <hr>
         <article id="portfolio">
             <header>
                 <h1>Portfolio</h1>
@@ -281,10 +194,10 @@
     </footer>
     <script src="files/js/loader.js"></script>
     <script src="files/js/socialmedia.js"></script>
+    <script src="files/js/experience.js"></script>
     <script src="files/js/dates.js"></script>
     <script src="files/js/scroller.js"></script>
     <script src="files/js/init.js"></script>
-    <script src="files/js/vue.js"></script>
 </body>
 
 </html>
