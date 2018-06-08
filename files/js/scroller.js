@@ -1,12 +1,27 @@
+/*
+    One of the most notorious features on the website.
+    Scroll hijacking.
+
+    I'm a nerd for fancy animations, I can't just teleport you to the content. I have to slowly scroll the entire webpage until you reach the content.
+*/
+
 $(window).scroll(function() {
-    if ($(document).scrollTop() > $('body').height() - 50) {
+    var scroll = $(document).scrollTop();
+    if (scroll > $('body').height() - 50) {
         $('nav').addClass('fixed');
     } else {
         $('nav').removeClass('fixed');
     }
+
+    if (scroll > 150) {
+        $('.backToTop').fadeIn();
+
+    } else {
+        $('.backToTop').fadeOut();
+
+    }
 });
 
-// Scroll hijacking at it's finest.
 $('a[href*="#"]')
     .not('[href="#"]')
     .not('[href="#0"]')

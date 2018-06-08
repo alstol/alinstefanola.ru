@@ -1,7 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway');
-@import url('https://fonts.googleapis.com/css?family=Oswald');
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
-@import url('https://fonts.googleapis.com/css?family=Allura');
 @font-face {
     font-family: "FancyScript";
     src: url("../fonts/script.ttf");
@@ -15,66 +12,49 @@ body {
     width: 100%;
 }
 
-
-a {
-    cursor: pointer;
-    color: #13752a;
-}
-
-.intro {
-    width: 100%;
+header.cover {
+    width:100%;
     height: 100%;
-    margin: auto;
-    background: url('bg.jpeg') no-repeat 50% 50%;
+    background:url('bg.jpeg') no-repeat 50% 50%;
     background-size: cover;
-    display: table;
-    top: 0;
-    position: relative;
-    z-index: 1;
+    display:table;
 }
 
-
-/*.intro:after {
-    background: linear-gradient(-45deg, #ffffff 16px, transparent 0), linear-gradient(45deg, #ffffff 16px, transparent 0);
-    background-position: left bottom;
-    background-repeat: repeat-x;
-    background-size: 32px 32px;
-    content: " ";
-    display: block;
-    position: absolute;
-    bottom: -6px;
-    left: 0px;
-    width: 100%;
-    height: 32px;
-}*/
-
-.intro .inner {
-    display: table-cell;
+header.cover .inner {
+    display:table-cell;
     vertical-align: middle;
-    width: 100%;
+    width:100%;
     max-width: none;
 }
 
-.content {
+header.cover .inner .content {
     max-width: 500px;
     margin: 0 auto;
     text-align: center;
 }
 
-.content .name {
-    color: #F9F3F4;
-    font-family: 'FancyScript', cursive;
+header.cover .inner .content .name {
+    color: rgba(255, 255, 255, 1);
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
     font-size: 400%;
-    transition: all 0.2s ease-in;
+    font-family: 'FancyScript';
+    word-spacing: -30px;
+    transition: all 0.5s ease;
 }
 
-.content .name:before {
+header.cover .inner .content .name:hover {
+    font-size: 420%;
+}
+
+header.cover .inner .content .title {
+    color: rgba(255, 255, 255, 1);
+    font-family: "Raleway", sans-serif;
+}
+
+header.cover .inner .content .name:before {
     content: '';
     display: block;
     position: absolute;
-    top: 0;
-    left: 0;
     width: 300px;
     height: 300px;
     left: 50%;
@@ -82,16 +62,88 @@ a {
     margin-left: -150px;
     margin-top: -150px;
     border-radius: 50%;
-    background-size: 100%;
-    opacity: 0.3;
-    background: limegreen;
+    background: rgba(0, 150, 5, 0.3);
+    transition: all 0.5s ease;
 }
 
-.info {
+header.cover .inner .content .name:hover:before{
+    width:280px;
+    height:280px;
+    margin-left: -140px;
+    margin-top: -140px;
+}
+
+nav {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    transition: all 0.2s ease-in;
+    bottom: 0px;
+    background: rgba(0, 0, 0, 1);
+    z-index: 3;
+}
+
+nav.fixed {
+    position: fixed !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    top: 0px;
+    height: 50px;
+}
+
+nav ul {
+    list-style-type: none;
+    float: right;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 25px;
+}
+
+nav ul li a {
+    color: white !important;
+    text-decoration: none;
     font-family: 'Raleway', sans-serif;
-    position: relative;
-    padding: 45px 0px 10px 0px;
-    display: table;
+    opacity: 0.7;
+    transition: opacity 0.5s ease;
+}
+
+nav ul li a:hover {
+    opacity: 1;
+}
+
+section {
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    padding: 25px;
+}
+
+section header {
+    text-align: center;
+    width:100%;
+}
+
+#intro figure {
+    float:left;
+}
+
+#intro .text {
+    padding-top: 10px;
+}
+
+#intro figure img#gh_avatar {
+    border-radius: 50%;
+    height:150px;
+    filter:grayscale(100%);
+    transition: all 0.5s ease;
+}
+
+#intro figure img#gh_avatar:hover {
+    filter:grayscale(0%);
 }
 
 .experience {
@@ -120,35 +172,16 @@ a {
 
 .experience .description {
     clear: both;
+    white-space: pre-line;
 }
 
-article {
-    padding-top: 50px;
-    display: table;
-    padding: 0 25px;
-}
-
-article header {
-    text-align: center;
-    font-size: 200%;
-}
-
-
-/*
-#about {
-    background: red;
-}
-
-#experience {
-    background: lime;
-}
-
-#portfolio {
-    background: blue;
-}*/
-
-#portfolio h2 {
-    padding-top: 10px;
+.keywords li{
+    display:inline-block;
+    padding:4px;
+    background: rgb(21, 193, 73);
+    border: 1px solid rgb(85, 255, 136);
+    border-radius:9px;
+    margin-left: 2px;
 }
 
 footer:before {
@@ -176,6 +209,7 @@ footer {
     font-family: 'Raleway', sans-serif;
     display: table;
 }
+
 
 ul#socialLinks {
     padding: 0;
@@ -224,193 +258,62 @@ ul#socialLinks {
 .social-media.facebook {
     background-position: 160px 0;
 }
-
-nav {
-    width: 100%;
-    position: absolute;
-    z-index: 2;
-    padding-bottom: 10px;
-    padding-top: 10px;
-    transition: all 0.2s ease-in;
-    bottom: 0px;
-    background: rgba(0, 0, 0, 1);
-    z-index: 3;
-}
-
-.hidden {
-    display: none;
-}
-
-.middle {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.intrologo {
-    max-width: 256px;
-    -webkit-animation: rotating 2s linear infinite;
-    -moz-animation: rotating 2s linear infinite;
-    -ms-animation: rotating 2s linear infinite;
-    -o-animation: rotating 2s linear infinite;
-    animation: rotating 2s linear infinite;
-}
-
-.keywords li{
-    display:inline-block;
-    padding:7px;
-    background: rgb(21, 193, 73);
-    border: 1px solid rgb(85, 255, 136);
-    border-radius:9px;
-    margin-top: 4px;
-}
-
-#meinFace {
-    width: 150px;
-    border-radius: 50%;
-    filter:grayscale(100%);
-    transition: filter 1s ease;
-}
-
-#meinFace:hover {
-    filter: grayscale(0%);
-    transition: filter 1s ease;
-}
-
-.faceHolder {
-    float:left;
-}
-
-.introText {
-    float: left;
-    width: 80%;
-    margin-left: 35px;
-}
-
-@-webkit-keyframes rotating {
-    from {
-        -webkit-transform: rotateY(0deg);
-        -o-transform: rotateY(0deg);
-        transform: rotateY(0deg);
-        
-    }
-    to {
-        -webkit-transform: rotateY(360deg);
-        -o-transform: rotateY(360deg);
-        transform: rotateY(360deg);
-    }
-}
-
-@keyframes rotating {
-    from {
-        -ms-transform: rotateY(0deg);
-        -moz-transform: rotateY(0deg);
-        -webkit-transform: rotateY(0deg);
-        -o-transform: rotateY(0deg);
-        transform: rotateY(0deg);
-    }
-    to {
-        -ms-transform: rotateY(360deg);
-        -moz-transform: rotateY(360deg);
-        -webkit-transform: rotateY(360deg);
-        -o-transform: rotateY(360deg);
-        transform: rotateY(360deg);
-    }
-}
-
-nav.fixed {
-    position: fixed !important;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background: rgba(0, 0, 0, 0.7);
-    top: 0px;
-    height: 50px;
-}
-
-nav #logo {
-    float: left;
-    width: 50px;
-    height: 50px;
-    background: url('SpadesLogo.png') no-repeat;
-    background-size: 100%;
+.bar-wrap {
     margin-left: 20px;
+}
+bar {
+    border: 1px solid black;
+    max-width: 400px;
+    min-width: 200px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 5px;
+    overflow:hidden;
+    text-align: left !important;
+}
+
+bar .fill {
+    background: rgba(0, 150, 5, 1);
+    background: linear-gradient(0deg, rgba(34,195,88,1) 40%, rgba(217,253,45,1) 100%);
+    padding: 6px;
+    height: 100%;
+    width: 0;
     transition: all 0.5s ease;
 }
 
-nav ul {
-    list-style-type: none;
-    float: right;
+label {
+    position: relative;
+    bottom: 12px;
 }
 
-nav ul li {
+aside.bars {
+    max-width: 600px;
+    text-align: left;
     display: inline-block;
-    margin-right: 25px;
+    border:1px solid black;
+    padding-right: 5px;
+    border-radius:10px;
+    margin: 10px 0;
 }
 
-nav ul li a {
-    color: white !important;
-    text-decoration: none;
-    font-family: 'Raleway', sans-serif;
-    opacity: 0.7;
-    transition: opacity 0.5s ease;
+#knowledge {
+    text-align: center;
 }
 
-nav ul li a:hover {
+.backToTop {
+    width: 50px;
+    height: 50px;
+    background: rgba(0,0,0, 0.0);
+    position:fixed;
+    right:10px;
+    bottom: 10px;
+}
+.backToTop img {
+    width:100%;
+    opacity: 0.5;
+    transition: all 0.5s ease;
+}
+
+.backToTop img:hover {
     opacity: 1;
-}
-
-#loadingContent {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, 1);
-    z-index: 4;
-}
-
-@media screen and (max-width: 975px) {
-    #meinFace {
-        width: 300px;
-        border-radius: 50%;
-        display: block;
-        margin:auto;
-    }
-
-    .faceHolder {
-        float:left;
-        width:100%;
-    }
-    
-    .introText {
-        float: left;
-        width: 100%;
-        margin-left: 0;
-    }
-}
-
-
-@media screen and (max-width: 750px) {
-    .content .name {
-        font-size: 250%;
-    }
-    .content .name:before {
-        width: 200px;
-        height: 200px;
-        margin-left: -100px;
-        margin-top: -100px;
-    }
-    nav ul li {
-        margin-right: 10px;
-    }
-    .fixed #logo {
-        height: 40px !important;
-        width: 40px !important;
-        margin-top: 4px;
-    }
-    .fixed {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-    }
 }

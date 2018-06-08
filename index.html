@@ -1,145 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Welcome | Alin-Stefan Olaru</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Personal webpage built for and by Alin Stefan Olaru">
+    <meta name="theme-color" content="#222">
+
     <link rel="stylesheet" href="files/images/style.css">
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
-
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-
-    <link rel="manifest" href="/manifest.json">
-
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="theme-color" content="#222">
+    <title>Alin Stefan Olaru - Software Engineer</title>    
 </head>
-
 <body>
-    <div id="loadingContent">
-        <div class="middle">
-            <img src="files/images/SpadesLogo.png" class="intrologo">
-        </div>
-    </div>
-    <nav class="hidden">
-        <a id="logo" href="#top"><img src="files/images/SpadesLogo.png" height="0"></a>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-        </ul>
-    </nav>
-    <section id="top" class="intro hidden">
+    <div id="top"></div>
+    <header class="cover">
         <div class="inner">
             <div class="content">
-                <div class="name">Alin-Stefan Olaru</div>
+                <div class="name" title="Woah, that's my name!">
+                    Alin Stefan Olaru
+                </div>
+                <div class="title" title="(Currently Unemployed)">
+                    Software Engineer
+                </div>
             </div>
         </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#knowledge">Knowledge</a></li>
+            <!--<li><a href="#experience">Experience</a></li>-->
+            <li><a href="#starredgithub">Portfolio</a></li>
+            <li><a href="files/pdf/resume.pdf" target="_blank">Resume</a></li>
+        </ul>
+    </nav>
+    <section id="intro">
+        <header>
+            <h1>Introduction</h1>
+        </header>
+        <figure>
+            <img v-bind:src="avatar" id="gh_avatar" title="Hopefully an image of my face. Fetched from GitHub. Might be off-centered...">
+        </figure>
+        <div class="text">
+            <p>
+                Hello there! My name is Alin, I'm a <span id="age"></span> year Romanian guy currently living in Denmark. <br>
+                I moved here back in 2014 in order to study ICT Engineering at <a href="https://en.via.dk/" target="_blank">VIA University College</a>, which of course I graduated back in February 2018. Back in High School I actually studied Social Sciences due to the fact that I wasn't best friends with the study system back home, and I had pretty much zero chances to pursue my one passion since I was a child: <strong>Computer Engineering.</strong><br>
+                By moving in Denmark I had a chance to pretty much have a 'fresh start' and I finally got a chance to achieve my dream. I went through college without failing a single class and I did so by gaining above average grades.
+            </p>        
+            <p>
+                I am currently <strong>unemployed</strong> and seeking for an entry level job. I'm confident enough to work with the following (In no significant order):
+                C# with .NET Framework or Core; Java; Web Development (I have <strong>a lot</strong> of JQuery/JavaScript provable experience)
+            </p>
+                
+        </div>
     </section>
-    <section class="info hidden">
-        <article id="about">
-            <header>
-                <h1>The person behind this page</h1>
-            </header>
-            <div class="faceHolder">
-                <img v-bind:src="avatar" id="meinFace" title="Hopefully an image of my face. Fetched from GitHub. Might be off-centered...">
-            </div>
-            <div class="introText">
-                <p>
-                    Well hello there! My name is Alin. I'm a <span id="age"></span> years old, Computer Engineering graduate currently living in Denmark. I moved here back in August 2014 when I started studying at VIA University College,
-                    Campus Horsens. During college I had courses such as Software Development with Java, .NET Development, Mobile Applications (Android), Serious Games Development, Mixed Reality Applications, Responsive Web Design, Relational Databases, Programming
-                    Concepts and Languages, Applied Linear Algebra, Lego Robot Lab, Single WebPage Applications, Linear Algebra, Stochastic Modelling and Processing. As of January of 2018 I have graduated college and managed to do so without failing a single class.
-                </p>
-                <p>
-                    I'm planning to keep this page as a "Business Card", where you can find <b>some</b> information about myself. If you wish to keep on stalking me feel free to make use of the social media links placed at the bottom of the page.
-                </p>
-                <p>
-                    If you have any specific questions feel free to contact me via mail at <a href="mailto:alinstefanolaru@gmail.com">alinstefanolaru@gmail.com</a>.
-                </p>
-                <p>
-                    The page is under continuous development. 
-                </p>
-            </div>
-        </article>
-
-        <article id="experience">
-            <header>
-                <h1>Working Experience</h1>
-            </header>
-            <div v-for="job in experience">
-                <section class="experience">
-                    <div class="logo">
-                        <img v-bind:src="job.companyLogo" alt="Logo">
-                    </div>
-                    <div class="title">{{ job.title }}</div>
-                    <div class="company">{{ job.companyName }}</div>
-                    <div class="timeperiod">{{ job.timePeriod.from }} - {{ job.timePeriod.until }}</div>
-                    <div class="description">
-                        <p v-for="p in job.descriptionParagraphs">
-                            {{ p }}
-                        </p>
-                    </div>
-                    <ul class="keywords">
-                        <li v-for="key in job.keywords">{{ key }}</li>
-                    </ul>
-                </section>
+    <section id="education" style="display:none;">
+        <header>
+            <h1>Education</h1>
+        </header>
+        <p>Find some way to display courses...</p>
+    </section>
+    <section id="knowledge">
+        <header>
+            <h1>Knowledge</h1>
+        </header>
+        <p>This part might look weird on your device due to the fact that I'm trying something new. If you experience any visual bugs please send me a screenshot together with some details regarding your device and the browser you used.</p>
+        <p>I'm still looking for ways to make it responsive/pretty, it might take a while <3. </p>
+        <p>However, the data should be valid.</p>
+        <aside id="programming" class="bars">
+            <div class="container">
+                <center><h3>Desktop/Mobile</h3></center>
                 <hr>
+                <bar value="90" max="100">C#</bar>
+                <bar value="80" max="100">Java</bar>           
+                <bar value="85" max="100">.NET Framework</bar>
+                <bar value="90" max="100">ASP.NET Framework</bar>
+                <bar value="80" max="100">UWP/WPF</bar>
+                <bar value="60" max="100">MySQL</bar>
+            </div>          
+        </aside>
+        <aside class="bars">
+            <div class="container">
+                <center><h3>Web-Technologies</h3></center>
+                <hr>
+                <bar value="100" max="100">JavaScript</bar>
+                <bar value="100" max="100">JQuery</bar>
+                <bar value="100" max="100">HTML5/CSS3</bar>
+                <bar value="60" max="100">TypeScript</bar>
+                <bar value="60" max="100">Angular</bar>
+                <bar value="50" max="100">PHP</bar>
+            </div>
+        </aside>
+        <aside class="bars">
+            <div class="continer">
+                <center><h3>Tools</h3></center>
+                <hr>
+                <bar value="100" max="100">JIRA</bar>
+                <bar value="100" max="100">Git</bar>
+                <bar value="90" max="100">Adobe Photoshop</bar>
+                <bar value="90" max="100">Visual Studio/Code</bar>
+                <bar value="90" max="100">Eclipse/IntelliJ</bar>
+                <bar value="60" max="100">Build Servers</bar>
+            </div>
+        </aside>
+        <aside id="other" class="bars">
+            <div class="container">
+                <center><h3>Other</h3></center> 
+                <hr>               
+                <bar value="80" max="100">Continuous Integration</bar>
+                <bar value="90" max="100">Customer Interaction</bar>
+                <bar value="80" max="100">AR/VR Development</bar>
+                <bar value="90" max="100">Web Development</bar>
+                <bar value="85" max="100">Software Development</bar>
+                <bar value="80" max="100">Design Patterns</bar>
             </div>
             
-        </article>
-        <article id="portfolio">
-            <header>
-                <h1>Portfolio</h1>
-            </header>
-            <div v-for="git in selfStarred">
-                <h2>{{ git.name }}</h2>
-                <p>{{git.description}}</p>
-                <ul>
-                    <li><a v-bind:href="git.html_url" target="_blank">Repo</a></li>
-                </ul>
-            </div>          
-        </article>
+        </aside>
+
 
     </section>
-    <footer id="social" class="hidden">
-        <img src="files/images/SpadesLogo.png" height="75">
-        <p><i>"Royal Spades"</i></p>
+    <section id="experience">
+        <header>
+            <h1>Experience</h1>
+        </header>
+        <div v-for="job in experience">
+        <div class="experience">
+            <div class="logo">
+                <img v-bind:src="job.companyLogo" alt="Logo">
+            </div>
+            <div class="title">{{ job.title }}</div>
+            <div class="company">{{ job.companyName }}</div>
+            <div class="timeperiod">{{ job.timePeriod.from }} - {{ job.timePeriod.until }}</div>
+            <div class="description">{{job.description}}</div>
+            <h4>Gained experience with:</h4>
+            <ul class="keywords">
+                <li v-for="key in job.keywords">{{ key }}</li>
+            </ul>
+        </div>
+        <hr>
+    </div>
+    </section>
+    <section id="starredgithub">
+        <header>
+            <h1>Portfolio</h1>
+        </header>
+        <p>Not precisely a "portfolio". This section is automatically generated. It contains some of my own GitHub repositiories that I shamelessly starred in order to be able to access them via GitHub's API. I'm aware that starring your own repositories is kind of 'meh' and that I'm calling for GitHub's API with every page visit (which sadly there's not many), but I'm looking on ways to improve this :)</p>
+        <p>If you're curious on how that works, I have a repo for this web-page that <strong>should</strong> be up to date. <a href="https://github.com/xShteff/alinstefanola.ru/" target="_blank">Click here to see this website's repo.</a></p>
+        <hr>
+        <div v-for="git in selfStarred">
+            <h2>{{ git.name }}</h2>
+            <p>{{git.description}}</p>
+            <ul>
+                <li><a v-bind:href="git.html_url" target="_blank">Repo</a></li>
+            </ul>
+            <hr>
+        </div>  
+    </section>
+    <div class="backToTop" style="display:none;"><a href="#top"><img src="files/images/top.png" title="Back to top"></a></div>
+    <footer id="social">
         <p>Copyright &copy; <span id="currentYear"></span> Alin-Stefan Olaru</p>
         <ul id="socialLinks">
             <li v-for="socialLink in socialLinks">
                 <a v-bind:href="socialLink.url" v-bind:target="socialLink.target"><div class="social-media" v-bind:class="socialLink.cname"></div></a>
             </li>
         </ul>
-
     </footer>
-    <script src="files/js/loader.js"></script>
-    <script src="files/js/socialmedia.js"></script>
-    <script src="files/js/experience.js"></script>
-    <script src="files/js/portfolio.js"></script>
-    <script src="files/js/dates.js"></script>
+    <script src="files/js/lazydates.js"></script>
     <script src="files/js/scroller.js"></script>
-    <script src="files/js/init.js"></script>
-</body>
+    <script src="files/js/bar.js"></script>
 
+    <script src="files/js/data/portfolio.js"></script>
+    <script src="files/js/data/experience.js"></script>
+    <script src="files/js/data/socialmedia.js"></script>
+</body>
 </html>
