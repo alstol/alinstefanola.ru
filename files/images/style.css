@@ -238,3 +238,19 @@ ul#socialLinks {
 .social-media.facebook {
     background-position: 160px 0;
 }
+
+bar {
+    border: 2px solid black;
+    width: 200px;
+    border-radius: 10px;
+    display: block;
+    margin-top: 5px;
+    overflow:hidden;
+}
+
+bar .fill {
+    background-color: rgba(0, 150, 5, 1);
+    padding: 6px;
+    height: 100%;
+    transition: width 0.5s ease;
+}

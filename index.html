@@ -44,7 +44,7 @@
         <div class="text">
             <p>
                 Hello there! My name is Alin, I'm a <span id="age"></span> year Romanian guy currently living in Denmark. <br>
-                I moved here back in 2014 in order to study ICT Engineering at <a href="https://www.via.dk/">VIA University College</a>, which of course I graduated back in February 2018. Back in High School I actually studied Social Sciences due to the fact that I wasn't best friends with the study system back home, and I had pretty much zero chances to pursue my one passion since I was a child: <strong>Computer Engineering.</strong><br>
+                I moved here back in 2014 in order to study ICT Engineering at <a href="https://en.via.dk/" target="_blank">VIA University College</a>, which of course I graduated back in February 2018. Back in High School I actually studied Social Sciences due to the fact that I wasn't best friends with the study system back home, and I had pretty much zero chances to pursue my one passion since I was a child: <strong>Computer Engineering.</strong><br>
                 By moving in Denmark I had a chance to pretty much have a 'fresh start' and I finally got a chance to achieve my dream. I went through college without failing a single class and I did so by gaining above average grades.
             </p>        
             <p>
@@ -58,11 +58,15 @@
         <header>
             <h1>Education</h1>
         </header>
+        <p>Find some way to display courses...</p>
     </section>
     <section id="knowledge">
         <header>
             <h1>Knowledge</h1>
         </header>
+        <p>Maybe some "progress-bar"-esque thingies showing how good/bad I am with a specific technology?</p>
+        <bar value="100" max="100">C#</bar>
+        <bar value="60" max="100">Java</bar>
     </section>
     <section id="experience">
         <header>
@@ -91,12 +95,14 @@
         </header>
         <p>Not precisely a "portfolio". This section is automatically generated. It contains some of my own GitHub repositiories that I shamelessly starred in order to be able to access them via GitHub's API. I'm aware that starring your own repositories is kind of 'meh' and that I'm calling for GitHub's API with every page visit (which sadly there's not many), but I'm looking on ways to improve this :)</p>
         <p>If you're curious on how that works, I have a repo for this web-page that <strong>should</strong> be up to date. <a href="https://github.com/xShteff/alinstefanola.ru/" target="_blank">Click here to see this website's repo.</a></p>
+        <hr>
         <div v-for="git in selfStarred">
             <h2>{{ git.name }}</h2>
             <p>{{git.description}}</p>
             <ul>
                 <li><a v-bind:href="git.html_url" target="_blank">Repo</a></li>
             </ul>
+            <hr>
         </div>  
     </section>
     <footer id="social" class="hidden">
@@ -112,5 +118,6 @@
     <script src="files/js/data/socialmedia.js"></script>
     <script src="files/js/lazydates.js"></script>
     <script src="files/js/scroller.js"></script>
+    <script src="files/js/bar.js"></script>
 </body>
 </html>
