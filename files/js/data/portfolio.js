@@ -11,14 +11,14 @@ var fetchGithubData = () => {
     $.getJSON('https://api.github.com/users/xShteff/starred', (result) => {
         ghData = result.filter(data => data.owner.login === "xShteff");
         var portfolio = new Vue({
-            el: '#portfolio',
+            el: '#starredgithub',
             data: {
                 selfStarred: ghData
             }
         })
         //Might as well do a 2-in-1 and include a recent picture of my face somewhere...
         var avatar = new Vue({
-            el: '#about',
+            el: '#intro',
             data: {
                 avatar: ghData[0].owner.avatar_url
             }
