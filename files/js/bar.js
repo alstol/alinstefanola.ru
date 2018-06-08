@@ -2,19 +2,46 @@
     I guess I'm hacking my own tag here.
 */
 
-$(document).init(() => {
-    $('bar').each(function(a, b) {
-        var label = $(this).text();
-        var value = $(this).attr('value');
-        var max = $(this).attr('max');
+class Bar {
+    constructor(el) {
+        this.el = el;
+    }
+
+    getValues() {
+        this.label = this.el.text();
+        this.value = this.el.attr('value');
+        this.max = this.el.attr('max');
+    }
+
+    initLabel() {
+        var wrap = $("<div>").addClass('bar-wrap');
+        this.el.wrap(wrap);
+        var label = $("<label>").text(`${this.label}: `);
+        this.el.before(label);
+    }
+
+    initFill() {
         var fill = $("<div>").css({
-            width: `${value}%`
-        }).text(`${value} / ${max}`).attr({
-            title: `${label}: ${value} / ${max}`,
+            width: `${this.value}%`
+        }).text(`${this.value} / ${this.max}`).attr({
+            title: `${this.label}: ${this.value} / ${this.max}`,
             'class': 'fill'
         });
-        $(this).html(fill)
-        console.log($(this));
-        console.log(`${label}: ${value}`);
+        this.el.html(fill);
+    }
+
+    init() {
+        this.getValues();
+        this.initFill();
+        this.initLabel();
+    }
+}
+
+
+
+$(document).init(() => {
+    $('bar').each(function(a, b) {
+        var bar = new Bar($(this));
+        bar.init();
     });
 });

@@ -241,11 +241,12 @@ ul#socialLinks {
 
 bar {
     border: 2px solid black;
-    width: 200px;
+    width: 400px;
     border-radius: 10px;
-    display: block;
+    display: inline-block;
     margin-top: 5px;
     overflow:hidden;
+    text-align: left !important;
 }
 
 bar .fill {
@@ -253,4 +254,20 @@ bar .fill {
     padding: 6px;
     height: 100%;
     transition: width 0.5s ease;
+}
+
+label {
+    padding-left: 25px;
+    position: relative;
+    bottom: 12px;
+}
+
+aside.bars {
+    width: 500px;
+    text-align: right;
+    display: inline-block;
+}
+
+#knowledge {
+    text-align: center;
 }
