@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
 @font-face {
     font-family: "FancyScript";
     src: url("../fonts/script.ttf");
@@ -38,6 +39,12 @@ header.cover .inner .content .name {
     font-size: 400%;
     font-family: 'FancyScript';
     word-spacing: -30px;
+    transition: all 0.5 ease;
+}
+
+header.cover .inner .content .title {
+    color: rgba(255, 255, 255, 1);
+    font-family: "Raleway", sans-serif;
 }
 
 header.cover .inner .content .name:before {
@@ -98,7 +105,8 @@ nav ul li a:hover {
 }
 
 section {
-    font-family: sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
     padding: 25px;
 }
 
@@ -253,7 +261,8 @@ bar .fill {
     background-color: rgba(0, 150, 5, 1);
     padding: 6px;
     height: 100%;
-    transition: width 0.5s ease;
+    width: 0;
+    transition: all 0.5s ease;
 }
 
 label {
@@ -263,9 +272,11 @@ label {
 }
 
 aside.bars {
-    width: 500px;
+    width: 600px;
     text-align: right;
     display: inline-block;
+    border:1px solid black;
+    padding-right: 5px;
 }
 
 #knowledge {

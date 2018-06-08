@@ -1,5 +1,6 @@
 /* 
     I guess I'm hacking my own tag here.
+    Sorry if someone gets offended by the way I'm achieving this <3
 */
 
 class Bar {
@@ -45,3 +46,5 @@ $(document).init(() => {
         bar.init();
     });
 });
+
+//TODO: Find a way to integrate this with Vue.JS
