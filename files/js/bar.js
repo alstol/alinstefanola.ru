@@ -17,8 +17,8 @@ class Bar {
     initLabel() {
         var wrap = $("<div>").addClass('bar-wrap');
         this.el.wrap(wrap);
-        var label = $("<label>").text(`${this.label}: `);
-        this.el.before(label);
+        var label = $("<label>").text(` ${this.label}`);
+        this.el.after(label);
     }
 
     initFill() {

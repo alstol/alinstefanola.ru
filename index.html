@@ -34,7 +34,7 @@
             <li><a href="#intro">Introduction</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#knowledge">Knowledge</a></li>
-            <li><a href="#experience">Experience</a></li>
+            <!--<li><a href="#experience">Experience</a></li>-->
             <li><a href="#starredgithub">Portfolio</a></li>
             <li><a href="files/pdf/resume.pdf" target="_blank">Resume</a></li>
         </ul>
@@ -59,7 +59,7 @@
                 
         </div>
     </section>
-    <section id="education">
+    <section id="education" style="display:none;">
         <header>
             <h1>Education</h1>
         </header>
@@ -73,30 +73,53 @@
         <p>I'm still looking for ways to make it responsive/pretty, it might take a while <3. </p>
         <p>However, the data should be valid.</p>
         <aside id="programming" class="bars">
-            <center><h3>Technical</h3></center>
-            <bar value="90" max="100">C#</bar>
-            <bar value="80" max="100">Java</bar>
-            <bar value="100" max="100">JavaScript</bar>
-            <bar value="100" max="100">JQuery</bar>
-            <bar value="100" max="100">HTML5/CSS3</bar>
-            <bar value="60" max="100">TypeScript</bar>
-            <bar value="60" max="100">Angular</bar>
-            <bar value="50" max="100">PHP</bar>
-            <bar value="85" max="100">.NET Framework</bar>
-            <bar value="60" max="100">MySQL</bar>
+            <div class="container">
+                <center><h3>Desktop/Mobile</h3></center>
+                <hr>
+                <bar value="90" max="100">C#</bar>
+                <bar value="80" max="100">Java</bar>           
+                <bar value="85" max="100">.NET Framework</bar>
+                <bar value="90" max="100">ASP.NET Framework</bar>
+                <bar value="80" max="100">UWP/WPF</bar>
+                <bar value="60" max="100">MySQL</bar>
+            </div>          
+        </aside>
+        <aside class="bars">
+            <div class="container">
+                <center><h3>Web-Technologies</h3></center>
+                <hr>
+                <bar value="100" max="100">JavaScript</bar>
+                <bar value="100" max="100">JQuery</bar>
+                <bar value="100" max="100">HTML5/CSS3</bar>
+                <bar value="60" max="100">TypeScript</bar>
+                <bar value="60" max="100">Angular</bar>
+                <bar value="50" max="100">PHP</bar>
+            </div>
+        </aside>
+        <aside class="bars">
+            <div class="continer">
+                <center><h3>Tools</h3></center>
+                <hr>
+                <bar value="100" max="100">JIRA</bar>
+                <bar value="100" max="100">Git</bar>
+                <bar value="90" max="100">Adobe Photoshop</bar>
+                <bar value="90" max="100">Visual Studio/Code</bar>
+                <bar value="90" max="100">Eclipse/IntelliJ</bar>
+                <bar value="60" max="100">Build Servers</bar>
+            </div>
         </aside>
         <aside id="other" class="bars">
-            <center><h3>Other</h3></center>
-            <bar value="100" max="100">JIRA</bar>
-            <bar value="100" max="100">Git</bar>
-            <bar value="90" max="100">Adobe Photoshop</bar>
-            <bar value="100" max="100">Agile Development</bar>
-            <bar value="80" max="100">Continuous Integration</bar>
-            <bar value="90" max="100">Customer Interaction</bar>
-            <bar value="80" max="100">AR/VR Development</bar>
-            <bar value="90" max="100">Web Development</bar>
-            <bar value="85" max="100">Software Development</bar>
-            <bar value="80" max="100">Design Patterns</bar>
+            <div class="container">
+                <center><h3>Other</h3></center> 
+                <hr>               
+                <bar value="80" max="100">Continuous Integration</bar>
+                <bar value="90" max="100">Customer Interaction</bar>
+                <bar value="80" max="100">AR/VR Development</bar>
+                <bar value="90" max="100">Web Development</bar>
+                <bar value="85" max="100">Software Development</bar>
+                <bar value="80" max="100">Design Patterns</bar>
+            </div>
+            
         </aside>
 
 
@@ -114,7 +137,7 @@
             <div class="company">{{ job.companyName }}</div>
             <div class="timeperiod">{{ job.timePeriod.from }} - {{ job.timePeriod.until }}</div>
             <div class="description">{{job.description}}</div>
-            <h4>Relevant keywords:</h4>
+            <h4>Gained experience with:</h4>
             <ul class="keywords">
                 <li v-for="key in job.keywords">{{ key }}</li>
             </ul>

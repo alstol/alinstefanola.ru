@@ -258,11 +258,14 @@ ul#socialLinks {
 .social-media.facebook {
     background-position: 160px 0;
 }
-
+.bar-wrap {
+    margin-left: 20px;
+}
 bar {
-    border: 2px solid black;
-    width: 400px;
-    border-radius: 10px;
+    border: 1px solid black;
+    max-width: 400px;
+    min-width: 200px;
+    border-radius: 5px;
     display: inline-block;
     margin-top: 5px;
     overflow:hidden;
@@ -270,7 +273,8 @@ bar {
 }
 
 bar .fill {
-    background-color: rgba(0, 150, 5, 1);
+    background: rgba(0, 150, 5, 1);
+    background: linear-gradient(0deg, rgba(34,195,88,1) 40%, rgba(217,253,45,1) 100%);
     padding: 6px;
     height: 100%;
     width: 0;
@@ -278,17 +282,18 @@ bar .fill {
 }
 
 label {
-    padding-left: 25px;
     position: relative;
     bottom: 12px;
 }
 
 aside.bars {
-    width: 600px;
-    text-align: right;
+    max-width: 600px;
+    text-align: left;
     display: inline-block;
     border:1px solid black;
     padding-right: 5px;
+    border-radius:10px;
+    margin: 10px 0;
 }
 
 #knowledge {
