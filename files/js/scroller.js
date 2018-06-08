@@ -6,10 +6,19 @@
 */
 
 $(window).scroll(function() {
-    if ($(document).scrollTop() > $('body').height()) {
+    var scroll = $(document).scrollTop();
+    if (scroll > $('body').height() - 50) {
         $('nav').addClass('fixed');
     } else {
         $('nav').removeClass('fixed');
+    }
+
+    if (scroll > 150) {
+        $('.backToTop').fadeIn();
+
+    } else {
+        $('.backToTop').fadeOut();
+
     }
 });
 
