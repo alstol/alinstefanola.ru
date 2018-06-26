@@ -98,6 +98,8 @@ nav.fixed {
 nav ul {
     list-style-type: none;
     float: right;
+    position: relative;
+    top:8px;
 }
 
 nav ul li {
@@ -183,6 +185,7 @@ section header {
     border: 1px solid rgb(85, 255, 136);
     border-radius:9px;
     margin-left: 2px;
+    margin-bottom: 5px;
 }
 
 footer:before {
@@ -294,7 +297,7 @@ aside.bars {
     border:1px solid black;
     padding-right: 5px;
     border-radius:10px;
-    margin: 10px 0;
+    margin: 5px;
 }
 
 #knowledge {
@@ -317,6 +320,11 @@ aside.bars {
 
 .backToTop img:hover {
     opacity: 1;
+}
+
+.progress {
+    height: 30px !important;
+    margin-bottom: 15px;
 }
 
 @media screen and (max-width: 1490px) {
@@ -359,5 +367,8 @@ aside.bars {
         height:180px;
         margin-left: -90px;
         margin-top: -90px;
+    }
+    nav ul li {
+        margin-right: 5px;
     }
 }

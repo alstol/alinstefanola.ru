@@ -9,9 +9,11 @@
     <meta name="theme-color" content="#222">
 
     <link rel="stylesheet" href="files/images/style.css">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
     <title>Alin Stefan Olaru - Software Engineer</title>    
 </head>
@@ -75,57 +77,18 @@
         <p>This part might look weird on your device due to the fact that I'm trying something new. If you experience any visual bugs please send me a screenshot together with some details regarding your device and the browser you used.</p>
         <p>I'm still looking for ways to make it responsive/pretty, it might take a while <3. </p>
         <p>However, the data should be valid.</p>
-        <aside id="programming" class="bars">
-            <div class="container">
-                <center><h3>Desktop/Mobile</h3></center>
-                <hr>
-                <bar value="90" max="100">C#</bar>
-                <bar value="80" max="100">Java</bar>           
-                <bar value="85" max="100">.NET Framework</bar>
-                <bar value="90" max="100">ASP.NET Framework</bar>
-                <bar value="80" max="100">UWP/WPF</bar>
-                <bar value="60" max="100">MySQL</bar>
-            </div>          
-        </aside>
-        <aside class="bars">
-            <div class="container">
-                <center><h3>Web-Technologies</h3></center>
-                <hr>
-                <bar value="100" max="100">JavaScript</bar>
-                <bar value="100" max="100">JQuery</bar>
-                <bar value="100" max="100">HTML5/CSS3</bar>
-                <bar value="60" max="100">TypeScript</bar>
-                <bar value="60" max="100">Angular</bar>
-                <bar value="50" max="100">PHP</bar>
-            </div>
-        </aside>
-        <aside class="bars">
-            <div class="continer">
-                <center><h3>Tools</h3></center>
-                <hr>
-                <bar value="100" max="100">JIRA</bar>
-                <bar value="100" max="100">Git</bar>
-                <bar value="90" max="100">Adobe Photoshop</bar>
-                <bar value="90" max="100">Visual Studio/Code</bar>
-                <bar value="90" max="100">Eclipse/IntelliJ</bar>
-                <bar value="60" max="100">Build Servers</bar>
-            </div>
-        </aside>
-        <aside id="other" class="bars">
-            <div class="container">
-                <center><h3>Other</h3></center> 
-                <hr>               
-                <bar value="80" max="100">Continuous Integration</bar>
-                <bar value="90" max="100">Customer Interaction</bar>
-                <bar value="80" max="100">AR/VR Development</bar>
-                <bar value="90" max="100">Web Development</bar>
-                <bar value="85" max="100">Software Development</bar>
-                <bar value="80" max="100">Design Patterns</bar>
-            </div>
-            
-        </aside>
-
-
+        <div id="progressBars">
+            <aside v-for="bar in bars" class="bars">
+                <div class="container">
+                    <center><h3>{{bar.title}}</h3></center>
+                    <hr>
+                    <div class="progress" v-for="dataSet in bar.data">
+                        <div class="progress-bar bg-success" role="progressbar" v-bind:style="dataSet.style" v-bind:aria-valuenow="dataSet.value" aria-valuemin="0" aria-valuemax="100">{{dataSet.name}}: {{dataSet.value}} / 100</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+        
     </section>
     <section id="experience">
         <header>
@@ -140,7 +103,7 @@
             <div class="company">{{ job.companyName }}</div>
             <div class="timeperiod">{{ job.timePeriod.from }} - {{ job.timePeriod.until }}</div>
             <div class="description">{{job.description}}</div>
-            <h4>Gained experience with:</h4>
+            <b>Gained experience with:</b>
             <ul class="keywords">
                 <li v-for="key in job.keywords">{{ key }}</li>
             </ul>
@@ -180,5 +143,6 @@
     <script src="files/js/data/portfolio.js"></script>
     <script src="files/js/data/experience.js"></script>
     <script src="files/js/data/socialmedia.js"></script>
+    <script src="files/js/data/bars.js"></script>
 </body>
 </html>
