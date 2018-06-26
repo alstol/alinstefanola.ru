@@ -104,9 +104,7 @@
             <div class="timeperiod">{{ job.timePeriod.from }} - {{ job.timePeriod.until }}</div>
             <div class="description">{{job.description}}</div>
             <b>Gained experience with:</b>
-            <ul class="keywords">
-                <li v-for="key in job.keywords">{{ key }}</li>
-            </ul>
+            <span class="badge badge-success" v-for="key in job.keywords" v-bind:title="key">{{key}}</span>
         </div>
         <hr>
     </div>

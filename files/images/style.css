@@ -178,14 +178,9 @@ section header {
     white-space: pre-line;
 }
 
-.keywords li{
-    display:inline-block;
-    padding:4px;
-    background: rgb(21, 193, 73);
-    border: 1px solid rgb(85, 255, 136);
-    border-radius:9px;
-    margin-left: 2px;
-    margin-bottom: 5px;
+.badge {
+    margin-left: 5px;
+    padding: 7px !important;
 }
 
 footer:before {
