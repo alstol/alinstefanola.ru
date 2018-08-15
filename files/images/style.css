@@ -180,6 +180,7 @@ section header {
 
 .badge {
     margin-left: 5px;
+    margin-bottom: 5px;
     padding: 7px !important;
 }
 
@@ -207,12 +208,14 @@ footer {
     text-align: center;
     font-family: 'Raleway', sans-serif;
     display: table;
+    z-index:-1;
 }
 
 
 ul#socialLinks {
     padding: 0;
     list-style-type: none;
+    margin: 0;
 }
 
 #socialLinks li {
@@ -302,10 +305,11 @@ aside.bars {
 .backToTop {
     width: 50px;
     height: 50px;
-    background: rgba(0,0,0, 0.0);
+    background: rgba(255,255,255, 0.5);
     position:fixed;
     right:10px;
     bottom: 10px;
+    border-radius:50%;
 }
 .backToTop img {
     width:100%;
