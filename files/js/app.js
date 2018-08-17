@@ -1,3 +1,5 @@
+var ghData = [];
+
 var angularApp = angular.module("angularApp", []);
 
 angularApp.controller("navbarController", ($scope) => {
@@ -10,7 +12,7 @@ angularApp.controller("navbarController", ($scope) => {
     ]
 });
 
-angularApp.controller("asideController", ($scope, $http) => {
+angularApp.controller("cvController", ($scope, $http) => {
     $scope.data = {
         name: "Alin Stefan Olaru",
         email: "alinstefanolaru@gmail.com",
@@ -30,14 +32,11 @@ angularApp.controller("asideController", ($scope, $http) => {
     
     $scope.loadGitHubData = () => {
         $http.get("https://api.github.com/users/xShteff/starred").then((result) => {
-        console.log(result);    
-        $scope.data.ghData = result.data.filter(data => data.owner.login === "xShteff");
+            $scope.data.ghData = result.data.filter(data => data.owner.login === "xShteff");
             $scope.data.image = $scope.data.ghData[0].owner.avatar_url;
-        })
+        });
     }
-});
 
-angularApp.controller("mainController", ($scope) => {
     $scope.workExperience = experienceData;
     $scope.education = [{
         uniLogo: "https://alinstefanola.ru/files/images/companies/VIA.png",
@@ -48,7 +47,7 @@ angularApp.controller("mainController", ($scope) => {
             until: "Feb 2018"
         }
     }]
-})
+});
 
 angularApp.controller("socialMediaController", ($scope) => {
     $scope.socialMedia = socialMediaData;

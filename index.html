@@ -37,8 +37,8 @@
         </ul>
     </nav>
 
-    <div class="container split-layout">
-        <aside ng-controller="asideController" ng-init="loadGitHubData()">
+    <div class="container split-layout" ng-controller="cvController">
+        <aside ng-init="loadGitHubData()">
             <div class="container">
                 <div class="headshot">
                     <img src="{{data.image}}" alt="">
@@ -60,7 +60,7 @@
                 </div>
             </div>
         </aside>
-        <main ng-controller="mainController">
+        <main>
             <div class="container">
                 <section id="intro">
                     <header>
@@ -111,6 +111,16 @@
                     <header>
                         Demos
                     </header>
+                    <p>Not precisely a "portfolio". This section is automatically generated. It contains some of my own GitHub repositiories that I shamelessly starred in order to be able to access them via GitHub's API. I'm aware that starring your own repositories is kind of 'meh' and that I'm calling for GitHub's API with every page visit (which sadly there's not many), but I'm looking on ways to improve this :)</p>
+                    <p>If you're curious on how that works, I have a repo for this web-page that <strong>should</strong> be up to date. <a href="https://github.com/xShteff/alinstefanola.ru/" target="_blank">Click here to see this website's repo.</a></p>
+                    <div ng-repeat="git in data.ghData">
+                        <h2>{{ git.name }}</h2>
+                        <p>{{git.description}}</p>
+                        <ul>
+                            <li><a href="{{git.html_url}}" target="_blank">Repo</a></li>
+                        </ul>
+                        <hr>
+                    </div>
                 </section>
             </div>
         </main>
