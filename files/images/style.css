@@ -159,6 +159,11 @@ aside .name {
     font-size: 2em;
 }
 
+.progress {
+    height: 30px !important;
+    margin-top: 5px;
+}
+
 main {
 
 }

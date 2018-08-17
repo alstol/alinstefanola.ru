@@ -50,13 +50,19 @@
                     <a href="mailto:{{data.email}}">{{data.email}}</a>
                 </div>
                 <div class="skills">
-
+                    <h4>Relevant skills</h4>
+                    <div ng-repeat="(key, bars) in skills.data">
+                        {{skills.keys[key]}}
+                        <div ng-repeat="bar in skills.data[key].data" class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="{{bar.style}}" aria-valuenow="{{bar.value}}" aria-valuemin="0" aria-valuemax="100">{{bar.name}}: {{bar.value}} / 100</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </aside>
         <main ng-controller="mainController">
             <div class="container">
-                <section>
+                <section id="intro">
                     <header>
                         About
                     </header>
@@ -71,12 +77,20 @@
                         By moving in Denmark I had a chance to pretty much have a 'fresh start' and I finally got a chance to achieve my dream. I went through college without failing a single class and I did so by gaining above average grades. 
                     </p>
                 </section>
-                <section>
+                <section id="education">
                     <header>
                         Education
                     </header>
+                    <div class="experience" ng-repeat="item in education">
+                        <div class="logo">
+                            <img ng-src="{{item.uniLogo}}" alt="Logo">
+                        </div>
+                        <div class="title">{{ item.uniName }}</div>
+                        <div class="company">{{ item.studyField }}</div>
+                        <div class="timeperiod">{{ item.date.from }} - {{ item.date.until }}</div>
+                    </div>
                 </section>
-                <section>
+                <section id="experience">
                     <header>
                         Experience
                     </header>
@@ -93,7 +107,7 @@
                     
                     </div>
                 </section>
-                <section>
+                <section id="starredgithub">
                     <header>
                         Demos
                     </header>

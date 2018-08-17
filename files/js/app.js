@@ -14,9 +14,18 @@ angularApp.controller("asideController", ($scope, $http) => {
     $scope.data = {
         name: "Alin Stefan Olaru",
         email: "alinstefanolaru@gmail.com",
-        skills: barsData,
         image: "",
         ghData: []
+    }
+
+    $scope.skills = {
+        keys: {
+            basic: "Desktop/Mobile",
+            web: "Web-Technologies",
+            tools: "Tools",
+            other: "Other"
+        },
+        data: barsData
     }
     
     $scope.loadGitHubData = () => {
@@ -30,6 +39,15 @@ angularApp.controller("asideController", ($scope, $http) => {
 
 angularApp.controller("mainController", ($scope) => {
     $scope.workExperience = experienceData;
+    $scope.education = [{
+        uniLogo: "https://alinstefanola.ru/files/images/companies/VIA.png",
+        uniName: "VIA University College",
+        studyField: "Bachelor of ICT Engineering",
+        date: {
+            from: "Aug 2014",
+            until: "Feb 2018"
+        }
+    }]
 })
 
 angularApp.controller("socialMediaController", ($scope) => {
