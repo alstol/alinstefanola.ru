@@ -77,6 +77,7 @@
                         By moving in Denmark I had a chance to pretty much have a 'fresh start' and I finally got a chance to achieve my dream. I went through college without failing a single class and I did so by gaining above average grades. 
                     </p>
                 </section>
+                <hr>
                 <section id="education">
                     <header>
                         Education
@@ -90,6 +91,7 @@
                         <div class="timeperiod">{{ item.date.from }} - {{ item.date.until }}</div>
                     </div>
                 </section>
+                <hr>
                 <section id="experience">
                     <header>
                         Experience
@@ -104,7 +106,8 @@
                         <div class="description">{{ job.description }}</div>
                         <b>Gained experience with:</b>
                         <span class="badge badge-success" ng-repeat="key in job.keywords" ng-title="{{key}}">{{key}}</span>
-                    
+                        <hr>
+
                     </div>
                 </section>
                 <section id="starredgithub">
@@ -113,6 +116,7 @@
                     </header>
                     <p>Not precisely a "portfolio". This section is automatically generated. It contains some of my own GitHub repositiories that I shamelessly starred in order to be able to access them via GitHub's API. I'm aware that starring your own repositories is kind of 'meh' and that I'm calling for GitHub's API with every page visit (which sadly there's not many), but I'm looking on ways to improve this :)</p>
                     <p>If you're curious on how that works, I have a repo for this web-page that <strong>should</strong> be up to date. <a href="https://github.com/xShteff/alinstefanola.ru/" target="_blank">Click here to see this website's repo.</a></p>
+                    <hr>
                     <div ng-repeat="git in data.ghData">
                         <h2>{{ git.name }}</h2>
                         <p>{{git.description}}</p>
