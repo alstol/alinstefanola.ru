@@ -29,15 +29,7 @@ angularApp.controller("cvController", ($scope, $http) => {
         },
         data: barsData
     }
-    
-    $scope.loadGitHubData = () => {
-        $http.get("https://api.github.com/users/xShteff/starred").then((result) => {
-            $scope.data.ghData = result.data.filter(data => data.owner.login === "xShteff");
-            $scope.data.image = $scope.data.ghData[0].owner.avatar_url;
-        });
-    }
 
-    $scope.workExperience = experienceData;
     $scope.education = [{
         uniLogo: "https://alinstefanola.ru/files/images/companies/VIA.png",
         uniName: "VIA University College",
@@ -46,7 +38,16 @@ angularApp.controller("cvController", ($scope, $http) => {
             from: "Aug 2014",
             until: "Feb 2018"
         }
-    }]
+    }];
+
+    $scope.workExperience = experienceData;
+        
+    $scope.loadGitHubData = () => {
+        $http.get("https://api.github.com/users/xShteff/starred").then((result) => {
+            $scope.data.ghData = result.data.filter(data => data.owner.login === "xShteff");
+            $scope.data.image = $scope.data.ghData[0].owner.avatar_url;
+        });
+    }
 });
 
 angularApp.controller("socialMediaController", ($scope) => {

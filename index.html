@@ -41,7 +41,7 @@
         <aside ng-init="loadGitHubData()">
             <div class="container">
                 <div class="headshot">
-                    <img src="{{data.image}}" alt="">
+                    <img src="{{data.image}}" title="Hopefully an image of my face. Fetched from GitHub. Might be off-centered...">
                 </div>
                 <div class="name">
                     {{data.name}}
@@ -49,7 +49,7 @@
                 <div class="contact">
                     <a href="mailto:{{data.email}}">{{data.email}}</a>
                 </div>
-                <div class="skills">
+                <div class="skills" id="knowledge">
                     <h4>Relevant skills</h4>
                     <div ng-repeat="(key, bars) in skills.data">
                         {{skills.keys[key]}}
@@ -144,8 +144,8 @@
     <script src="files/js/data/socialmedia.js"></script>
     <script src="files/js/data/bars.js"></script>
 
-    <script src="files/js/app.js"></script>
     <script src="files/js/scroller.js"></script>
+    <script src="files/js/app.js"></script>
 
 </body>
 </html>
