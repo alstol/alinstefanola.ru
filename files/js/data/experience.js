@@ -68,3 +68,25 @@ var experienceData = [
         keywords: ["Java", "Software Development", "Design Patterns", "Teaching"]
     }
 ]
+
+
+//I mean, I might forget to update this so uhh.. yeah.
+var spoiler = () => {
+    var date = new Date();
+    if(date.getMonth() === 8) {
+        experienceData.unshift({
+            companyLogo: `${companyLogoFolderPath}LEGO.png`,
+            title: "Junior Software Developer",
+            companyName: "LEGO",
+            timePeriod: {
+                from: "September 2018",
+                until: "Current"
+            },
+            description: "",
+            keywords: ["Angular", "REST Services", "Frontend", "UX"]
+        });
+    }
+   
+}
+
+spoiler();

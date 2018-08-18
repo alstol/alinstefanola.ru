@@ -76,7 +76,7 @@ header.cover .inner .content .name:hover:before{
     margin-top: -140px;
 }
 
-nav {
+.oldNav {
     width: 100%;
     position: absolute;
     z-index: 2;
@@ -88,7 +88,7 @@ nav {
     z-index: 3;
 }
 
-nav.fixed {
+.oldNav.fixed {
     position: fixed !important;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -97,19 +97,19 @@ nav.fixed {
     height: 50px;
 }
 
-nav ul {
+.oldNav ul {
     list-style-type: none;
     float: right;
     position: relative;
     top:8px;
 }
 
-nav ul li {
+.oldNav ul li {
     display: inline-block;
     margin-right: 25px;
 }
 
-nav ul li a {
+.oldNav ul li a {
     color: white !important;
     text-decoration: none;
     font-family: 'Raleway', sans-serif;
@@ -117,15 +117,67 @@ nav ul li a {
     transition: opacity 0.5s ease;
 }
 
-nav ul li a:hover {
+.oldNav ul li a:hover {
     opacity: 1;
+}
+
+.menu {
+    position:absolute;
+    top:-23px;
+    z-index: -1;
+}
+
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    display: inline;
+    background: rgba(40, 167, 69, 1);
+    padding:7px 7px 20px 7px;
+    margin: 0 10px;
+    position:relative;
+    bottom: 0;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    -webkit-box-shadow: 2px 1px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 2px 1px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 1px 10px 0px rgba(0,0,0,0.75);
+}
+
+.menu ul li a:link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.menu ul li a:visited {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.menu ul li a:hover {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.menu ul li a:active {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.menu ul li:hover {
+    bottom: 10px;
+    background: rgba(40, 167, 69, 0.7);
+    padding:8px 8px 20px 8px;
 }
 
 .split-layout {
     display: grid;
     grid-template-columns: 30% 70%;
     grid-auto-rows: minmax(700px, auto);
-    margin-top: 10px;
+    margin-top: 70px;
     padding-left: 0 !important;
     padding-right: 0 !important;
     -webkit-box-shadow: 3px 3px 11px 0px rgba(0,0,0,0.75);
@@ -140,6 +192,10 @@ aside {
     text-align: center;
 }
 
+.container {
+    position: relative;
+}
+
 aside .container {
     padding-top:10px;
 }
@@ -149,12 +205,12 @@ aside .headshot img {
     margin-left: auto;
     margin-right:auto;
     height:150px;
-    filter:grayscale(100%);
+    filter:grayscale(0%);
     transition:filter 0.5s ease;
 }
 
 aside .headshot img:hover {
-    filter:grayscale(0%);
+    filter:grayscale(100%);
 }
 
 aside .name {
@@ -168,10 +224,23 @@ aside .name {
 
 main {
     border-left:1px solid black;
+    padding-bottom: 45px;
+    position: relative;
 }
+
+main section:not(:first-child) {
+    display:none;
+}
+
 main section header {
     font-size: 2em;
-    margin-bottom:10px;
+    margin-bottom:30px;
+}
+
+main footer {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
 }
 
 .experience {
@@ -232,35 +301,6 @@ main section header {
 .backToTop img:hover {
     opacity: 1;
 }
-
-
-footer:before {
-    background: linear-gradient(-45deg, #000000 16px, transparent 0), linear-gradient(45deg, #000000 16px, transparent 0);
-    background-position: left bottom;
-    background-repeat: repeat-x;
-    background-size: 32px 32px;
-    content: " ";
-    display: block;
-    position: absolute;
-    top: -32px;
-    left: 0px;
-    width: 100%;
-    height: 32px;
-}
-
-footer {
-    background: black;
-    width: 100%;
-    padding-top: 25px;
-    color: white;
-    position: relative;
-    margin-top: 50px;
-    text-align: center;
-    font-family: 'Raleway', sans-serif;
-    display: table;
-    z-index:-1;
-}
-
 
 ul#socialLinks {
     padding: 0;
@@ -324,12 +364,17 @@ ul#socialLinks {
     .split-layout main {
         border-left:none;
         border-top:1px solid black;
+        padding-bottom: 50px;
     }
 }
 
 @media screen and (max-width: 598px) {
     nav {
         font-size: 10px;
+    }
+
+    .menu {
+        top: -20px;
     }
 }
 

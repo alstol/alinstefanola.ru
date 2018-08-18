@@ -17,8 +17,7 @@
     <title>Alin Stefan Olaru - Software Engineer</title>    
 </head>
 <body ng-app="angularApp">
-    <div id="top"></div>
-    <header class="cover">
+    <header class="cover" style="display: none;">
         <div class="inner">
             <div class="content">
                 <div class="name" title="Woah, that's my name!">
@@ -30,14 +29,12 @@
             </div>
         </div>
     </header>
-    <nav ng-controller="navbarController">
-        <ul>
-            <li ng-repeat="menuItem in menuItems"><a href="{{menuItem.href}}">{{menuItem.label}}</a></li>
-            <li><a href="files/pdf/resume.pdf" target="_blank">Resume</a></li>
-        </ul>
-    </nav>
-
     <div class="container split-layout" ng-controller="cvController">
+        <nav class="menu" ng-controller="navbarController">
+            <ul>
+                <li ng-repeat="menuItem in menuItems" ng-click="showSection(menuItem.href)"><a href="{{menuItem.href}}">{{menuItem.label}}</a></li>
+            </ul>
+        </nav>
         <aside ng-init="loadGitHubData()">
             <div class="container">
                 <div class="headshot">
@@ -47,17 +44,12 @@
                     {{data.name}}
                 </div>
                 <div class="contact">
-                    <a href="mailto:{{data.email}}">{{data.email}}</a>
-                </div>
-                <div class="skills" id="knowledge">
-                    <h4>Relevant skills</h4>
-                    <div ng-repeat="(key, bars) in skills.data">
-                        {{skills.keys[key]}}
-                        <div ng-repeat="bar in skills.data[key].data" class="progress">
-                            <div class="progress-bar bg-success" role="progressbar" style="{{bar.style}}" aria-valuenow="{{bar.value}}" aria-valuemin="0" aria-valuemax="100">{{bar.name}}: {{bar.value}} / 100</div>
-                        </div>
-                    </div>
-                </div>
+                    <ul id="socialLinks">
+                        <li ng-repeat="socialLink in socialMedia">
+                            <a href="{{socialLink.url}}" target="{{socialLink.target}}"><div class="social-media {{socialLink.cname}}"></div></a>
+                        </li>
+                    </ul>
+                </div>            
             </div>
         </aside>
         <main>
@@ -72,12 +64,11 @@
                         </i>
                     </p>
                     <p>
-                        Hello there! My name is Alin, I'm a 23 year Romanian guy currently living in Denmark.
+                        Hello there! My name is Alin, I'm a {{getAge()}} year Romanian guy currently living in Denmark.
                         I moved here back in 2014 in order to study ICT Engineering at VIA University College, which of course I graduated back in February 2018. Back in High School I actually studied Social Sciences due to the fact that I wasn't best friends with the study system back home, and I had pretty much zero chances to pursue my one passion since I was a child: Computer Engineering.
                         By moving in Denmark I had a chance to pretty much have a 'fresh start' and I finally got a chance to achieve my dream. I went through college without failing a single class and I did so by gaining above average grades. 
                     </p>
                 </section>
-                <hr>
                 <section id="education">
                     <header>
                         Education
@@ -91,7 +82,6 @@
                         <div class="timeperiod">{{ item.date.from }} - {{ item.date.until }}</div>
                     </div>
                 </section>
-                <hr>
                 <section id="experience">
                     <header>
                         Experience
@@ -126,21 +116,27 @@
                         <hr>
                     </div>
                 </section>
+                <section id="knowledge">
+                    <header>
+                        Relevant skills
+                    </header>
+                    <div class="skills" >
+                        <div ng-repeat="(key, bars) in skills.data">
+                            {{skills.keys[key]}}
+                            <div ng-repeat="bar in skills.data[key].data" class="progress">
+                                <div class="progress-bar bg-success" role="progressbar" style="{{bar.style}}" aria-valuenow="{{bar.value}}" aria-valuemin="0" aria-valuemax="100">{{bar.name}}: {{bar.value}} / 100</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
             </div>
+            <footer>
+                Copyright &copy; {{getYear()}} alinstefanola.ru
+            </footer>
         </main>
     </div>
 
-
-
-    <div class="backToTop" style="display:none;"><a href="#top"><img src="files/images/top.png" title="Back to top"></a></div>
-    <footer id="social" ng-controller="socialMediaController">
-        <p>Copyright &copy; <span id="currentYear"></span> Alin-Stefan Olaru</p>
-        <ul id="socialLinks">
-            <li ng-repeat="socialLink in socialMedia">
-                <a href="{{socialLink.url}}" target="{{socialLink.target}}"><div class="social-media {{socialLink.cname}}"></div></a>
-            </li>
-        </ul>
-    </footer>
     <script src="files/js/model/bardataset.js"></script>
     <script src="files/js/model/menuitem.js"></script>
 
