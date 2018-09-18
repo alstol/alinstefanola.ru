@@ -150,7 +150,7 @@ section header {
 
 #intro figure img#gh_avatar {
     border-radius: 50%;
-    height:150px;
+    max-width:150px;
     filter:grayscale(100%);
     transition: all 0.5s ease;
     margin-right: 20px;
@@ -158,6 +158,10 @@ section header {
 
 #intro figure img#gh_avatar:hover {
     filter:grayscale(0%);
+}
+
+#knowledge {
+    text-align: center;
 }
 
 .experience {
@@ -195,6 +199,15 @@ section header {
     padding: 7px !important;
 }
 
+.toggle {
+    cursor:pointer;
+}
+
+.toggle-area {
+    margin-top: 20px;
+    display:none;
+}
+
 footer:before {
     background: linear-gradient(-45deg, #000000 16px, transparent 0), linear-gradient(45deg, #000000 16px, transparent 0);
     background-position: left bottom;
@@ -212,7 +225,7 @@ footer:before {
 footer {
     background: black;
     width: 100%;
-    padding-top: 25px;
+    padding: 25px 0;
     color: white;
     position: relative;
     margin-top: 50px;
@@ -343,13 +356,17 @@ aside.bars {
     }
 }
 
-@media screen and (max-width: 562px) {
+@media screen and (max-width: 614px) {
     nav {
         font-size: 10px;
     }
+    #intro figure {
+        float:none;
+        text-align: center;
+    }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 454px) {
     header.cover .inner .content .name {
         font-size: 300%;
         word-spacing: -22px;

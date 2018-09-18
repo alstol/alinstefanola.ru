@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Personal webpage built for and by Alin Stefan Olaru">
     <meta name="theme-color" content="#222">
+    <meta name="mobile-web-app-capable" content="yes">
 
     <link rel="stylesheet" href="files/images/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
@@ -74,8 +75,11 @@
                     <div class="company">{{ school.studyField }}</div>
                     <div class="timeperiod">{{ school.date.from }} - {{ school.date.until }}</div>
                     
-                    <b>Courses:</b>
-                    <span class="badge badge-success" v-for="key in school.courses" v-bind:title="key">{{key}}</span>
+                    <a data-toggleid="courses" class="toggle"><span class="badge badge-success">Toggle Courses</span></a>
+                    <div class="toggle-area" data-toggleid="courses">
+                        <b>Courses:</b>
+                        <span class="badge badge-success" v-for="key in school.courses" v-bind:title="key">{{key}}</span>
+                    </div>
                 </div>
                 <hr>
             </div>
@@ -153,6 +157,7 @@
     <script src="files/js/lazydates.js"></script>
     <script src="files/js/scroller.js"></script>
     <script src="files/js/bar.js"></script>
+    <script src="files/js/toggle.js"></script>
 
     <script src="files/js/data/portfolio.js"></script>
     <script src="files/js/data/experience.js"></script>

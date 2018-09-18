@@ -14,11 +14,11 @@ var socialMedia = new Vue({
              },
              {
                 "name": "LinkedIn",
-                "url":"https://linkedin.com/in/alin-stefan-olaru-774164a3",
+                "url":"https://www.linkedin.com/in/alinstefanolaru",
                 "cname":"linkedin",
                 "target":"_blank"
              },
-             {
+             /*{
                 "name": "Facebook",
                 "url":"https://www.facebook.com/DoNotTryThis",
                 "cname":"facebook",
@@ -29,10 +29,10 @@ var socialMedia = new Vue({
                 "url":"skype:alin_shtefan?chat",
                 "cname":"skype",
                 "target":"_blank"
-             },
+             },*/
              {
                 "name": "Email",
-                "url":"mailto:alinstefanolaru@gmail.com",
+                "url":"mailto:alinstefanolaru@gmail.com?subject=Hello!",
                 "cname":"email",
                 "target":"_top"
              }
