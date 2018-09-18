@@ -17,7 +17,7 @@ body {
 header.cover {
     width:100%;
     height: 100%;
-    background:url('bg.jpeg') no-repeat 50% 50%;
+    background:url('bgsmaller.jpg') no-repeat 50% 50%;
     background-attachment: fixed;
     background-size: cover;
     display:table;
@@ -300,18 +300,12 @@ label {
 }
 
 aside.bars {
-    max-width: 600px;
     text-align: left;
-    display: inline-block;
-    border:1px solid black;
     padding-right: 5px;
     border-radius:10px;
     margin: 5px;
 }
 
-#knowledge {
-    text-align: center;
-}
 
 .backToTop {
     width: 50px;

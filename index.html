@@ -84,9 +84,7 @@
             <header>
                 <h1>Knowledge</h1>
             </header>
-            <p>This part might look weird on your device due to the fact that I'm trying something new. If you experience any visual bugs please send me a screenshot together with some details regarding your device and the browser you used.</p>
-            <p>I'm still looking for ways to make it responsive/pretty, it might take a while <3. </p>
-            <p>However, the data should be valid.</p>
+            <p>A few relevant technologies/tools, somewhat categorised.</p>
             <div id="progressBars">
                 <aside v-for="bar in bars" class="bars">
                     <div class="container">
@@ -125,7 +123,12 @@
                 <h1>Demos (Portfolio)</h1>
             </header>
             <p>Not precisely a "portfolio". This section is automatically generated. It contains some of my own GitHub repositiories that I shamelessly starred in order to be able to access them via GitHub's API. I'm aware that starring your own repositories is kind of 'meh' and that I'm calling for GitHub's API with every page visit (which sadly there's not many), but I'm looking on ways to improve this :)</p>
-            <p>If you're curious on how that works, I have a repo for this web-page that <strong>should</strong> be up to date. <a href="https://github.com/xShteff/alinstefanola.ru/" target="_blank">Click here to see this website's repo.</a></p>
+            <hr>
+            <h2>this</h2>
+            <p>Literally this website. I'm maintaining a repository on GitHub. You might be able to see different versions of the websites, or the entire progress I've been through.</p>
+            <ul>
+                <li><a href="https://github.com/xShteff/alinstefanola.ru/" target="_blank">Repo</a></li>
+            </ul>
             <hr>
             <div v-for="git in selfStarred">
                 <h2>{{ git.name }}</h2>

@@ -31,7 +31,7 @@ var bars = new Vue({
                     new BarDataSet("PHP", 50),
                 ]
             },
-            tools: {
+            /*tools: {
                 title: "Tools",
                 data: [
                     new BarDataSet("JIRA", 100),
@@ -41,7 +41,7 @@ var bars = new Vue({
                     new BarDataSet("Eclipse/IntelliJ", 80),
                     new BarDataSet("Build Servers", 60),
                 ]
-            },
+            },*/
             other: {
                 title: "Other",
                 data: [
