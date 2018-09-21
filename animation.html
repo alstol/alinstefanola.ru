@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body,html {
+            font-family: sans-serif;
+            margin:0;
+            padding:0;
+        }
+        @keyframes b1 {
+            0% {
+                width: 1px;
+                height: 5px;
+                left: 50%;
+                position: relative;
+                top:20px;
+            }
+
+            33% {
+                width: 100%;
+                left: 0;
+                position: relative;
+                top: 20px;
+            }
+
+            66% {
+                width: 100%;
+                left: 0;
+                position: relative;
+                top:0;
+            }
+
+            100% {
+                width: 0;
+                height: 5px;
+                left: 50%;
+                position: relative;
+                top:0px;
+            }
+        }
+
+        @keyframes b2 {
+            0% {
+                width: 1px;
+                height: 5px;
+                left: 50%;
+                position: relative;
+                bottom:20px;
+            }
+
+            33% {
+                width: 100%;
+                left: 0;
+                position: relative;
+                bottom:20px;
+            }
+
+            66% {
+                width: 100%;
+                left: 0;
+                position: relative;
+                bottom:0px;
+            }
+
+            100% {
+                width: 0;
+                height: 5px;
+                left: 50%;
+                position: relative;
+                bottom:0px;
+            }
+        }
+
+        @keyframes name { 
+            0% {
+                opacity:0;
+            }
+
+            33% {
+                opacity:0;
+            }
+
+            66% {
+                opacity:1;
+            }
+
+            100% {
+                opacity:1;
+            }
+        }
+
+        .wub {
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            margin-top:20px;
+        }
+
+        #b1 {
+            background:red;
+            animation: b1 2s ease 0s 1 normal forwards;
+           
+        }
+
+        #b2 {
+            background:red;
+            animation: b2 2s ease 0s 1 normal forwards;
+        }
+
+        #name {
+            font-size: 30px;
+            animation: name 2s ease 0s 1 normal forwards;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="wub">
+            <div id="b1"></div>
+            <div id="name">The Bushmeister</div>
+            <div id="b2"></div>
+        </div>
+        
+    </div>
+</body>
+</html>
