@@ -306,9 +306,7 @@ nav ul li a:hover{
     box-shadow: 4px 3px 10px -3px rgba(0,0,0,0.75);
 }
 
-#experience .content .slide .timeperiod {
-    margin-bottom: 20px;
-}
+
 
 .slide {
     height: 600px;
@@ -316,11 +314,15 @@ nav ul li a:hover{
 }
 
 #experience .content .slide {
-    height: 350px;  
+    height: auto;  
 }
 
 #experience .content .slide-controls {
-    bottom: 222px;
+    bottom: 200px;
+}
+
+#experience .content .slide .timeperiod {
+    margin-bottom: 20px;
 }
 
 .slide .logo {
