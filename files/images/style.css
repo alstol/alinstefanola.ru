@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Jura|Playball|Sacramento|Shadows+Into+Light+Two');
+@import url('https://fonts.googleapis.com/css?family=Jura|Playball|Sacramento|Shadows+Into+Light+Two|Quicksand');
+
+
+body,html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Quicksand', sans-serif;
+}
 
 .right {
     float: right;
@@ -12,13 +21,6 @@
     font-style:italic;
 }
 
-body,html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: sans-serif;
-}
 
 p {
     margin:0;
@@ -26,25 +28,20 @@ p {
     padding:0;
 }
 
+.tile.full {
+    height:100%;
+    padding: 0;
+}
+
 .tile {
     width: 100%;
-    height: 50%;
     text-align: center;
+    padding: 20px 0; 
 }
 
-.separator {
-    width:100%;
-    height:50%;
-}
-
-.tile.full{
-    height:100%;
-}
 
 .tile .content {
     position: relative;
-    top: 50%;
-    transform: translateY(-50%);
     margin-left: auto;
     margin-right: auto;
 }
@@ -104,18 +101,16 @@ nav ul li a:hover{
 }
 
 #landing .content {
-    top: calc(50% - 100px);
+    top: calc(50% - 10px);
+    font-size: 35px;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 #name {
-    font-family: 'Sacramento', cursive;
-    font-size: 70px;
     color: rgb(255, 255, 255);
 }
 
 #title {
-    font-family: 'Jura', sans-serif;
-    font-size: 30px;
     color: rgb(8, 228, 100);
 }
 
@@ -137,20 +132,16 @@ nav ul li a:hover{
     width: 80%;
     font-size: 20px;
     padding:50px;
-    background:rgba(0,0,0, 0.2);
     color: rgba(255,255,255,1);
     text-shadow: 1px 1px rgba(0,0,0,0.5);    
 }
 /*Skills*/
 #skills {
-    background:url('backgrounds/DSC_0399.JPG') no-repeat 50% 50%;
-    background-attachment: fixed;
-    background-size: cover;
-    filter:grayscale(50%) contrast(1.4);
+    background: rgb(50, 185, 106);
+    padding-bottom:60px;
 }
 
 #skills .content {
-    background:rgba(0,0,0, 0.2);
     color: rgba(255,255,255,1);
     text-shadow: 1px 1px rgba(0,0,0,0.5);
     width: 80%;
@@ -158,29 +149,30 @@ nav ul li a:hover{
 }
 /*Experience*/
 #experience {
-    background:url('backgrounds/DSC_0106.JPG') no-repeat 50% 50%;
-    background-attachment: fixed;
-    background-size: cover;
-    filter:grayscale(50%) contrast(1.4);
+    background:rgba(255,255,255, 1);
 }
 #experience .content {
-    background:rgba(255,255,255, 0.2);
-    color: rgba(255,255,255,1);
+    color: rgba(255,255,255, 1);
     text-shadow: 1px 1px rgba(0,0,0,0.5);
     width: 80%;
     padding: 50px;
+    background: rgba(69, 69, 69, 1);
+    border-radius: 5px;
+    position: relative;
+    bottom:65px;
 }
 /*Recommendations*/
 #recommendations {
-    background:url('backgrounds/DSC_0386.JPG') no-repeat 50% 50%;
+    background:url('backgrounds/DSC_0085.JPG') no-repeat 50% 50%;
     background-attachment: fixed;
     background-size: cover;
     filter:grayscale(50%) contrast(1.4);
+    border-top: 1px solid rgb(69, 69, 69);
+    
 }
 
 #recommendations .content{
-    background:rgba(0,0,0, 0.2);
-    color: rgba(255,255,255,1);
+    color: rgba(255,255,255, 1);
     text-shadow: 1px 1px rgba(0,0,0,0.5);
     width: 80%;
     padding: 50px;
@@ -188,14 +180,10 @@ nav ul li a:hover{
 
 /*Demos*/
 #demos {
-    background:url('backgrounds/DSC_0395.JPG') no-repeat 50% 50%;
-    background-attachment: fixed;
-    background-size: cover;
-    filter:grayscale(50%) contrast(1.4);
+    background:rgb(50, 185, 106);
 }
 
 #demos .content {
-    background:rgba(0,0,0, 0.2);
     color: rgba(255,255,255,1);
     text-shadow: 1px 1px rgba(0,0,0,0.5);
     width: 80%;
@@ -204,7 +192,7 @@ nav ul li a:hover{
 
 /*Contact*/
 #contact {
-    background: rgb(31, 175, 94);
+    background: rgb(5, 85, 39);
 }
 
 
