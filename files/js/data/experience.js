@@ -83,18 +83,8 @@ var experienceData = [
 var experience = new Vue({
     el: "#experience",
     data: {
-        selected: {
-            companyLogo: `${companyLogoFolderPath}LEGO.png`,
-            title: "Junior Software Developer",
-            companyName: "LEGO Group",
-            timePeriod: {
-                from: "September 2018",
-                until: "Current"
-            },
-            description: "Junior Software Developer at LEGO Group in Billund.",
-            keywords: ["Angular", "TypeScript"]
-        },
-        slider: new Slider(experienceData)
+        slider: new Slider(experienceData),
+        selected: experienceData[0],
     },
     methods: {
         next: function () {
