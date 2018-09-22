@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Jura|Playball|Sacramento|Shadows+Into+Light+Two|Quicksand');
 
-
 body,html {
     margin: 0;
     padding: 0;
@@ -62,14 +61,25 @@ nav {
     position: absolute;
     bottom: 0;
     text-align: right;
-    background: rgba(0,0,0, 0.8);
+    background: rgba(0,0,0, 0.2);
     display:table;
     z-index: 1000;
+    transition: background 1s ease;
 }
 
 nav.fixed {
     position:fixed;
     top:0;
+    background: rgba(0,0,0, 0.8);
+}
+
+nav #logo {
+    float:left;
+    color:white;
+}
+
+nav ul {
+    float:right;
 }
 
 nav ul li a {
@@ -92,7 +102,115 @@ nav ul li a:hover{
     color: rgba(69, 69, 69, 0.5);
 }
 
+#logo img {
+    height:40px;
+    position: relative;
+    left:10px;
+    top:10px;
+}
+
 /*Landing*/
+@keyframes b1 {
+    0% {
+        width: 1px;
+        height: 5px;
+        left: 50%;
+        position: relative;
+        top:55px;
+    }
+
+    33% {
+        width: 100%;
+        left: 0;
+        position: relative;
+        top: 55px;
+    }
+
+    66% {
+        width: 100%;
+        left: 0;
+        position: relative;
+        top:0;
+    }
+
+    100% {
+        width: 0;
+        height: 5px;
+        left: 50%;
+        position: relative;
+        top:0px;
+    }
+}
+
+@keyframes b2 {
+    0% {
+        width: 1px;
+        height: 5px;
+        left: 50%;
+        position: relative;
+        bottom:55px;
+    }
+
+    33% {
+        width: 100%;
+        left: 0;
+        position: relative;
+        bottom:55px;
+    }
+
+    66% {
+        width: 100%;
+        left: 0;
+        position: relative;
+        bottom:0px;
+    }
+
+    100% {
+        width: 0;
+        height: 5px;
+        left: 50%;
+        position: relative;
+        bottom:0px;
+    }
+}
+
+@keyframes name { 
+    0% {
+        opacity:0;
+    }
+
+    33% {
+        opacity:0;
+    }
+
+    66% {
+        opacity:1;
+    }
+
+    100% {
+        opacity:1;
+    }
+}
+
+.animation-container {
+    width: -moz-fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#b1 {
+    background:rgb(0, 255, 128);;
+    animation: b1 2s ease 0s 1 normal forwards;
+    border-radius:2px;
+}
+
+#b2 {
+    background:rgb(0, 255, 128);;
+    animation: b2 2s ease 0s 1 normal forwards;
+    border-radius:2px;
+}
+
 #landing {
     background:url('backgrounds/bgsmaller.jpg') no-repeat 50% 50%;
     background-attachment: fixed;
@@ -101,17 +219,20 @@ nav ul li a:hover{
 }
 
 #landing .content {
-    top: calc(50% - 10px);
+    top: calc(50% - 50px);
     font-size: 35px;
     color: rgba(255, 255, 255, 0.8);
 }
 
 #name {
     color: rgb(255, 255, 255);
+    font-size: 50px;
+    animation: name 2s ease 0s 1 normal forwards;
 }
 
 #title {
     color: rgb(8, 228, 100);
+    animation: name 2s ease 0s 1 normal forwards;
 }
 
 #headshot {
@@ -147,6 +268,20 @@ nav ul li a:hover{
     width: 80%;
     padding: 50px;
 }
+
+.bar {
+    height: 50px;
+    background: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+}
+
+.skill .label {
+    float:left;
+}
+
+.skill .bar-container {
+    float:right;
+}
 /*Experience*/
 #experience {
     background:rgba(255,255,255, 1);
@@ -161,6 +296,27 @@ nav ul li a:hover{
     position: relative;
     bottom:65px;
 }
+
+.slide {
+    height: 600px;
+}
+
+.slide-controls {
+    position: relative;
+    font-size: 50px;
+    bottom: 340px;
+}
+
+.slide-controls .prev {
+    float:left;
+    cursor:pointer;
+}
+
+.slide-controls .next {
+    float:right;
+    cursor:pointer;
+}
+
 /*Recommendations*/
 #recommendations {
     background:url('backgrounds/DSC_0085.JPG') no-repeat 50% 50%;
