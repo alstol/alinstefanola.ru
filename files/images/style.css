@@ -315,6 +315,14 @@ nav ul li a:hover{
     text-align: center;
 }
 
+#experience .content .slide {
+    height: 350px;  
+}
+
+#experience .content .slide-controls {
+    bottom: 222px;
+}
+
 .slide .logo {
     height: 200px;
 }
@@ -353,7 +361,9 @@ nav ul li a:hover{
     border-radius: 5px;
     padding: 5px;
     margin-left: 2px;
+    margin-top: 5px;
     color: rgb(255, 255, 255);
+    display:inline-block;
 }
 
 /*Recommendations*/
