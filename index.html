@@ -4,28 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <meta name="theme-color" content="#222">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description" content="Personal webpage built for and by Alin Stefan Olaru">
+    
+    <title>Alin Stefan Olaru - Junior Software Developer</title>    
+
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    
     <link rel="stylesheet" href="files/images/style.css">
 </head>
 <body>
-    <div class="tile" id="landing">
+    <div class="tile full" id="landing">
         <div class="content">
                 <img id="headshot" src="files/images/eddshotsquare.jpg" alt="">
-
                 <div id="name">
                     Alin Stefan Olaru
                 </div>
                 <div id="title">
                     Junior Software Engineer
-                </div>
-          
-            
-            
+                </div>          
         </div>
         <nav>
             <ul class="inline-list">
+                <li><a href="#landing">Landing</a></li>
                 <li><a href="#intro">Introduction</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
@@ -35,6 +38,7 @@
             </ul>
         </nav>
     </div>
+    <div class="separator" style="background: rgb(50, 185, 106);"></div>
     <div class="tile" id="intro">
         <div class="content">
             <p class="italic">
@@ -51,21 +55,25 @@
             </p>        
         </div>
     </div>
+    <div class="separator" style="background: rgb(6, 112, 50);"></div>
     <div class="tile" id="skills">
         <div class="content">
             Some kind of skill charts.
         </div>
     </div>
+    <div class="separator" style="background: rgb(50, 185, 106);"></div>
     <div class="tile" id="experience">
         <div class="content">
             Carousel w/ companies? That would be nice.
         </div>
     </div>
-    <div class="tile"  id="recommendations">
+    <div class="separator" style="background:rgb(2, 85, 37)"></div>
+    <div class="tile" id="recommendations">
         <div class="content">
             Recommendations?
         </div>
     </div>
+    <div class="separator" style="background: rgb(16, 126, 61);"></div>
     <div class="tile" id="demos">
         <div class="content">
             Git Demos?
@@ -73,7 +81,7 @@
     </div>
     <div class="tile" id="contact">
         <div class="content">
-            Copyright &copy; 2017 alinstefanolaru
+            Copyright &copy; 2018 alinstefanolaru
             <ul class="inline-list">
                 <li><a href="">Contact</a></li>
                 <li><a href="">Contact</a></li>
@@ -114,7 +122,7 @@
                         if (target.length) {
                             event.preventDefault();
                             $('html, body').animate({
-                                scrollTop: target.offset().top - 40
+                                scrollTop: target.offset().top - ($('body').height() / 4)
                             }, 1000, function() {
 
                                 var $target = $(target);
@@ -129,7 +137,7 @@
                         }
                     }
                 });
-        })
+        });
     </script>
 </body>
 </html>
