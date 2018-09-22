@@ -61,8 +61,6 @@
                 <div class="company">{{ selected.companyName }}</div>
                 <div class="title">{{ selected.title }}</div>
                 <div class="timeperiod">{{ selected.timePeriod.from }} - {{ selected.timePeriod.until }}</div>
-                <div class="description">{{selected.description}}</div>
-                <b>Gained experience with:</b>
                 <span class="exp-bullet" v-for="key in selected.keywords" v-bind:title="key">{{key}}</span>
             </div>
             <div class="slide-controls" >

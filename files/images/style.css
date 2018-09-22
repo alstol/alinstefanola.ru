@@ -292,20 +292,21 @@ nav ul li a:hover{
 }
 /*Experience*/
 #experience {
-    background:rgba(255,255,255, 1);
+    background:rgba(69, 69, 69, 1);
+    padding-bottom: 40px;
 }
 #experience .content {
-    color: rgba(255,255,255, 1);
-    text-shadow: 1px 1px rgba(0,0,0,0.5);
+    color: rgb(0, 0, 0);
     width: 80%;
     padding: 50px;
-    background: rgba(69, 69, 69, 1);
+    background: rgba(255,255,255, 1);
     border-radius: 5px;
     position: relative;
     bottom:65px;
+    box-shadow: 4px 3px 10px -3px rgba(0,0,0,0.75);
 }
 
-#experience .content .slide .description {
+#experience .content .slide .timeperiod {
     margin-bottom: 20px;
 }
 
@@ -352,7 +353,7 @@ nav ul li a:hover{
     border-radius: 5px;
     padding: 5px;
     margin-left: 2px;
-
+    color: rgb(255, 255, 255);
 }
 
 /*Recommendations*/
