@@ -202,13 +202,13 @@ nav ul li a:hover{
 
 #b1 {
     background:rgb(0, 255, 128);;
-    animation: b1 2s ease 0s 1 normal forwards;
+    animation: b1 4s ease 0s 1 normal forwards;
     border-radius:2px;
 }
 
 #b2 {
     background:rgb(0, 255, 128);;
-    animation: b2 2s ease 0s 1 normal forwards;
+    animation: b2 4s ease 0s 1 normal forwards;
     border-radius:2px;
 }
 
@@ -228,12 +228,12 @@ nav ul li a:hover{
 #name {
     color: rgb(255, 255, 255);
     font-size: 50px;
-    animation: name 2s ease 0s 1 normal forwards;
+    animation: name 4s ease 0s 1 normal forwards;
 }
 
 #title {
     color: rgb(8, 228, 100);
-    animation: name 2s ease 0s 1 normal forwards;
+    animation: name 4s ease 0s 1 normal forwards;
 }
 
 #headshot {
@@ -298,24 +298,61 @@ nav ul li a:hover{
     bottom:65px;
 }
 
+#experience .content .slide .description {
+    margin-bottom: 20px;
+}
+
 .slide {
     height: 600px;
+    text-align: center;
+}
+
+.slide .logo {
+    height: 200px;
+}
+
+.slide .company {
+    font-size: 20px;
+}
+
+.slide .description {
+    font-style: italic;
 }
 
 .slide-controls {
     position: relative;
     font-size: 50px;
     bottom: 340px;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 .slide-controls .prev {
     float:left;
     cursor:pointer;
+    position: relative;
+    right: 25px;
 }
 
 .slide-controls .next {
     float:right;
     cursor:pointer;
+    position: relative;
+    left: 25px;
+}
+
+.exp-bullet {
+    background: rgb(14, 148, 59);
+    border: 1px solid rgb(5, 85, 39);
+    border-radius: 5px;
+    padding: 5px;
+    margin-left: 2px;
+
 }
 
 /*Recommendations*/
