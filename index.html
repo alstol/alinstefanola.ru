@@ -7,56 +7,85 @@
     <title>Document</title>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="files/images/style.css">
 </head>
 <body>
-    <div class="tile" style="background:#00401F">
+    <div class="tile" id="landing">
         <div class="content">
-            Some kind of intro, maybe a headshot (maybe new one?), name, title and fluff.
+                <img id="headshot" src="files/images/eddshotsquare.jpg" alt="">
+
+                <div id="name">
+                    Alin Stefan Olaru
+                </div>
+                <div id="title">
+                    Junior Software Engineer
+                </div>
+          
+            
+            
         </div>
         <nav>
-            <ul>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
+            <ul class="inline-list">
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#recommendations">Recommendations</a></li>
+                <li><a href="#demos">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </div>
-    <div class="tile" style="background: #017F3F">
+    <div class="tile" id="intro">
         <div class="content">
-            A short introduction. y not.
+            <p class="italic">
+                 Software Engineering Graduate with core competences in designing and developing applications and user interfaces using ASP.NET Framework including C#, JavaScript, JQuery, HTML5, CSS3, and Git as main technologies.
+            </p>
+            <p>
+                Hello there! My name is Alin, I'm a 23 year Romanian guy currently living in Denmark.
+            </p>
+            <p>
+                I moved here back in 2014 in order to study ICT Engineering at VIA University College, which of course I graduated back in February 2018. Back in High School I actually studied Social Sciences due to the fact that I wasn't best friends with the study system back home, and I had pretty much zero chances to pursue my one passion since I was a child. Computer Engineering.
+            </p>
+            <p>
+                By moving in Denmark I had a chance to pretty much have a 'fresh start' and I finally got a chance to achieve my dream. I went through college without failing a single class and I did so by gaining above average grades. 
+            </p>        
         </div>
     </div>
-    <div class="tile" style="background: #02FF7D">
+    <div class="tile" id="skills">
         <div class="content">
             Some kind of skill charts.
         </div>
     </div>
-    <div class="tile" style="background: #01BF5E">
+    <div class="tile" id="experience">
         <div class="content">
             Carousel w/ companies? That would be nice.
         </div>
     </div>
-    <div class="tile" style="background: #01E571">
+    <div class="tile"  id="recommendations">
         <div class="content">
             Recommendations?
         </div>
     </div>
-    <div class="tile" style="background: #017F3F">
+    <div class="tile" id="demos">
         <div class="content">
             Git Demos?
         </div>
     </div>
-    <div class="tile" style="background: #104020">
+    <div class="tile" id="contact">
         <div class="content">
-            Contact.
+            Copyright &copy; 2017 alinstefanolaru
+            <ul class="inline-list">
+                <li><a href="">Contact</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
         </div>
     </div>
     <script>
         $(window).scroll(function() {
             var scroll = $(document).scrollTop();
-            if (scroll > $('body').height() - 50) {
+            if (scroll > $('body').height() - 70) {
                 $('nav').addClass('fixed');
             } else {
                 $('nav').removeClass('fixed');
@@ -70,6 +99,37 @@
 
             }*/
         });
+
+        $(document).ready(() => {
+            $('a[href*="#"]')
+                .not('[href="#"]')
+                .not('[href="#0"]')
+                .click(function(event) {
+                    if (
+                        location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+                        location.hostname == this.hostname
+                    ) {
+                        var target = $(this.hash);
+                        target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                        if (target.length) {
+                            event.preventDefault();
+                            $('html, body').animate({
+                                scrollTop: target.offset().top - 40
+                            }, 1000, function() {
+
+                                var $target = $(target);
+                                $target.focus();
+                                if ($target.is(":focus")) {
+                                    return false;
+                                } else {
+                                    $target.attr('tabindex', '-1');
+                                    $target.focus();
+                                };
+                            });
+                        }
+                    }
+                });
+        })
     </script>
 </body>
 </html>
