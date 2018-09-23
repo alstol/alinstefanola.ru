@@ -1,4 +1,29 @@
 @import url('https://fonts.googleapis.com/css?family=Jura|Playball|Sacramento|Shadows+Into+Light+Two|Quicksand');
+#site {
+    height: 100%;
+    width: 100%;
+    right: 0;
+    transition: right 1s ease;
+    position: relative;
+}
+
+#site.toggled {
+    right: 200px;
+}
+
+.menu {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    background: rgba(69, 69, 69, 1);
+    width: 200px;
+    right: -200px;
+    transition: right 1s ease;
+}
+
+.menu.toggled {
+    right: 0;
+}
 
 body,html {
     margin: 0;
@@ -63,7 +88,7 @@ ul.inline-list li {
     padding: 10px;
 }
 
-nav {
+.navbar {
     width: 100%;
     position: absolute;
     bottom: 0;
@@ -72,40 +97,45 @@ nav {
     display:table;
     z-index: 1000;
     transition: background 1s ease;
+    transition: width 1s ease;
 }
 
-nav.fixed {
+.navbar.fixed {
     position:fixed;
     top:0;
     background: rgba(0,0,0, 0.8);
 }
 
-nav #logo {
+.navbar.toggled {
+    width: calc(100% - 200px);
+}
+
+.navbar #logo {
     float:left;
     color:white;
 }
 
-nav ul {
+.navbar ul {
     float:right;
 }
 
-nav ul li a {
+.navbar ul li a {
     text-decoration: none;
 }
 
-nav ul li a:link {
+.navbar ul li a:link {
     color:  rgba(255, 255, 255, 1);
 }
 
-nav ul li a:visited {
+.navbar ul li a:visited {
     color:  rgba(255, 255, 255, 1);
 }
 
-nav ul li a:active {
+.navbar ul li a:active {
     color:  rgba(255, 255, 255, 1);
 }
 
-nav ul li a:hover{
+.navbar ul li a:hover{
     color: rgba(69, 69, 69, 0.5);
 }
 
@@ -114,6 +144,14 @@ nav ul li a:hover{
     position: relative;
     left:10px;
     top:10px;
+}
+
+#menuToggle {
+    float:right;
+    color: rgba(255, 255, 255, 1);
+    margin-right: 25px;
+    cursor: pointer;
+    line-height: 50px;
 }
 
 /*Landing*/
@@ -274,22 +312,39 @@ nav ul li a:hover{
     color: rgba(255,255,255,1);
     text-shadow: 1px 1px rgba(0,0,0,0.5);
     width: 80%;
-    padding: 50px;
+    padding: 50px 0 100px 0;
+}
+
+#skills .content .exp-bullet {
+    background: rgb(69, 69, 69);
+    border: 1px solid rgb(0, 0, 0);
+    transition: background 1s ease;
+    cursor: pointer;
+}
+
+#skills .content .exp-bullet:hover {
+    background:rgba(69, 69, 69, 0.8);
+}
+
+.bar-container {
+    margin-bottom: 20px;
 }
 
 .bar {
     height: 50px;
     background: rgba(255, 255, 255, 1);
-    border-radius: 10px;
+    border-radius: 15px;
+    text-align: left;
+    line-height:50px;
+    color: rgb(0, 0, 0);
 }
 
-.skill .label {
-    float:left;
+.bar .label {
+    margin-left: 10px;
 }
 
-.skill .bar-container {
-    float:right;
-}
+
+
 /*Experience*/
 #experience {
     background:rgba(69, 69, 69, 1);

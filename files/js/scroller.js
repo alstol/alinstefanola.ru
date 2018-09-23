@@ -8,9 +8,9 @@
 $(window).scroll(function() {
     var scroll = $(document).scrollTop();
     if (scroll > $('body').height() - 50) {
-        $('nav').addClass('fixed');
+        $('.navbar').addClass('fixed');
     } else {
-        $('nav').removeClass('fixed');
+        $('.navbar').removeClass('fixed');
     }
 
     if (scroll > 150) {

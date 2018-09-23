@@ -16,98 +16,130 @@
     <link rel="stylesheet" href="files/images/style.css">
 </head>
 <body>
-    <div class="tile full" id="landing">
-        <div class="content">
-            <img id="headshot" src="files/images/eddshotsquare.jpg" alt="" style="display: none;">
-            <div class="animation-container">
-                <div id="b1"></div>
-                <div id="name">Alin Stefan Olaru</div>
-                <div id="title">Junior Software Engineer</div>
-                <div id="b2"></div>
-            </div>      
-        </div>
-        <nav>
-            <div id="logo">
-                <img src="files/images/siggywhite.png" alt="">
+
+    <div id="site">
+        <div class="tile full" id="landing">
+            <div class="content">
+                <img id="headshot" src="files/images/eddshotsquare.jpg" alt="" style="display: none;">
+                <div class="animation-container">
+                    <div id="b1"></div>
+                    <div id="name">Alin Stefan Olaru</div>
+                    <div id="title">Junior Software Engineer</div>
+                    <div id="b2"></div>
+                </div>      
             </div>
-            <ul class="inline-list">
-                <li><a href="#landing"> </a></li>
-            </ul>
-        </nav>
-    </div>
-    <div class="tile" id="intro">
-        <div class="content">
-            <p class="italic">
-                 Software Engineering Graduate with core competences in designing and developing applications and user interfaces using ASP.NET Framework including C#, JavaScript, JQuery, HTML5, CSS3, and Git as main technologies.
-            </p>
-            <p>
-                I moved here back in 2014 in order to study ICT Engineering at VIA University College, which of course I graduated back in February 2018. Back in High School I actually studied Social Sciences due to the fact that I wasn't best friends with the study system back home, and I had pretty much zero chances to pursue my one passion since I was a child. Computer Engineering.
-            </p>
-            <p>
-                By moving in Denmark I had a chance to pretty much have a 'fresh start' and I finally got a chance to achieve my dream. I went through college without failing a single class and I did so by gaining above average grades. 
-            </p>        
-        </div>
-    </div>
-    <div class="tile" id="skills">
-        <div class="content" style="height: 400px;">
-            Skill bars (up to 6) + Skill labels
-         
-        </div>
-    </div>
-    <div class="tile" id="experience">
-        <div class="content">
-            <div class="slide">
-                <img class="logo" v-bind:src="selected.companyLogo" alt="Logo">
-                <div class="company">{{ selected.companyName }}</div>
-                <div class="title">{{ selected.title }}</div>
-                <div class="timeperiod">{{ selected.timePeriod.from }} - {{ selected.timePeriod.until }}</div>
-                <span class="exp-bullet" v-for="key in selected.keywords" v-bind:title="key">{{key}}</span>
-            </div>
-            <div class="slide-controls" >
-                <div class="prev" v-if="!slider.isOnFirstPage()" v-on:click="prev()">
-                    <
+            <div class="navbar">
+                <div id="logo">
+                    <img src="files/images/siggywhite.png" alt="">
                 </div>
-                <div class="next" v-if="!slider.isOnLastPage()" v-on:click="next()">
-                    >
+                <div id="menuToggle" style="display: none;">
+                    Toggle Menu
                 </div>
-                
+                <ul class="inline-list">
+                    <li><a href="#landing"> </a></li>
+                </ul>
             </div>
         </div>
-    </div>
-    <div class="tile" id="recommendations">
-        <div class="content" style="height: 300px;">
-            Uhhh. Three qualities maybe? 
+        <div class="tile" id="intro">
+            <div class="content">
+                <p class="italic">
+                    Software Engineering Graduate with core competences in designing and developing applications and user interfaces using ASP.NET Framework including C#, JavaScript, JQuery, HTML5, CSS3, and Git as main technologies.
+                </p>
+                <p>
+                    I moved here back in 2014 in order to study ICT Engineering at VIA University College, which of course I graduated back in February 2018. Back in High School I actually studied Social Sciences due to the fact that I wasn't best friends with the study system back home, and I had pretty much zero chances to pursue my one passion since I was a child. Computer Engineering.
+                </p>
+                <p>
+                    By moving in Denmark I had a chance to pretty much have a 'fresh start' and I finally got a chance to achieve my dream. I went through college without failing a single class and I did so by gaining above average grades. 
+                </p>        
+            </div>
         </div>
-    </div>
-    <div class="tile" id="demos">
-        <div class="content">
+        <div class="tile" id="skills">
+            <div class="content">
+                <h1>Relevant Skills</h1>
+                <div class="bar-container" v-for="skill in main">
+                    <div class="bar" v-bind:style="skill.style">
+                        <span class="label">{{skill.name}} - {{skill.value}} / 100</span>
+                    </div>
+                </div>    
+                <div class="exp-bullet" class="exp-bullet" v-for="key in keywords">{{key}}</div>
+            </div>
+        </div>
+        <div class="tile" id="experience">
+            <div class="content">
                 <div class="slide">
-                    Git demos?
+                    <img class="logo" v-bind:src="selected.companyLogo" alt="Logo">
+                    <div class="company">{{ selected.companyName }}</div>
+                    <div class="title">{{ selected.title }}</div>
+                    <div class="timeperiod">{{ selected.timePeriod.from }} - {{ selected.timePeriod.until }}</div>
+                    <span class="exp-bullet" v-for="key in selected.keywords" v-bind:title="key">{{key}}</span>
                 </div>
-                <div class="slide-controls">
-                    <div class="prev">
+                <div class="slide-controls" >
+                    <div class="prev" v-if="!slider.isOnFirstPage()" v-on:click="prev()">
                         <
                     </div>
-                    <div class="next">
+                    <div class="next" v-if="!slider.isOnLastPage()" v-on:click="next()">
                         >
                     </div>
+                    
                 </div>
+            </div>
+        </div>
+        <div class="tile" id="recommendations">
+            <div class="content" style="height: 300px;">
+                Uhhh. Three qualities maybe? 
+            </div>
+        </div>
+        <div class="tile" id="demos">
+            <div class="content">
+                    <div class="slide">
+                        Git demos?
+                    </div>
+                    <div class="slide-controls">
+                        <div class="prev">
+                            <
+                        </div>
+                        <div class="next">
+                            >
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="tile" id="contact">
+            <div class="content">
+                Copyright &copy; 2018 alinstefanolaru
+                <ul class="inline-list">
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Contact</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-    <div class="tile" id="contact">
-        <div class="content">
-            Copyright &copy; 2018 alinstefanolaru
-            <ul class="inline-list">
-                <li><a href="">Contact</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="">Contact</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-        </div>
+    <div class="menu">
+        <ul>
+            <li>
+                <a href="#landing">Back to top</a>
+            </li>
+            <li>
+                <a href="#into">Introduction</a>
+            </li>
+            <li>
+                <a href="#skills">Relevant Skills</a>
+            </li>
+            <li>
+                <a href="#experience">Work Experience</a>
+            </li>
+            <li>
+                <a href="#demos">Demos</a>
+            </li>
+        </ul>
     </div>
     <script src="files/js/model/slider.js"></script>
     <script src="files/js/scroller.js"></script>
     <script src="files/js/data/experience.js"></script>
+    <script src="files/js/data/skills.js"></script>
+    <script src="files/js/menu.js"></script>
     <script>
        
     </script>
