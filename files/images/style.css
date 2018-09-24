@@ -300,7 +300,7 @@ ul.inline-list li {
     font-size: 20px;
     padding:50px;
     color: rgba(255,255,255,1);
-    text-shadow: 1px 1px rgba(0,0,0,0.5);    
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);    
 }
 /*Skills*/
 #skills {
@@ -310,7 +310,6 @@ ul.inline-list li {
 
 #skills .content {
     color: rgba(255,255,255,1);
-    text-shadow: 1px 1px rgba(0,0,0,0.5);
     width: 80%;
     padding: 50px 0 100px 0;
 }
@@ -341,6 +340,8 @@ ul.inline-list li {
 
 .bar .label {
     margin-left: 10px;
+    color: rgb(50, 185, 106);
+    font-weight: bold;
 }
 
 
@@ -435,9 +436,18 @@ ul.inline-list li {
 
 #recommendations .content{
     color: rgba(255,255,255, 1);
-    text-shadow: 1px 1px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);    
     width: 80%;
     padding: 50px;
+}
+
+.column {
+    width: 30%;
+    float:left;
+}
+
+.clear {
+    clear:both;
 }
 
 /*Demos*/
