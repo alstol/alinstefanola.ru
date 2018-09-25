@@ -130,12 +130,12 @@
         </div>
         <div class="tile" id="contact">
             <div class="content">
-                Copyright &copy; 2018 alinstefanola.ru
-                <ul class="inline-list">
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">Contact</a></li>
+                <p>Copyright &copy; 2018 alinstefanola.ru</p>
+                <i>Want to stalk me, or you just want to say hi? Just use the followng methods:</i>
+                <ul id="socialLinks" class="inline-list">
+                    <li v-for="socialLink in socialLinks">
+                        <a v-bind:href="socialLink.url" v-bind:target="socialLink.target"><div class="social-media" v-bind:class="socialLink.cname"></div></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -163,6 +163,7 @@
     <script src="files/js/data/demos.js"></script>
     <script src="files/js/data/experience.js"></script>
     <script src="files/js/data/skills.js"></script>
+    <script src="files/js/data/socialmedia.js"></script>
     <script src="files/js/scroller.js"></script>
     <script src="files/js/menu.js"></script>
     <script src="files/js/imagepreload.js"></script>
