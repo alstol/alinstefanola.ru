@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Jura|Playball|Sacramento|Shadows+Into+Light+Two|Quicksand');
+
 #site {
     height: 100%;
     width: 100%;
@@ -386,7 +387,7 @@ ul.inline-list li {
 }
 
 .slider .company {
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .slider .description {
@@ -396,7 +397,7 @@ ul.inline-list li {
 .slider-controls {
     position: relative;
     font-size: 50px;
-    bottom: 340px;
+    top: 150px;
 }
 
 .slider-controls .prev {
@@ -422,6 +423,20 @@ ul.inline-list li {
     margin-top: 5px;
     color: rgb(255, 255, 255);
     display:inline-block;
+}
+
+.job {
+    margin-bottom: 20px;
+}
+
+.titles {
+    font-size: 20px;
+    margin-top:20px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 20px;
 }
 
 /*Recommendations*/

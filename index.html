@@ -66,21 +66,25 @@
         </div>
         <div class="tile" id="experience">
             <div class="content">
+                <div class="slider-controls" >
+                    <div class="prev" v-if="!slider.isOnFirstPage()" v-on:click="prev()">
+                        &lt;
+                    </div>
+                    <div class="next" v-if="!slider.isOnLastPage()" v-on:click="next()">
+                        &gt;
+                    </div>          
+                </div>
                 <div class="slider">
                     <img class="logo" v-bind:src="selected.companyLogo" alt="Logo">
                     <div class="company">{{ selected.companyName }}</div>
-                    <div class="title">{{ selected.title }}</div>
-                    <div class="timeperiod">{{ selected.timePeriod.from }} - {{ selected.timePeriod.until }}</div>
-                    <span class="exp-bullet" v-for="key in selected.keywords" v-bind:title="key">{{key}}</span>
+                    <div class="titles">Position<span v-if="selected.jobs.length > 1">s</span>:</div>
+                    <div class="job" v-for="job in selected.jobs">
+                        <div class="title">{{ job.title }}</div>
+                        <div class="timeperiod">{{ job.timePeriod.from }} - {{ job.timePeriod.until }}</div>
+                        <span class="exp-bullet" v-for="key in job.keywords" v-bind:title="key">{{key}}</span>
+                    </div>    
                 </div>
-                <div class="slider-controls" >
-                    <div class="prev" v-if="!slider.isOnFirstPage()" v-on:click="prev()">
-                        <
-                    </div>
-                    <div class="next" v-if="!slider.isOnLastPage()" v-on:click="next()">
-                        >
-                    </div>          
-                </div>
+                
             </div>
         </div>
         <div class="tile" id="recommendations">
@@ -115,10 +119,10 @@
                     </div>
                     <div class="slider-controls">
                         <div class="prev" v-if="!slider.isOnFirstPage()" v-on:click="prev()">
-                            <
+                            &lt;
                         </div>
                         <div class="next" v-if="!slider.isOnLastPage()" v-on:click="next()">
-                            >
+                            &gt;
                         </div>
                     </div>
             </div>
