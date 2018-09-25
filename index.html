@@ -106,6 +106,14 @@
         </div>
         <div class="tile" id="demos">
             <div class="content">
+                    <div class="slider-controls">
+                        <div class="prev" v-if="!slider.isOnFirstPage()" v-on:click="prev()">
+                            &lt;
+                        </div>
+                        <div class="next" v-if="!slider.isOnLastPage()" v-on:click="next()">
+                            &gt;
+                        </div>
+                    </div>
                     <div class="slider">
                         <div class="slide" data-id="0" v-if="slider.imOnPage(0)">
                             Maybe some demos? Page 1.
@@ -117,14 +125,7 @@
                             Maybe some fancy screenshots/animations.
                         </div>
                     </div>
-                    <div class="slider-controls">
-                        <div class="prev" v-if="!slider.isOnFirstPage()" v-on:click="prev()">
-                            &lt;
-                        </div>
-                        <div class="next" v-if="!slider.isOnLastPage()" v-on:click="next()">
-                            &gt;
-                        </div>
-                    </div>
+                    
             </div>
         </div>
         <div class="tile" id="contact">
