@@ -1,12 +1,21 @@
 class Slider {
+    /*
+        data can be both an array and a number showing the limit of pages
+    */
     constructor(data) {
         this.data = data;
         this.currentSelectedId = 0;
     }
 
     next() {
-        if(this.currentSelectedId < this.data.length - 1)
-            this.currentSelectedId++;
+        if(Array.isArray(this.data)) {
+            if(this.currentSelectedId < this.data.length - 1)
+                this.currentSelectedId++;
+        } else  {
+            if(this.currentSelectedId < this.data - 1)
+                this.currentSelectedId++;
+        }
+        
     }
 
     prev() {
@@ -15,14 +24,25 @@ class Slider {
     }
 
     getCurrentData() {
-        return this.data[this.currentSelectedId];
+        if(Array.isArray(this.data)) 
+            return this.data[this.currentSelectedId];
+        else 
+            return this.currentSelectedId;
+        
     }
 
     isOnLastPage() {
-        return this.currentSelectedId == this.data.length - 1;
+        if(Array.isArray(this.data)) 
+            return this.currentSelectedId == this.data.length - 1;
+         else 
+            return this.currentSelectedId == this.data - 1;
     }
 
     isOnFirstPage() {
         return this.currentSelectedId == 0;
+    }
+
+    imOnPage(number) {
+        return this.currentSelectedId == number;
     }
 }

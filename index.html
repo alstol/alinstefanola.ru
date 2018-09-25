@@ -66,64 +66,58 @@
         </div>
         <div class="tile" id="experience">
             <div class="content">
-                <div class="slide">
+                <div class="slider">
                     <img class="logo" v-bind:src="selected.companyLogo" alt="Logo">
                     <div class="company">{{ selected.companyName }}</div>
                     <div class="title">{{ selected.title }}</div>
                     <div class="timeperiod">{{ selected.timePeriod.from }} - {{ selected.timePeriod.until }}</div>
                     <span class="exp-bullet" v-for="key in selected.keywords" v-bind:title="key">{{key}}</span>
                 </div>
-                <div class="slide-controls" >
+                <div class="slider-controls" >
                     <div class="prev" v-if="!slider.isOnFirstPage()" v-on:click="prev()">
                         <
                     </div>
                     <div class="next" v-if="!slider.isOnLastPage()" v-on:click="next()">
                         >
-                    </div>
-                    
+                    </div>          
                 </div>
             </div>
         </div>
         <div class="tile" id="recommendations">
             <div class="content">
-                <div class="column">
-                    <h1>
-                        Uhh enthusiastic?
-                    </h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas eos voluptates ducimus quos at molestias, vero, maxime optio quas error ex laboriosam cum omnis, eveniet aliquid consectetur explicabo officiis nesciunt.
-                    </p>
-                </div>
-
-                <div class="column">
-                    <h1>
-                        Punctual.
-                    </h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem ad corrupti quibusdam optio nulla, voluptates nobis tempore eius, nostrum sed ducimus laboriosam corporis, itaque labore! Maxime voluptatem tempora culpa exercitationem.
-                    </p>
-                </div>
-                <div class="column">
-                    <h1>
-                        Heavily reconsidering this area as it looks cringy.
-                    </h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla neque facere optio pariatur, id praesentium accusamus similique fugiat consequuntur at laboriosam. Sunt illo adipisci dicta ratione fuga! Odit, nesciunt. Sed.
-                    </p>
-                </div>
+                <p>
+                    <i>
+                        <h2>Curiousity, enthusiasm, a positive attitude and an open mind. </h2>
+                    </i>
+                </p>
+                <p>
+                    Some of these could be observed even since I was a child. Curiousity is just something natural,
+                    always trying to figure out how things around me work in order to have a better understanding of things around me. 
+                </p>
+                <p>
+                    Never afraid to pick on something new, always willing to learn something new and develop a new skill. Always doing my best and not giving up until I reach my goals.
+                </p>
                 <div class="clear"></div>
             </div>
         </div>
         <div class="tile" id="demos">
             <div class="content">
-                    <div class="slide">
-                        Git demos?
+                    <div class="slider">
+                        <div class="slide" data-id="0" v-if="slider.imOnPage(0)">
+                            Maybe some demos? Page 1.
+                        </div>
+                        <div class="slide" data-id="1" v-if="slider.imOnPage(1)">
+                            Yeah, that would be a nice idea.
+                        </div>
+                        <div class="slide" data-id="2" v-if="slider.imOnPage(2)">
+                            Maybe some fancy screenshots/animations.
+                        </div>
                     </div>
-                    <div class="slide-controls">
-                        <div class="prev">
+                    <div class="slider-controls">
+                        <div class="prev" v-if="!slider.isOnFirstPage()" v-on:click="prev()">
                             <
                         </div>
-                        <div class="next">
+                        <div class="next" v-if="!slider.isOnLastPage()" v-on:click="next()">
                             >
                         </div>
                     </div>
@@ -131,7 +125,7 @@
         </div>
         <div class="tile" id="contact">
             <div class="content">
-                Copyright &copy; 2018 alinstefanolaru
+                Copyright &copy; 2018 alinstefanola.ru
                 <ul class="inline-list">
                     <li><a href="">Contact</a></li>
                     <li><a href="">Contact</a></li>
@@ -162,9 +156,10 @@
     </div>
     <script src="files/js/model/slider.js"></script>
     <script src="files/js/scroller.js"></script>
+    <script src="files/js/menu.js"></script>
+    <script src="files/js/data/demos.js"></script>
     <script src="files/js/data/experience.js"></script>
     <script src="files/js/data/skills.js"></script>
-    <script src="files/js/menu.js"></script>
     <script>
        
     </script>

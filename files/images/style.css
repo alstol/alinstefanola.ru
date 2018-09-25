@@ -364,49 +364,49 @@ ul.inline-list li {
 
 
 
-.slide {
+.slider {
     height: 600px;
     text-align: center;
 }
 
-#experience .content .slide {
+#experience .content .slider {
     height: auto;  
 }
 
-#experience .content .slide-controls {
+#experience .content .slider-controls {
     bottom: 200px;
 }
 
-#experience .content .slide .timeperiod {
+#experience .content .slider .timeperiod {
     margin-bottom: 20px;
 }
 
-.slide .logo {
+.slider .logo {
     height: 200px;
 }
 
-.slide .company {
+.slider .company {
     font-size: 20px;
 }
 
-.slide .description {
+.slider .description {
     font-style: italic;
 }
 
-.slide-controls {
+.slider-controls {
     position: relative;
     font-size: 50px;
     bottom: 340px;
 }
 
-.slide-controls .prev {
+.slider-controls .prev {
     float:left;
     cursor:pointer;
     position: relative;
     right: 25px;
 }
 
-.slide-controls .next {
+.slider-controls .next {
     float:right;
     cursor:pointer;
     position: relative;
