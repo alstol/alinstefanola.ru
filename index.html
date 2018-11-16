@@ -91,15 +91,16 @@
             <div class="content">
                 <p>
                     <i>
-                        <h2>Curiousity, enthusiasm, a positive attitude and an open mind. </h2>
+                        <h2>Curious, enthusiastic, creative, open-minded. </h2>
                     </i>
                 </p>
                 <p>
-                    Some of these could be observed even since I was a child. Curiousity is just something natural,
-                    always trying to figure out how things around me work in order to have a better understanding of things around me. 
+                    This is one of those cheesy areas in my page where I talk about myself in a nice manner. Sorry. I had to.
                 </p>
                 <p>
-                    Never afraid to pick on something new, always willing to learn something new and develop a new skill. Always doing my best and not giving up until I reach my goals.
+                    Curiousity is something natural for me. As a child I used to dissasemble things around the house and then successfully re-assemble them.
+                    Always curious on new technologies, always up to date with the new tech trends. Never afraid to pick on something new, always willing to learn
+                    and develop a new skill. Always doing my best to succeed and never giving up until my goal is reached.
                 </p>
                 <div class="clear"></div>
             </div>
@@ -116,13 +117,32 @@
                     </div>
                     <div class="slider">
                         <div class="slide" data-id="0" v-if="slider.imOnPage(0)">
-                            Maybe some demos? Page 1.
+                            <h1>
+                                this
+                            </h1>
+                            <p>
+                                Literally this.
+                            </p>
+                            <p>
+                                By "this", I mean the website. I had to put it somewhere, right? The page "suffered" several modifications across the years. 
+                            </p>
+                            <p>
+                                It went from being this single full screen "business card-esque" page, to an actual CV, to this. 
+                            </p>
+                            <p>
+                                It went from plain HTML, to Vue.JS, to Angular JS and then back to Vue.JS. It had several fancy and "eye-stealing" animations, that were eventually removed (except for this fancy intro, I like it).
+                            </p>
+                            <a href="https://github.com/xshteff/alinstefanola.ru" target="_blank"><span class="exp-bullet">Repository</span></a>
                         </div>
-                        <div class="slide" data-id="1" v-if="slider.imOnPage(1)">
-                            Yeah, that would be a nice idea.
-                        </div>
-                        <div class="slide" data-id="2" v-if="slider.imOnPage(2)">
-                            Maybe some fancy screenshots/animations.
+                        <div class="slide" v-bind:data-id="index + 1" v-if="slider.imOnPage(index + 1)" v-for="(git, index) in selfStarred">
+                            <h1>
+                                {{git.name}}
+                            </h1>
+                            <p>
+                                {{git.description}}
+                            </p>
+                                <a v-bind:href="git.html_url" target="_blank"><span class="exp-bullet">Repository</span></a>
+                                <a v-if="git.homepage" v-bind:href="git.homepage" target="_blank"><span class="exp-bullet">Demo</span></a>
                         </div>
                     </div>
                     

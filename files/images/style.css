@@ -120,23 +120,23 @@ ul.inline-list li {
     float:right;
 }
 
-.navbar ul li a {
+ ul li a {
     text-decoration: none;
 }
 
-.navbar ul li a:link {
+ul li a:link {
     color:  rgba(255, 255, 255, 1);
 }
 
-.navbar ul li a:visited {
+ul li a:visited {
     color:  rgba(255, 255, 255, 1);
 }
 
-.navbar ul li a:active {
+ul li a:active {
     color:  rgba(255, 255, 255, 1);
 }
 
-.navbar ul li a:hover{
+ul li a:hover{
     color: rgba(69, 69, 69, 0.5);
 }
 
@@ -301,7 +301,7 @@ ul.inline-list li {
     font-size: 20px;
     padding:50px;
     color: rgba(255,255,255,1);
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);    
+    text-shadow: 1px 1px 1px rgba(0,0,0,1);    
 }
 /*Skills*/
 #skills {
@@ -366,8 +366,9 @@ ul.inline-list li {
 
 
 .slider {
-    height: 600px;
+    height: 250px;
     text-align: center;
+    padding: 0 25px;
 }
 
 #experience .content .slider {
@@ -397,7 +398,7 @@ ul.inline-list li {
 .slider-controls {
     position: relative;
     font-size: 50px;
-    top: 150px;
+    top: 85px;
 }
 
 .slider-controls .prev {
@@ -423,6 +424,7 @@ ul.inline-list li {
     margin-top: 5px;
     color: rgb(255, 255, 255);
     display:inline-block;
+    cursor: pointer;
 }
 
 .job {
@@ -451,7 +453,7 @@ ul.inline-list li {
 
 #recommendations .content{
     color: rgba(255,255,255, 1);
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);    
+    text-shadow: 1px 1px 1px rgba(0,0,0,1);    
     width: 80%;
     padding: 50px;
 }
@@ -530,3 +532,11 @@ ul#socialLinks {
     background-position: 160px 0;
 }
 
+.demo-links {
+    color: white;
+    text-decoration: none;
+}
+
+.demo-links li {
+    list-style: none;
+}
