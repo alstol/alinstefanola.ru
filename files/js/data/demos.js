@@ -8,35 +8,35 @@
 var ghData = []
 
 var fetchGithubData = () => {
-    $.getJSON('https://api.github.com/users/xShteff/starred', result => {
-        ghData = result.filter(data => data.owner.login === 'xShteff')
-        var portfolio = new Vue({
-            el: '#demos',
-            data: {
-                selfStarred: ghData,
-                slider: new Slider(ghData.length + 1), //
-                selected: 0
-            },
-            methods: {
-                next: function () {
-                    this.slider.next();
-                    this.selected = this.slider.getCurrentData();
-                },
-                prev: function () {
-                    this.slider.prev();
-                    this.selected = this.slider.getCurrentData();
-                }
-            }
-        })
-        console.log(ghData)
-        // Might as well do a 2-in-1 and include a recent picture of my face somewhere...
-        var avatar = new Vue({
-            el: '#intro',
-            data: {
-                avatar: ghData[0].owner.avatar_url
-            }
-        })
+  $.getJSON('https://api.github.com/users/xShteff/starred', result => {
+    ghData = result.filter(data => data.owner.login === 'xShteff')
+    var portfolio = new Vue({
+      el: '#demos',
+      data: {
+        selfStarred: ghData,
+        slider: new Slider(ghData.length + 1), //
+        selected: 0
+      },
+      methods: {
+        next: function () {
+          this.slider.next()
+          this.selected = this.slider.getCurrentData()
+        },
+        prev: function () {
+          this.slider.prev()
+          this.selected = this.slider.getCurrentData()
+        }
+      }
     })
+    console.log(ghData)
+    // Might as well do a 2-in-1 and include a recent picture of my face somewhere...
+    var avatar = new Vue({
+      el: '#intro',
+      data: {
+        avatar: ghData[0].owner.avatar_url
+      }
+    })
+  })
 }
 
 fetchGithubData()
