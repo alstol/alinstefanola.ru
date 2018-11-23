@@ -1,8 +1,8 @@
 /*
-    One of the most notorious features on the website.
-    Scroll hijacking.
+One of the most notorious features on the website.
+Scroll hijacking.
 
-    I'm a nerd for fancy animations, I can't just teleport you to the content. I have to slowly scroll the entire webpage until you reach the content.
+I'm a nerd for fancy animations, I can't just teleport you to the content. I have to slowly scroll the entire webpage until you reach the content.
 */
 
 $(window).scroll(function () {
@@ -31,9 +31,9 @@ $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function (event) {
       event.preventDefault()
       $('html, body').animate(
         {
-          scrollTop: target.offset().top - 40
+          scrollTop: target.offset().top
         },
-        1000,
+        500,
         function () {
           var $target = $(target)
           $target.focus()

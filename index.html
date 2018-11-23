@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="files/images/style.css">
     <script
       src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
@@ -17,21 +17,25 @@
 
         </div>
         <ul>
-          <li>About</li>
-          <li>Skills</li>
-          <li>Experience</li>
-          <li>Contact</li>
+          <li><a href="#intro">Intro</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
     </header>
     <div class="landing">
       <div class="content">
-        <div class="name">
-          Fancy intro here
+        <div class="animation-container">
+          <div id="barTop"></div>
+          <div id="name">Alin Stefan Olaru</div>
+          <div id="title">Junior Software Engineer</div>
+          <div id="barBottom"></div>
         </div>
       </div>
     </div>
-    <div class="section empty">
+    <div class="section empty" id="intro">
       Why are you even looking at my source code?
     </div>
     <div class="section" id="about">
@@ -49,5 +53,6 @@
     <footer>
       Copyright &copy; 2018 alinstefanola.ru
     </footer>
+    <script src="files/js/scroller.js"></script>
   </body>
 </html>
