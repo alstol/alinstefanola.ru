@@ -7,17 +7,28 @@ I'm a nerd for fancy animations, I can't just teleport you to the content. I hav
 
 $(window).scroll(function () {
   var scroll = $(document).scrollTop()
-  if (scroll > $('body').height() - 50) {
-    $('.navbar').addClass('fixed')
-  } else {
-    $('.navbar').removeClass('fixed')
-  }
+  // if (scroll > $('body').height() - 50) {
+  //   $('.navbar').addClass('fixed')
+  // } else {
+  //   $('.navbar').removeClass('fixed')
+  // }
 
-  if (scroll > 150) {
-    $('.backToTop').fadeIn()
-  } else {
-    $('.backToTop').fadeOut()
-  }
+  // Back to top button
+  // if (scroll > 150) {
+  //   $('.backToTop').fadeIn()
+  // } else {
+  //   $('.backToTop').fadeOut()
+  // }
+
+  // Current area highlighter
+  $('.section').each(function () {
+    var target = $(this).offset().top
+    var id = $(this).attr('id')
+    if (scroll >= target) {
+      $('ul > li > a').removeClass('active')
+      $(`ul > li > a[href=#${id}]`).addClass('active')
+    }
+  })
 })
 
 $('a[href*="#"]').not('[href="#"]').not('[href="#0"]').click(function (event) {

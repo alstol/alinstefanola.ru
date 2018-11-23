@@ -140,6 +140,10 @@ nav ul li a {
     display: block;
 }
 
+nav ul li a.active {
+    color: var(--highlight-color);
+}
+
 nav ul li:last-of-type {
     border-bottom: 1px solid black;
 }
