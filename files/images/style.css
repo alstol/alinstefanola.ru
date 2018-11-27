@@ -166,6 +166,35 @@ footer {
     text-align: center;
 }
 
+section:first-child {
+    margin-top: 100%;
+}
+
+section {
+    width: calc(100% - 250px);
+    height: 100%;
+    margin-left: 250px;
+    display:grid;
+    grid-template-columns: 70% 30%;
+    grid-auto-rows: minmax(700px, auto);
+}
+
+section.empty {
+    color: transparent;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+aside {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+
+
 .landing {
     background: url('backgrounds/bgsmaller.jpg');
     background-size: cover;
@@ -187,26 +216,6 @@ footer {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-}
-
-.section:first-child {
-    margin-top: 100%;
-}
-
-.section {
-    width: calc(100% - 250px);
-    height: 100%;
-    margin-left: 250px;
-}
-
-.section.empty {
-    color: transparent;
-    user-select: none;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
 }
 
 #barTop {
@@ -234,6 +243,13 @@ footer {
 
 #about {
     background: rgb(255, 0, 0);
+}
+
+#about aside {
+    background: url("backgrounds/DSC_0085.JPG");
+    background-size:cover;
+    background-attachment: fixed;
+    filter: contrast(110%) grayscale(50%);
 }
 
 #skills {
