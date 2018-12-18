@@ -597,3 +597,109 @@ ul#socialLinks {
 .demo-links li {
     list-style: none;
 }
+
+@media screen and (max-width: 1000px) {
+    #experience .content {
+        width: 100%;
+        padding: 40px 0;
+    }
+
+    .slider-controls .next {
+        left: -5px;
+    }
+
+    .slider-controls .prev {
+        right: -5px;
+    }
+
+    #demos .content {
+        width: 100%;
+        padding: 40px 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #landing,
+    #intro,
+    #recommendations {
+        background-attachment: unset;
+    }
+
+    #intro .content {
+        font-size: inherit;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    #landing .content {
+        font-size: 20px;
+    }
+
+    #name {
+        font-size: 30px;
+    }
+
+    @keyframes b1 {
+        0% {
+            width: 1px;
+            height: 5px;
+            left: 50%;
+            position: relative;
+            top: 35px;
+        }
+
+        33% {
+            width: 100%;
+            left: 0;
+            position: relative;
+            top: 35px;
+        }
+
+        66% {
+            width: 100%;
+            left: 0;
+            position: relative;
+            top: 0;
+        }
+
+        100% {
+            width: 0;
+            height: 5px;
+            left: 50%;
+            position: relative;
+            top: 0px;
+        }
+    }
+
+    @keyframes b2 {
+        0% {
+            width: 1px;
+            height: 5px;
+            left: 50%;
+            position: relative;
+            bottom: 35px;
+        }
+
+        33% {
+            width: 100%;
+            left: 0;
+            position: relative;
+            bottom: 35px;
+        }
+
+        66% {
+            width: 100%;
+            left: 0;
+            position: relative;
+            bottom: 0px;
+        }
+
+        100% {
+            width: 0;
+            height: 5px;
+            left: 50%;
+            position: relative;
+            bottom: 0px;
+        }
+    }
+}
