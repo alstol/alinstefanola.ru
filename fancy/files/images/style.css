@@ -115,20 +115,22 @@ ul.inline-list li {
 
 .navbar {
     width: 100%;
+    height: 100%;
     position: absolute;
     bottom: 0;
     text-align: right;
-    background: rgba(0, 0, 0, 0.2);
-    display: table;
+    background: rgba(0, 0, 0, 0);
+    display: block;
     z-index: 1000;
-    transition: background 1s ease;
-    transition: width 1s ease;
+    transition: all 1s ease;
 }
 
 .navbar.fixed {
     position: fixed;
     top: 0;
     background: rgba(0, 0, 0, 0.8);
+    display: table;
+    height: auto;
 }
 
 .navbar.toggled {
@@ -269,7 +271,7 @@ ul.inline-list li {
     text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-#landing .content {
+#landing .navbar .content {
     top: calc(50% - 50px);
     font-size: 35px;
     color: rgba(255, 255, 255, 0.8);
