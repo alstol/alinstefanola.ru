@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Acme|Bungee|Dancing+Script|Permanent+Marker');
+@import url('https://fonts.googleapis.com/css?family=Acme|Bungee|Dancing+Script|Permanent+Marker|Kalam');
 :root {
     --name-card-border: 20px;
     --box-shadow: 2px 2px 15px -1px rgba(0, 0, 0, 0.75);
@@ -151,6 +151,7 @@ html {
     clear: both;
     padding-bottom: 20px;
     height: 100px;
+    font-family: 'Kalam', cursive;
 }
 
 .job-entry .company {
