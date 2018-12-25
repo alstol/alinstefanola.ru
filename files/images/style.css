@@ -404,7 +404,7 @@ ul.inline-list li {
     padding: 0 25px;
 }
 
-.slide {
+.slider .slide {
     min-height: 400px;
     background: rgb(5, 85, 39);
     padding: 20px 10px 30px 10px;
@@ -424,7 +424,7 @@ ul.inline-list li {
     margin-bottom: 20px;
 }
 
-.slider .logo {
+.logo {
     height: 200px;
 }
 
@@ -449,11 +449,20 @@ ul.inline-list li {
     right: 15px;
 }
 
-.slider-controls .next {
+.carousel-control-next .next {
     float: right;
     cursor: pointer;
     position: relative;
     left: 15px;
+}
+
+a[class^='carousel-control-'] {
+    font-size: 66px;
+    color: rgb(0, 0, 0);
+}
+
+a[class^='carousel-control-'] .control {
+    color: rgb(0, 0, 0);
 }
 
 .exp-bullet {

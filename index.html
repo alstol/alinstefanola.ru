@@ -16,7 +16,19 @@
         <script
             src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+            integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+            crossorigin="anonymous"></script>
+        <script
+            src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+            integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+            crossorigin="anonymous"></script>
 
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+            crossorigin="anonymous">
         <link rel="stylesheet" href="files/images/style.css" />
     </head>
     <body>
@@ -80,9 +92,11 @@
                     <h1>Relevant Skills</h1>
                     <div class="bar-container" v-for="skill in main">
                         <div class="bar" v-bind:style="skill.style">
-                            <span class="label">{{ skill.name }} - {{
+                            <span class="label">
+                                {{ skill.name }} - {{
                                 skill.value }} /
-                                100</span>
+                                100
+                            </span>
                         </div>
                     </div>
                     <div
@@ -95,42 +109,42 @@
             </div>
             <div class="tile" id="experience">
                 <div class="content">
-                    <div class="slider-controls">
-                        <div
-                            class="prev"
-                            v-if="!slider.isOnFirstPage()"
-                            v-on:click="prev()">
-                            &lt;
-                        </div>
-                        <div
-                            class="next"
-                            v-if="!slider.isOnLastPage()"
-                            v-on:click="next()">
-                            &gt;
-                        </div>
-                    </div>
-                    <div class="slider">
-                        <img
-                            class="logo"
-                            v-bind:src="selected.companyLogo"
-                            alt="Logo"
-                            />
-                        <div class="company">{{ selected.companyName }}</div>
-                        <div class="titles">
-                            Position<span v-if="selected.jobs.length> 1"
-                                >s</span>:
-                        </div>
-                        <div class="job" v-for="job in selected.jobs">
-                            <div class="title">{{ job.title }}</div>
-                            <div class="timeperiod">
-                                {{ job.timePeriod.from }} -
-                                {{ job.timePeriod.until }}
+                    <div id="carouselJobs" class="carousel slide"
+                        data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item"
+                                v-for="(value, index) in jobs"
+                                v-bind:class="{ active: (index == 0) }">
+                                <img class="logo" v-bind:src="value.companyLogo"
+                                    alt="Logo" />
+                                <div class="company">{{ value.companyName }}</div>
+                                <div class="titles">
+                                    Position<span v-if="value.jobs.length> 1">s</span>:
+                                </div>
+                                <div class="job" v-for="job in value.jobs">
+                                    <div class="title">{{ job.title }}</div>
+                                    <div class="timeperiod">
+                                        {{ job.timePeriod.from }} -
+                                        {{ job.timePeriod.until }}
+                                    </div>
+                                    <span class="exp-bullet" v-for="key in
+                                        job.keywords" v-bind:title="key">{{ key
+                                        }}</span>
+                                </div>
                             </div>
-                            <span
-                                class="exp-bullet"
-                                v-for="key in job.keywords"
-                                v-bind:title="key">{{ key }}</span>
                         </div>
+                        <a class="carousel-control-prev"
+                            href="#carouselJobs" role="button"
+                            data-slide="prev">
+                            <span class="control">&lt;</span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next"
+                            href="#carouselJobs" role="button"
+                            data-slide="next">
+                            <span class="control">&gt;</span>
+                            <span class="sr-only">Next</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -269,6 +283,7 @@
             </ul>
         </div>
         <script src="files/js/utils.js"></script>
+        <script src="files/js/carousels.js"></script>
         <script src="files/js/model/slider.js"></script>
         <script src="files/js/data/demos.js"></script>
         <script src="files/js/data/experience.js"></script>

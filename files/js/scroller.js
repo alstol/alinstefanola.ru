@@ -14,7 +14,7 @@ $(window).scroll(function () {
   var body = $('body').height()
   if (scroll > body / 2) {
     if (!ScrollSettings.logoOnNav) {
-      console.log('Boop')
+      // console.log('Boop')
     }
     ScrollSettings.logoOnNav = true
   } else {
