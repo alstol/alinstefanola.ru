@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Acme|Dancing+Script|Permanent+Marker');
-
+@import url('https://fonts.googleapis.com/css?family=Acme|Bungee|Dancing+Script|Permanent+Marker');
 :root {
     --name-card-border: 20px;
     --box-shadow: 2px 2px 15px -1px rgba(0, 0, 0, 0.75);
@@ -13,6 +12,16 @@ html {
     background-color: #a3a1a1;
     background-image: url('images/notebook.png');
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.wip {
+    position: fixed;
+    top: 0;
+    right: 20px;
+    background: rgba(255, 255, 0, 1);
+    padding: 20px;
+    font-family: 'Bungee', cursive;
+    border: 2px solid black;
 }
 
 .container {
