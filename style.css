@@ -9,9 +9,14 @@ html {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    background-color: #a3a1a1;
-    background-image: url('images/notebook.png');
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    background-color: #38200c;
+    background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .wip {
@@ -30,9 +35,13 @@ html {
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
-    background: rgba(0, 0, 0, 0.5);
     padding-bottom: 100px;
     margin-bottom: 100px;
+    background-color: #4d4c4c;
+    background-image: url('https://www.transparenttextures.com/patterns/notebook.png');
+    -webkit-box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow);
 }
 
 .name-card {
@@ -180,6 +189,11 @@ html {
     white-space: pre-line;
 }
 
+span[class^='arrow-'],
+img {
+    pointer-events: none;
+}
+
 .arrow-three {
     z-index: 2;
     position: relative;
@@ -195,7 +209,7 @@ html {
     -webkit-box-shadow: var(--box-shadow);
     -moz-box-shadow: var(--box-shadow);
     box-shadow: var(--box-shadow);
-    padding: 20px;
+    padding: 10px 20px 40px 20px;
     background-color: #e7d63f;
     background-image: url('https://www.transparenttextures.com/patterns/lined-paper.png');
     width: 500px;
@@ -208,5 +222,5 @@ html {
 }
 
 .yellow-pages h1 {
-    font-family: 'Permanent Maker' cursive;
+    font-family: 'Permanent Marker', cursive;
 }
