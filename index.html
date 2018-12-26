@@ -49,53 +49,15 @@
             </span>
             <div id="experience" class="notebook experience">
                 <h1>This is who I worked for</h1>
-                <div class="job-entry"><img
-                        src="fancy/files/images/companies/LEGO.png" alt="Logo"
-                        class="logo">
-                    <div class="company">LEGO Group</div>
+                <div class="job-entry" v-for="job in experience">
+                    <img v-bind:src="job.logo" alt="" class="logo">
+                    <div class="company">{{job.company}}</div>
                     <div class="job">
-                        <div class="title">Junior Software Developer</div>
+                        <div class="title">{{job.jobTitle}}</div>
                         <div class="timeperiod">
-                            September 2018 -
-                            Current
-                        </div>
-                    </div> <br>
-                </div>
-                <div class="job-entry"><img
-                        src="fancy/files/images/companies/EConGrid.png"
-                        alt="Logo" class="logo">
-                    <div class="company">EConGrid</div>
-                    <div class="job">
-                        <div class="title">Software Engineer Intern + Part Time</div>
-                        <div class="timeperiod">
-                            August 2016 -
-                            February 2018
+                            {{job.timePeriod.from}} - {{job.timePeriod.until}}
                         </div>
                     </div>
-                </div>
-                <div class="job-entry"><img
-                        src="fancy/files/images/companies/Inno.png" alt="Logo"
-                        class="logo">
-                    <div class="company">InnoGames GmbH</div>
-                    <div class="job">
-                        <div class="title">Community Manager + Game Moderator</div>
-                        <div class="timeperiod">
-                            May 2013 -
-                            August 2017
-                        </div>
-                    </div>
-                </div>
-                <div class="job-entry"><img
-                        src="fancy/files/images/companies/VIA.png" alt="Logo"
-                        class="logo">
-                    <div class="company">VIA University College</div>
-                    <div class="job">
-                        <div class="title">Student Lecturer</div>
-                        <div class="timeperiod">
-                            August 2015 -
-                            January 2016
-                        </div>
-                    </div> <br>
                 </div>
             </div>
 
@@ -103,29 +65,86 @@
                 <img src="right-drawn-arrow-svgrepo-com.svg" alt="">
             </span>
 
-            <div class="yellow-pages">
+            <div class="yellow-pages" id="contact">
                 <h1>Get in touch with me!</h1>
                 <p>
                     Feel free to use any of the following methods if you want to
                     get in touch :)
                 </p>
                 <ul>
-                    <li>
-                        <a href="https://github.com/xShteff" target="_blank">GitHub</a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/xShteff" target="_blank">Twitter</a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/alinstefanolaru/"
-                            target="_blank">LinkedIn</a>
-                    </li>
-                    <li>
-                        <a
-                            href="mailto:alinstefanolaru@gmail.com?Subject=Hello"
-                            target="_blank">E-mail</a>
+                    <li v-for="contact in contacts">
+                        <a v-bind:href="contact.href" target="_blank">{{contact.title}}</a>
                     </li>
                 </ul>
             </div>
+            <script>
+                var companyLogoFolderPath = "fancy/files/images/companies/"
+                var jobs = new Vue({
+                    el: '#experience',
+                    data: {
+                        experience: [
+                            {
+                                company: "LEGO Group",
+                                jobTitle: "Junior Software Engineer",
+                                logo: `${companyLogoFolderPath}LEGO.png`,
+                                timePeriod: {
+                                    from: "September 2018",
+                                    until: "Current"
+                                }
+                            },
+                            {
+                                company: "EConGrid",
+                                jobTitle: "Software Engineer Intern + Part Time",
+                                logo: `${companyLogoFolderPath}EConGrid.png`,
+                                timePeriod: {
+                                    from: "August 2016",
+                                    until: "February 2018"
+                                }
+                            },
+                            {
+                                company: "InnoGames GmbH",
+                                jobTitle: "Community Manager + Game Moderator",
+                                logo: `${companyLogoFolderPath}Inno.png`,
+                                timePeriod: {
+                                    from: "May 2013",
+                                    until: "August 2017"
+                                }
+                            },
+                            {
+                                company: "VIA University College",
+                                jobTitle: "Student Lecturer",
+                                logo: `${companyLogoFolderPath}VIA.png`,
+                                timePeriod: {
+                                    from: "August 2015",
+                                    until: "January 2016"
+                                }
+                            },
+                        ]
+                    }
+                });
+                var contact = new Vue({
+                    el: "#contact",
+                    data: {
+                        contacts: [
+                            {
+                                title: "GitHub",
+                                href: "https://github.com/xShteff"
+                            },
+                            {
+                                title: "LinkedIn",
+                                href: "https://www.linkedin.com/in/alinstefanolaru/"
+                            },
+                            {
+                                title: "Twitter",
+                                href: "https://twitter.com/xShteff"
+                            },
+                            {
+                                title: "Email",
+                                href: "mailto:alinstefanolaru@gmail.com?Subject=Hello"
+                            }
+                        ]
+                    }
+                })
+            </script>
         </body>
     </html>

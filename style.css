@@ -2,6 +2,8 @@
 :root {
     --name-card-border: 20px;
     --box-shadow: 2px 2px 15px -1px rgba(0, 0, 0, 0.75);
+    --hover-animation: rotate(0deg) scale(1.2);
+    --hover-transition: transform 0.5s ease;
 }
 
 body,
@@ -53,8 +55,16 @@ html {
     box-shadow: var(--box-shadow);
     transform: rotate(-15deg);
     position: relative;
-    left: -150px;
+    left: -20px;
     float: left;
+    transition: var(--hover-transition);
+}
+
+.name-card:hover,
+.polaroid:hover,
+.notebook:hover,
+.yellow-pages:hover {
+    transform: var(--hover-animation);
 }
 
 .name-card .header {
@@ -95,12 +105,12 @@ html {
 
 .arrow-one {
     position: relative;
-    top: 153px;
-    right: 145px;
+    top: 130px;
+    right: 240px;
 }
 
 .arrow-one img {
-    transform: rotate(-30deg);
+    transform: rotate(-50deg);
 }
 
 .polaroid {
@@ -112,7 +122,9 @@ html {
     float: right;
     transform: rotate(14deg);
     position: relative;
-    bottom: 300px;
+    bottom: 420px;
+    right: 50px;
+    transition: var(--hover-transition);
 }
 
 .polaroid .image img {
@@ -130,7 +142,7 @@ html {
 .arrow-two {
     position: relative;
     left: 320px;
-    top: 50px;
+    bottom: 40px;
 }
 
 .arrow-two img {
@@ -144,11 +156,13 @@ html {
     width: 500px;
     position: relative;
     right: 30px;
+    bottom: 100px;
     transform: rotate(-10deg);
     padding: 10px 20px 30px 20px;
     -webkit-box-shadow: var(--box-shadow);
     -moz-box-shadow: var(--box-shadow);
     box-shadow: var(--box-shadow);
+    transition: var(--hover-transition);
 }
 
 .notebook h1 {
@@ -219,6 +233,7 @@ img {
     transform: rotate(10deg);
     left: 100px;
     bottom: 600px;
+    transition: var(--hover-transition);
 }
 
 .yellow-pages h1 {
