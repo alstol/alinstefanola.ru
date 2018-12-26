@@ -41,30 +41,18 @@ html {
     margin-bottom: 100px;
     background-color: #110f8b;
     background-image: url('https://www.transparenttextures.com/patterns/project-paper.png');
-    -webkit-box-shadow: var(--box-shadow);
-    -moz-box-shadow: var(--box-shadow);
-    box-shadow: var(--box-shadow);
 }
 
 .name-card {
     max-width: 500px;
     text-align: center;
     border-radius: var(--name-card-border);
-    -webkit-box-shadow: var(--box-shadow);
-    -moz-box-shadow: var(--box-shadow);
-    box-shadow: var(--box-shadow);
     transform: rotate(-15deg);
     position: relative;
     left: -20px;
     float: left;
     transition: var(--hover-transition);
-}
-
-.name-card:hover,
-.polaroid:hover,
-.notebook:hover,
-.yellow-pages:hover {
-    transform: var(--hover-animation);
+    z-index: 2;
 }
 
 .name-card .header {
@@ -111,12 +99,32 @@ html {
 
 .arrow-one img {
     transform: rotate(-50deg);
+    filter: invert(100%);
+}
+
+.arrow-two {
+    position: relative;
+    left: 320px;
+    bottom: 40px;
+}
+
+.arrow-two img {
+    transform: rotate(100deg);
+    filter: invert(100%);
+}
+
+.arrow-three {
+    position: relative;
+    bottom: 430px;
+    left: 500px;
+}
+
+.arrow-three img {
+    transform: rotate(-65deg);
+    filter: invert(100%);
 }
 
 .polaroid {
-    -webkit-box-shadow: var(--box-shadow);
-    -moz-box-shadow: var(--box-shadow);
-    box-shadow: var(--box-shadow);
     max-width: 400px;
     background: rgb(255, 255, 255);
     float: right;
@@ -125,6 +133,7 @@ html {
     bottom: 420px;
     right: 50px;
     transition: var(--hover-transition);
+    z-index: 2;
 }
 
 .polaroid .image img {
@@ -139,17 +148,6 @@ html {
     font-size: 40px;
 }
 
-.arrow-two {
-    position: relative;
-    left: 320px;
-    bottom: 40px;
-}
-
-.arrow-two img {
-    transform: rotate(100deg);
-    z-index: 2;
-}
-
 .notebook {
     background-color: #fffcfc;
     background-image: url('https://www.transparenttextures.com/patterns/lined-paper.png');
@@ -159,15 +157,13 @@ html {
     bottom: 100px;
     transform: rotate(-10deg);
     padding: 10px 20px 30px 20px;
-    -webkit-box-shadow: var(--box-shadow);
+    z-index: 1;
+}
+
+.drop-shadow {
     -moz-box-shadow: var(--box-shadow);
     box-shadow: var(--box-shadow);
     transition: var(--hover-transition);
-}
-
-.notebook h1 {
-    font-family: 'Permanent Marker', cursive;
-    text-align: center;
 }
 
 .job-entry {
@@ -208,21 +204,7 @@ img {
     pointer-events: none;
 }
 
-.arrow-three {
-    z-index: 2;
-    position: relative;
-    bottom: 430px;
-    left: 500px;
-}
-
-.arrow-three img {
-    transform: rotate(-65deg);
-}
-
 .yellow-pages {
-    -webkit-box-shadow: var(--box-shadow);
-    -moz-box-shadow: var(--box-shadow);
-    box-shadow: var(--box-shadow);
     padding: 10px 20px 40px 20px;
     background-color: #e7d63f;
     background-image: url('https://www.transparenttextures.com/patterns/lined-paper.png');
@@ -236,6 +218,15 @@ img {
     transition: var(--hover-transition);
 }
 
-.yellow-pages h1 {
+.yellow-pages h1,
+.notebook h1 {
     font-family: 'Permanent Marker', cursive;
+    text-align: center;
+}
+
+.name-card:hover,
+.polaroid:hover,
+.notebook:hover,
+.yellow-pages:hover {
+    transform: var(--hover-animation);
 }

@@ -14,8 +14,8 @@
         <div class="wip">
             This page is under construction!
         </div>
-        <div class="container">
-            <div class="name-card">
+        <div class="container drop-shadow">
+            <div class="name-card drop-shadow">
                 <div class="header">
                     <div class="hello">
                         Hello
@@ -34,7 +34,7 @@
             <span class="arrow-one">
                 <img src="right-drawn-arrow-svgrepo-com.svg" alt="">
             </span>
-            <div class="polaroid">
+            <div class="polaroid drop-shadow">
                 <div class="image">
                     <img
                         src="https://avatars1.githubusercontent.com/u/9394141?s=400&u=a47bae2a8c3b994bc0f6651de62a6e72fcff79a3&v=4"
@@ -47,7 +47,7 @@
             <span class="arrow-two">
                 <img src="right-drawn-arrow-svgrepo-com.svg" alt="">
             </span>
-            <div id="experience" class="notebook experience">
+            <div id="experience" class="notebook experience drop-shadow">
                 <h1>This is who I worked for</h1>
                 <div class="job-entry" v-for="job in experience">
                     <img v-bind:src="job.logo" alt="" class="logo">
@@ -65,11 +65,12 @@
                 <img src="right-drawn-arrow-svgrepo-com.svg" alt="">
             </span>
 
-            <div class="yellow-pages" id="contact">
+            <div class="yellow-pages drop-shadow" id="contact">
                 <h1>Get in touch with me!</h1>
                 <p>
-                    Feel free to use any of the following methods if you want to
-                    get in touch :)
+                    Do you have an idea and think that I could help you? Maybe
+                    you just want to say hello? Well then, feel free to use any
+                    of the below methods to get in touch with me! :)
                 </p>
                 <ul>
                     <li v-for="contact in contacts">
