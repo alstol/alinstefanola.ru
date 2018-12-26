@@ -179,3 +179,34 @@ html {
     clear: both;
     white-space: pre-line;
 }
+
+.arrow-three {
+    z-index: 2;
+    position: relative;
+    bottom: 430px;
+    left: 500px;
+}
+
+.arrow-three img {
+    transform: rotate(-65deg);
+}
+
+.yellow-pages {
+    -webkit-box-shadow: var(--box-shadow);
+    -moz-box-shadow: var(--box-shadow);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    background-color: #e7d63f;
+    background-image: url('https://www.transparenttextures.com/patterns/lined-paper.png');
+    width: 500px;
+    font-family: 'Kalam', cursive;
+    float: right;
+    position: relative;
+    transform: rotate(10deg);
+    left: 100px;
+    bottom: 600px;
+}
+
+.yellow-pages h1 {
+    font-family: 'Permanent Maker' cursive;
+}
