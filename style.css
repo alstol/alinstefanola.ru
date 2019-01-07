@@ -1,232 +1,74 @@
-@import url('https://fonts.googleapis.com/css?family=Acme|Bungee|Dancing+Script|Permanent+Marker|Kalam');
-:root {
-    --name-card-border: 20px;
-    --box-shadow: 2px 2px 15px -1px rgba(0, 0, 0, 0.75);
-    --hover-animation: rotate(0deg) scale(1.2);
-    --hover-transition: transform 0.5s ease;
+@import url('https://fonts.googleapis.com/css?family=Jura|Playball|Sacramento|Shadows+Into+Light+Two|Quicksand');
+
+@keyframes word {
+    0%,
+    100% {
+        margin-left: 5px;
+    }
+
+    40%,
+    60% {
+        margin-left: 0px;
+    }
+}
+
+@keyframes dot {
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    40%,
+    60% {
+        opacity: 1;
+    }
+}
+
+@keyframes ru {
+    0%,
+    100% {
+        position: relative;
+        right: 8px;
+    }
+
+    40%,
+    60% {
+        position: relative;
+        right: 0px;
+    }
 }
 
 body,
 html {
-    margin: 0;
-    padding: 0;
     font-family: sans-serif;
-    background-color: #38200c;
-    background-image: url('https://www.transparenttextures.com/patterns/dark-wood.png');
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
-.wip {
-    position: fixed;
-    top: -2px;
-    right: 20px;
-    background: rgba(255, 255, 0, 1);
-    padding: 20px;
-    font-family: 'Bungee', cursive;
-    border: 2px solid black;
-    z-index: 200;
+.name {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 50px;
+    text-align: center;
+}
+
+.name .word {
+    animation-name: word;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+.name .dot {
+    animation-name: dot;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+.name .ru {
+    animation-name: ru;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
-    padding-bottom: 100px;
-    margin-bottom: 100px;
-    background-color: #110f8b;
-    background-image: url('https://www.transparenttextures.com/patterns/project-paper.png');
-}
-
-.name-card {
-    max-width: 500px;
-    text-align: center;
-    border-radius: var(--name-card-border);
-    transform: rotate(-15deg);
-    position: relative;
-    left: -20px;
-    float: left;
-    transition: var(--hover-transition);
-    z-index: 2;
-}
-
-.name-card .header {
-    background: rgba(255, 0, 0, 1);
-    border-top-left-radius: var(--name-card-border);
-    border-top-right-radius: var(--name-card-border);
-    padding: 15px 0;
-    color: rgb(255, 255, 255);
-    text-transform: lowercase;
-    font-family: 'Acme', sans-serif;
-    font-size: 40px;
-}
-
-.name-card .header .hello {
-    font-size: 40px;
-    text-transform: uppercase;
-}
-
-.name-card .body {
-    padding: 50px 0;
-    font-family: 'Permanent Marker', cursive;
-    overflow: visible;
-    background: rgba(255, 255, 255, 1);
-}
-
-.name-card .body .name {
-    position: relative;
-    font-size: 50px;
-    transform: rotate(-5deg);
-}
-
-.name-card .end {
-    background: rgba(255, 0, 0, 1);
-    border-bottom-left-radius: var(--name-card-border);
-    border-bottom-right-radius: var(--name-card-border);
-    padding: 10px 0;
-}
-
-.arrow-one {
-    position: relative;
-    top: 130px;
-    right: 240px;
-}
-
-.arrow-one img {
-    transform: rotate(-50deg);
-    filter: invert(100%);
-}
-
-.arrow-two {
-    position: relative;
-    left: 320px;
-    bottom: 40px;
-}
-
-.arrow-two img {
-    transform: rotate(100deg);
-    filter: invert(100%);
-}
-
-.arrow-three {
-    position: relative;
-    bottom: 430px;
-    left: 500px;
-}
-
-.arrow-three img {
-    transform: rotate(-65deg);
-    filter: invert(100%);
-}
-
-.polaroid {
-    max-width: 400px;
-    background: rgb(255, 255, 255);
-    float: right;
-    transform: rotate(14deg);
-    position: relative;
-    bottom: 420px;
-    right: 50px;
-    transition: var(--hover-transition);
-    z-index: 2;
-}
-
-.polaroid .image img {
-    max-width: -moz-available;
-    padding: 20px 20px 0px 20px;
-}
-
-.polaroid .text {
-    padding: 0px 10px 20px 10px;
-    text-align: center;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 40px;
-}
-
-.notebook {
-    background-color: #fffcfc;
-    background-image: url('https://www.transparenttextures.com/patterns/lined-paper.png');
-    width: 500px;
-    position: relative;
-    right: 30px;
-    bottom: 100px;
-    transform: rotate(-10deg);
-    padding: 10px 20px 30px 20px;
-    z-index: 1;
-}
-
-.drop-shadow {
-    -moz-box-shadow: var(--box-shadow);
-    box-shadow: var(--box-shadow);
-    transition: var(--hover-transition);
-}
-
-.job-entry {
-    clear: both;
-    padding-bottom: 20px;
-    height: 100px;
-    font-family: 'Kalam', cursive;
-}
-
-.job-entry .company {
-    font-weight: bold;
-    font-size: 19px;
-}
-
-.job-entry .logo {
-    float: left;
-    margin-right: 25px;
-    width: 100px;
-    height: 100px;
-}
-
-.job-entry .title {
-    font-weight: bold;
-    font-size: 110%;
-}
-
-.job-entry .timeperiod {
-    font-style: italic;
-}
-
-.job-entry .description {
-    clear: both;
-    white-space: pre-line;
-}
-
-span[class^='arrow-'],
-img {
-    pointer-events: none;
-}
-
-.yellow-pages {
-    padding: 10px 20px 40px 20px;
-    background-color: #e7d63f;
-    background-image: url('https://www.transparenttextures.com/patterns/lined-paper.png');
-    width: 500px;
-    font-family: 'Kalam', cursive;
-    float: right;
-    position: relative;
-    transform: rotate(10deg);
-    left: 100px;
-    bottom: 600px;
-    transition: var(--hover-transition);
-}
-
-.yellow-pages h1,
-.notebook h1 {
-    font-family: 'Permanent Marker', cursive;
-    text-align: center;
-}
-
-.name-card:hover,
-.polaroid:hover,
-.notebook:hover,
-.yellow-pages:hover {
-    transform: var(--hover-animation);
 }
