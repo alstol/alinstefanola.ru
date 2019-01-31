@@ -2,51 +2,240 @@
 <html lang="en">
 
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>alinstefanola.ru</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="theme-color" content="#222" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description"
+      content="Personal webpage built for and by Alin Stefan Olaru" />
+
+    <title>Alin-Stefan Olaru's Personal Webpage</title>
+
+    <script src="dist/js/jquery.js"></script>
+    <script src="dist/js/vue.js"></script>
+
+    <link rel="stylesheet" href="files/images/style.css" />
   </head>
 
   <body>
-    <div class="container">
-      <div class="name">
-        <span class="word">Alin</span><span class="word">Stefan</span><span
-          class="word">Ola</span><span class="dot">.</span><span
-          class="ru">ru</span>
+    <div id="site">
+      <div class="tile full" id="landing">
+        <div class="content">
+          <img id="headshot" src="files/images/eddshotsquare.jpg" alt=""
+            style="display: none;" />
+          <div class="animation-container" id="logo-animated">
+            <div id="b1"></div>
+            <div id="name" class="glitch" data-text="Alin Stefan Olaru">Alin
+              Stefan Olaru</div>
+            <div id="title">Junior Software Engineer</div>
+            <div id="b2"></div>
+          </div>
+        </div>
+        <div class="navbar">
+          <div id="logo">
+            <img src="files/images/siggywhite.png" alt="" />
+          </div>
+          <ul class="inline-list">
+            <li><a href="#landing"> </a></li>
+          </ul>
+        </div>
       </div>
-      <p>
-        Hi there. As you probably already guessed, my name's Alin Stefan Olaru.
-        I'm a Software Engineer at LEGO Group in Billund, Denmark.
-      </p>
-      <p>
-        This is a placeholder for my web-page that's currently under
-        construction. For some reason I'm never happy with a layout, and I keep
-        changing them every now and then. You can follow my progress on the
-        Website <a href="https://github.com/alstol/alinstefanola.ru">GitHub
-          repository</a>.
-      </p>
-      <p>
-        Feel free to use any of the following links, if you want to get in touch
-        with me.
-      </p>
+      <div class="tile" id="intro">
+        <div class="content">
+          <p class="italic">
+            Software Engineer with core competences in
+            designing and developing applications using C# (.NET Framework or
+            Core) or Java.
+          </p>
+          <p>
+            I moved here back in 2014 in order to study ICT
+            Engineering at VIA University College, which of course I
+            graduated back in February 2018. Back in High School I
+            actually studied Social Sciences due to the fact that I
+            wasn't best friends with the study system back home, and
+            I had pretty much zero chances to pursue my one passion
+            since I was a child. Computer Engineering.
+          </p>
+          <p>
+            By moving in Denmark I had a chance to pretty much have
+            a 'fresh start' and I finally got a chance to achieve my
+            dream. I went through college without failing a single
+            class and I did so by gaining above average grades.
+          </p>
+        </div>
+      </div>
+      <div class="tile" id="skills">
+        <div class="content">
+          <h1>Relevant Skills</h1>
+          <div class="bar-container" v-for="skill in main">
+            <div class="bar" v-bind:style="skill.style">
+              <span class="label">{{ skill.name }} - {{
+                skill.value }} /
+                100</span>
+            </div>
+          </div>
+          <div class="exp-bullet" class="exp-bullet" v-for="key in keywords">
+            {{ key }}
+          </div>
+        </div>
+      </div>
+      <div class="tile" id="experience">
+        <div class="content">
+          <div class="slider-controls">
+            <div class="prev" v-if="!slider.isOnFirstPage()"
+              v-on:click="prev()">
+              &lt;
+            </div>
+            <div class="next" v-if="!slider.isOnLastPage()" v-on:click="next()">
+              &gt;
+            </div>
+          </div>
+          <div class="slider">
+            <img class="logo" v-bind:src="selected.companyLogo" alt="Logo" />
+            <div class="company">{{ selected.companyName }}</div>
+            <div class="titles">
+              Position<span v-if="selected.jobs.length> 1">s</span>:
+            </div>
+            <div class="job" v-for="job in selected.jobs">
+              <div class="title">{{ job.title }}</div>
+              <div class="timeperiod">
+                {{ job.timePeriod.from }} -
+                {{ job.timePeriod.until }}
+              </div>
+              <span class="exp-bullet" v-for="key in job.keywords"
+                v-bind:title="key">{{ key }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tile" id="recommendations">
+        <div class="content">
+          <p>
+            <i>
+              <h2>
+                Curious, enthusiastic, creative, open-minded.
+              </h2>
+            </i>
+          </p>
+          <p>
+            This is one of those cheesy areas in my page where I
+            talk about myself in a nice manner. Sorry. I had to.
+          </p>
+          <p>
+            Curiousity is something natural for me. As a child I
+            used to dissasemble things around the house and then
+            successfully re-assemble them. Always curious on new
+            technologies, always up to date with the new tech
+            trends. Never afraid to pick on something new, always
+            willing to learn and develop a new skill. Always doing
+            my best to succeed and never giving up until my goal is
+            reached.
+          </p>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div class="tile" id="demos">
+        <div class="content">
+          <div class="slider-controls">
+            <div class="prev" v-if="!slider.isOnFirstPage()"
+              v-on:click="prev()">
+              &lt;
+            </div>
+            <div class="next" v-if="!slider.isOnLastPage()" v-on:click="next()">
+              &gt;
+            </div>
+          </div>
+          <div class="slider">
+            <h1>Projects</h1>
+            <p>
+              This section contains some highlighted repositories
+              from my
+              <a href="https://github.com/xShtef" target="_blank">GitHub</a>
+              account, where I shamelessly star my own
+              repositories. I know it's not a good idea to do so
+              but it's a nice "hacky" way to automatically fetch
+              specific repositories from GitHub
+            </p>
+            <div class="slide" data-id="0" v-if="slider.imOnPage(0)">
+              <h1>this</h1>
+              <p>Literally this.</p>
+              <p>
+                By "this", I mean the website. I had to put it
+                somewhere, right? The page "suffered" several
+                modifications across the years.
+              </p>
+              <p>
+                It went from being this single full screen
+                "business card-esque" page, to an actual CV, to
+                this.
+              </p>
+              <p>
+                It went from plain HTML, to Vue.JS, to Angular
+                JS and then back to Vue.JS. It had several fancy
+                and "eye-stealing" animations, that were
+                eventually removed (except for this fancy intro,
+                I like it).
+              </p>
+              <p>
+                Please note that the page is still under
+                development. I'm aware it might not look so nice
+                on mobile phones or on specific browsers. If you
+                want to have the full experience you'll have to
+                visit it from a PC and a modern browser.
+              </p>
+              <a href="https://github.com/xshteff/alinstefanola.ru"
+                target="_blank"><span class="exp-bullet">Repository</span></a>
+            </div>
+            <!--Wtf. I just realised I made this slider different from the other one.-->
+            <div class="slide" v-bind:data-id="index + 1"
+              v-if="slider.imOnPage(index + 1)" v-for="(git, index) in
+              selfStarred">
+              <h1>{{ git.name }}</h1>
+              <p>{{ git.description }}</p>
+              <a v-bind:href="git.html_url" target="_blank"><span
+                  class="exp-bullet">Repository</span></a>
+              <a v-if="git.homepage" v-bind:href="git.homepage" target="_blank">
+                <span class="exp-bullet">Demo</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tile" id="contact">
+        <div class="content">
+          <p>Copyright &copy; 2018 alinstefanola.ru</p>
+          <i>Want to stalk me, or you just want to say hi? Just use
+            the followng methods:</i>
+          <ul id="socialLinks" class="inline-list">
+            <li v-for="socialLink in socialLinks">
+              <a v-bind:href="socialLink.url" v-bind:target="socialLink.target">
+                <div class="social-media" v-bind:class="socialLink.cname"></div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="menu">
       <ul>
-        <li>
-          <a target="_blank" href="https://github.com/alstol">GitHub</a>
-        </li>
-        <li>
-          <a target="_blank"
-            href="https://www.linkedin.com/in/alinstefanolaru/">LinkedIn</a>
-        </li>
-        <li>
-          <a target="_blank" href="https://twitter.com/xShteff">Twitter</a>
-        </li>
-        <li>
-          <a href="mailto:alinstefanolaru@gmail.com?subject=Hello">E-mail</a>
-        </li>
+        <li><a href="#landing">Back to top</a></li>
+        <li><a href="#into">Introduction</a></li>
+        <li><a href="#skills">Relevant Skills</a></li>
+        <li><a href="#experience">Work Experience</a></li>
+        <li><a href="#demos">Demos</a></li>
       </ul>
     </div>
+    <script src="files/js/utils.js"></script>
+    <script src="files/js/model/slider.js"></script>
+    <script src="files/js/data/demos.js"></script>
+    <script src="files/js/data/experience.js"></script>
+    <script src="files/js/data/skills.js"></script>
+    <script src="files/js/data/socialmedia.js"></script>
+    <script src="files/js/scroller.js"></script>
+    <script src="files/js/menu.js"></script>
+    <script src="files/js/imagepreload.js"></script>
+    <script></script>
   </body>
 
 </html>
