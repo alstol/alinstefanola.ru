@@ -9,29 +9,29 @@ namespace alinstefanola.ru.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EducationController : ControllerBase
+    public class SocialMediaController : ControllerBase
     {
-        // GET: api/Education
+        // GET: api/SocialMedia
         [HttpGet]
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
 
-        // GET: api/Education/5
+        // GET: api/SocialMedia/5
         [HttpGet("{id}")]
         public string Get(int id)
         {
             return "value";
         }
 
-        // POST: api/Education
+        // POST: api/SocialMedia
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
-        // PUT: api/Education/5
+        // PUT: api/SocialMedia/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {

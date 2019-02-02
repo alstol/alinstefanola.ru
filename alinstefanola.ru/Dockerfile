@@ -10,6 +10,7 @@ RUN dotnet restore "alinstefanola.ru/alinstefanola.ru.csproj"
 COPY . .
 WORKDIR "/src/alinstefanola.ru"
 RUN dotnet build "alinstefanola.ru.csproj" -c Release -o /app
+RUN npm install
 
 FROM build AS publish
 RUN dotnet publish "alinstefanola.ru.csproj" -c Release -o /app
