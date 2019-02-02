@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace alinstefanola.ru
+namespace alinstefanolaruWeb
 {
     public class Startup
     {
@@ -44,7 +44,7 @@ namespace alinstefanola.ru
             }
             else
             {
-                //app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Error");
                 app.UseHsts();
             }
 
@@ -52,12 +52,7 @@ namespace alinstefanola.ru
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
-            });
+            app.UseMvc();
         }
     }
 }
