@@ -70,6 +70,25 @@ nav.bottom .avatar {
   float: right;
   margin-top: 25px;
   padding: 5px;
+  text-align: left;
+}
+
+.container .about .text .name {
+  font-size: 25px;
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+.container .about .text .nickname {
+  color: rgb(69, 69, 69);
+  margin-bottom: 15px;
+}
+
+.container .about .text ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  color: rgb(69, 69, 69);
 }
 
 .container .content {
@@ -109,9 +128,41 @@ nav.bottom .avatar {
 
 .articles .article {
   border-top: 1px solid var(--background-colour);
-  padding: 30px 10px;
+  padding: 10px;
   cursor: pointer;
+  display: grid;
+  grid-template-columns: 55px auto;
 }
+
 .articles .article:hover {
   background: rgba(207, 237, 255, 0.5);
+}
+
+.articles .article .avatar .mini {
+  width: 45px;
+  border-radius: 50%;
+}
+
+.post .header .name {
+  font-weight: bold;
+}
+
+.post .header .nickname {
+  color: rgb(69, 69, 69);
+}
+
+.post .header .date {
+  color: rgb(69, 69, 69);
+}
+
+.hashtags {
+  padding: 0;
+  margin: 10px 0 0 0;
+  list-style: none;
+  color: var(--accent-colour);
+  font-weight: bold;
+}
+
+.hashtags li {
+  display: inline;
 }

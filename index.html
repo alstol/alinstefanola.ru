@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Personal Webpage</title>
         <script src="dist/js/jquery.js"></script>
+        <script src="dist/js/vue.js"></script>
         <link rel="stylesheet" href="files/css/style.css">
     </head>
     <body>
@@ -34,8 +35,8 @@
         <div class="container">
             <div class="about">
                 <div class="text">
-                    <h2>Alin Stefan Olaru</h2>
-                    <p>@xShteff</p>
+                    <div class="name">Alin Stefan Olaru</div class="name">
+                    <div class="nickname">@xShteff</div>
                     <ul>
                         <li>Billund, Danmark</li>
                         <li>Born March 19, 1995</li>
@@ -54,43 +55,65 @@
                         </li>
                     </ul>
                 </div>
-                <div class="articles">
+                <div class="articles" id="main-content">
                     <div class="article">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Porro reprehenderit eveniet dolore eum officia illo
-                        ducimus dolor repellat aspernatur, magnam eaque at
-                        voluptatibus asperiores eligendi, delectus assumenda
-                        corrupti facilis aut.
+                        <div class="avatar">
+                            <img
+                                src="https://avatars1.githubusercontent.com/u/9394141?s=460&v=4"
+                                class="mini">
+                        </div>
+                        <div class="post">
+                            <div class="header">
+                                <span class="name">Alin-Stefan Olaru</span>
+                                <span class="nickname">@xShteff</span>
+                                <span class="date">17 Feb 2018</span>
+                            </div>
+                            <div class="text">
+                                Lorem ipsum dolor sit amet consectetur
+                                adipisicing elit. Eum eos iste architecto,
+                                maiores distinctio asperiores molestias! Nisi
+                                beatae itaque error nostrum quo molestias
+                                maiores, deserunt perferendis voluptates, quae
+                                ipsam velit?
+                            </div>
+                        </div>
                     </div>
-                    <div class="article">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Porro reprehenderit eveniet dolore eum officia illo
-                        ducimus dolor repellat aspernatur, magnam eaque at
-                        voluptatibus asperiores eligendi, delectus assumenda
-                        corrupti facilis aut.
-                    </div>
-                    <div class="article">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Porro reprehenderit eveniet dolore eum officia illo
-                        ducimus dolor repellat aspernatur, magnam eaque at
-                        voluptatibus asperiores eligendi, delectus assumenda
-                        corrupti facilis aut.
-                    </div>
-                    <div class="article">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Porro reprehenderit eveniet dolore eum officia illo
-                        ducimus dolor repellat aspernatur, magnam eaque at
-                        voluptatibus asperiores eligendi, delectus assumenda
-                        corrupti facilis aut.
+                    <div class="article" v-for="entry in experience">
+                        <div class="avatar">
+                            <img
+                                v-bind:src="entry.avatar"
+                                class="mini">
+                        </div>
+                        <div class="post">
+                            <div class="header">
+                                <span class="name">{{entry.name}}</span>
+                                <span class="nickname">{{entry.nickname}}</span>
+                                <span class="date">{{entry.date}}</span>
+                            </div>
+                            <div class="text">
+                                {{entry.content}}
+                                <ul class="hashtags">
+                                    <li v-for="hashtag in entry.hashtags">
+                                        {{hashtag}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="footer">
                 <div class="articles shadow">
                     <div class="article">
+                        <div class="avatar">
+
+                        </div>
                         Some fancy text here
                     </div>
                     <div class="article">
+                        <div class="avatar">
+
+                        </div>
                         More ideas to come...
                     </div>
                 </div>
@@ -99,6 +122,8 @@
                 </p>
             </div>
         </div>
-
+        <script src="files/js/xutils.js"></script>
+        <script src="files/data/experience.js"></script>
+        <script src="files/js/app.js"></script>
     </body>
 </html>
