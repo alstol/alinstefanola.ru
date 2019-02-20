@@ -41,3 +41,26 @@ var app = new Vue({
   },
   methods: {}
 })
+
+$(document).ready(() => {
+  $(window).scroll(function (a) {
+    var scroll = $(document).scrollTop()
+    var height = $('body').height()
+    if (scroll > 510) {
+      $('.headshot').addClass('toggled')
+      $('.mini-stats .mini-avatar').removeClass('toggled')
+      $('.mini-stats .name').removeClass('toggled')
+      // $('nav.bottom').addClass('fixed')
+    } else {
+      $('.headshot').removeClass('toggled')
+      $('.mini-stats .mini-avatar').addClass('toggled')
+      $('.mini-stats .name').addClass('toggled')
+      $('nav.bottom').removeClass('fixed')
+    }
+    console.log(`${scroll} - ${height}`)
+    console.log(scroll > height)
+    if (scroll > 545) {
+    } else {
+    }
+  })
+})
